@@ -1,5 +1,7 @@
 #TODO
 
+Since.  >>TODO: side other research on visual aids for folding slash other 2d to 3d vis
+
 goal: test whether users understand the mapping of 2d fold patterns to 3d, and test the degree to which plane coloring, edge patterning, and a 3d preview help users understand how a popup card will fold.
 
 Each subject received a set of five laser cut cards, and we recorded the time it takes them to successfully fold the card.   
