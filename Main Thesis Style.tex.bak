@@ -1,0 +1,113 @@
+\documentclass[12pt,american]{report}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\geometry{verbose,letterpaper,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1in}     %% sets paper size and margins
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[options]{mcode}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{lscape}          %% allows for landscape pages
+%\usepackage{fancyheadings}  %% allows for fancy headers
+%\pagestyle{fancyplain}
+\pagestyle{plain}            %% select plain page style: no headers, only page numbers in center bottom
+\usepackage{babel}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{subfloat}
+\usepackage{subfigure}
+\usepackage{mathrsfs}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+
+%\onehalfspacing
+%\doublespacing
+%\singlespacing
+\usepackage{cite}        %% cites [1-4] instead of [1,2,3,4]
+\widowpenalty=10000      %% this avoids "widows"
+\clubpenalty=10000       %% this avoids "orphans"
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%% uncomment the following to include headers (e.g., to keep track of draft versions). Also change pagestyle to fancyplain:
+%\rhead[\fancyplain{}{\leftmark}]%0
+%      {\fancyplain{}{Draft 04/08 -- \thepage}}
+%\cfoot[\fancyplain{Draft 04/08 -- \thepage}{}]{\fancyplain{Draft 04/08 -- \thepage}{}}
+\def\topfraction{.9}
+\def\floatpagefraction{.8}
+
+%Useing a STY file
+%\usepackage{dartthesis}
+
+\author{David Lukofsky}
+\begin{document}
+
+\pagenumbering{roman}        %% roman page numbers for front matter
+
+\renewcommand\thepage{}
+\include{TitlePage}
+\newpage
+% a blank page follows the title page
+\mbox{}
+\newpage
+
+\renewcommand\thepage{\arabic{page}}
+\pagenumbering{roman}        %% roman page numbers for front matter
+\setcounter{page}{2}
+
+
+\doublespacing               %% set spacing to double
+
+\include{Abstract}                %% include file "abs.tex" 
+\include{Acknowledgements}
+
+\singlespacing
+\tableofcontents             %% include TOC
+\listoftables                %% include list of tables
+\listoffigures               %% include list of figures
+\cleardoublepage             %% start new page
+
+
+
+\pagenumbering{arabic}       %% arabic page numbers for body of text
+
+
+\doublespacing
+%\include{Introduction}
+
+%\include{TheExp}   % has now been taken out of the thesis but should remain as a file so that it can be used later on
+
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+\include{Chapter8}
+\include{Chapter9}
+\include{Chapter4}
+\include{Chapter5}
+\include{Chapter6}
+\include{Chapter7}
+\include{Chapter10}
+\include{Chapter11}
+
+\appendix
+\include{A}
+\include{B}
+\include{C}
+
+\singlespacing
+
+\addcontentsline{TOC}{chapter}{Bibliography}  %% include bibliography in the TOC
+\bibliographystyle{unsrt}                  %% specify bibliography style (requires IEEEtran.bst somewhere TeX can find it)
+\bibliography{MastersRef}		% expects file "myrefs.bib"
+\end{document}

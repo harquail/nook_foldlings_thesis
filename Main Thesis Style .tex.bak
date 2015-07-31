@@ -1,0 +1,65 @@
+\documentclass[12pt,american]{report}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1in} %% sets paper size and margins
+\usepackage{setspace}
+%\singlespacing        %% 1-spacing (default)
+%\onehalfspacing       %% 1,5-spacing
+%\doublespacing        %% 2-spacing
+
+\pagestyle{plain}            %% select plain page style: no headers, only page numbers in center bottom
+
+%% uncomment the following to include headers (e.g., to keep track of draft versions). Also change pagestyle to fancyplain:
+%\rhead[\fancyplain{}{\leftmark}]%0
+%      {\fancyplain{}{Draft 04/08 -- \thepage}}
+%\cfoot[\fancyplain{Draft 04/08 -- \thepage}{}]{\fancyplain{Draft 04/08 -- \thepage}{}}
+
+\begin{document}
+
+\pagenumbering{roman}        %% roman page numbers for front matter
+
+\renewcommand\thepage{}
+\include{TitlePage}this page is not numbered
+\newpage
+% a blank page follows the title page, this page is not numbered
+\mbox{}
+\newpage
+
+\renewcommand\thepage{\arabic{page}}
+\pagenumbering{roman}        %% roman page numbers for front matterstarting with page ii
+\setcounter{page}{2}
+
+
+\doublespacing               %% set spacing to double
+
+\include{Abstract}           
+\include{Acknowledgements}
+
+\singlespacing
+\tableofcontents             %% include TOC
+\listoftables                %% include list of tables
+\listoffigures               %% include list of figures
+\cleardoublepage             %% start new page
+
+\pagenumbering{arabic}       %% arabic page numbers for body of text starting with page 1
+
+\doublespacing
+%\include{Introduction}
+
+\include{Chapter1}
+%\include{Chapter2}          % continue to include all the chapters.
+
+\appendix
+\include{A}
+\include{B}
+\include{C}
+
+\singlespacing
+
+\addcontentsline{TOC}{chapter}{Bibliography}  %% include bibliography in the TOC
+\bibliographystyle{unsrt}   %% specify bibliography style (requires IEEEtran.bst somewhere TeX can find it)
+\bibliography{MastersRef}	% expects file "myrefs.bib"
+\end{document}
