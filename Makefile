@@ -7,6 +7,8 @@ endef
 all:
 	$(shell cd shell-scripts && sh markDownMaker.sh)
 	python includeIncludes.py
+	#do this twice, to get reference correct
+	make pdf
 	make pdf
 	open Main\ Thesis\ Style.pdf
 

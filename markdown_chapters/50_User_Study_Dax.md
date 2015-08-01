@@ -1,3 +1,4 @@
+\chapter{User Studies}
 #User Test at the	 Digital Arts Exhibition 
 On April 28, 2015, we tested our system with attendees of the Digital Arts Exhibition at Dartmouth. After a brief demonstration of how to create folds and preview their design, users designed cards using Foldlings.  Users drew sketches and then sent an email containing an SVG file to the computer connected to the laser cutter.  Finally, they placed a piece of paper in the laser cutter, and watched as the laser beam cut out their design.  Over the course of two hours, users cut and folded 31 popup cards. <<TOOO: CITE DAX <<TODO:
 
