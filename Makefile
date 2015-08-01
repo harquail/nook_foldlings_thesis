@@ -8,6 +8,7 @@ all:
 	$(shell cd shell-scripts && sh markDownMaker.sh)
 	python includeIncludes.py
 	make pdf
+	open Main\ Thesis\ Style.pdf
 
 pdf:
 		pdflatex Main\ Thesis\ Style.tex
