@@ -19,3 +19,8 @@ clean:
 		find . -name "*.toc" -type f -delete
 		rm chapters/*
 		rm shell-scripts/includes.md
+
+share:
+	make all
+	$(shell git pull && git commit -am "sharing to sharelatex" && git push)
+	$(shell open https://www.sharelatex.com/project/55bbf07dd2ca043251bda49f)
