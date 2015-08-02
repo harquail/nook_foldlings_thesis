@@ -2,13 +2,23 @@
 
 >>TODO: add tap options, how to draw, and a description of the tool-based interface in general
 
-## Box Fold
+## Feature Interactions
+
+Certain interactions are common to all features.
+
+### Box Fold
 
 To draw a 
 
-## FreeForm
+### FreeForm
 
-## Polygon
+### Polygon
 
-## V-Fold
+### V-Fold
+
+##Send to Laser Cutter
+
+In the three-dimensional preview, 
+
+##Print
 

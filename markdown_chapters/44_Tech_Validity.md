@@ -1,3 +1,3 @@
-#TODOsf
+#Feature Validity
 
-sfds
+Each feature contains a 

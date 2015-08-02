@@ -1,3 +1,7 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.}}{5}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.}}{6}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.}}{7}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Left: the vertical cut of a v-fold. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.}}{10}{figure.1.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
