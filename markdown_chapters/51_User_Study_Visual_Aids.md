@@ -59,7 +59,7 @@ The effect each type of aid has on folding time will help determine which types 
 \addplot+[error bars/.cd,
 y dir=both,y explicit]
 coordinates {
-    (nothing,347) +- (0.0, 24)
+    (nothing,347) +- (0.0, 30)
     (lined,156) +- (0.0, 14)
     (shaded,206) +- (0.0, 19)
     (still 3D,222) +- (0.0, 17)

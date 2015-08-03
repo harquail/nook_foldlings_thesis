@@ -1,5 +1,9 @@
 #Interface Iteration
 
+>>TODO: figure showing alpha UI
+
+discuss move from drawing cuts & folds directly to templating
+
 \begin{tikzpicture}
   \begin{axis}[
     title=User Reactions to Alpha,

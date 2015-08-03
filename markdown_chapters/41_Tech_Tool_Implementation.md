@@ -1,8 +1,7 @@
 #Tool Implementation
 
-**>>TODO DIAGRAM OF SKETCHVIEW CONTAINS SKETCH CONTAINS FEATURES**
 
-Below is the definition of the FoldFeature superclass — all features created using Foldlings implement these methods.  For further discussion of the FoldFeature data structure, see.  
+Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  For further discussion of the FoldFeature data structure, see **>>TODO cite**.  
 
 \singlespacing 
 \begin{pygmented}{swift}
@@ -46,21 +45,6 @@ func getFeaturePlanes()-> [Plane]{
 func containsPoint(point:CGPoint) -> Bool{
   return self.boundingBox()?.contains(point) ?? false
 }
-/// returns edges that are less than the minimum length
-func tooShortEdges() -> [Edge]{
-  return featureEdges?.filter({$0.length() < kMinLineLength}) ?? []
-}
-/// this function should try to fix errors first, 
-/// then return an error if it can't fix them
-/// returns whether the feature was valid
-func validate() -> (passed:Bool,error:String){ 
-  var valid = true
-  if(!tooShortEdges().filter({$0.kind == Edge.Kind.Fold}).isEmpty){              
-  return (false,"Edges too short")
-  }
-  println("valid")
-  return (true,"")
-}
 \end{pygmented}
 \doublespacing
 
@@ -76,6 +60,7 @@ talk about splitting
 
 ### Polygon
 
+contrast with free-form
 talk about point dragging 
 talk about truncation
 

@@ -20,7 +20,7 @@ A driving fold is not a special type of edge, but rather a relationship between 
  
 ###Fold Orientation
  
- Traditionally, kirigami patterns are based on.   **>>TODO: FINISH SECTION, cite**
+ Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface.  **>>TODO: FINISH SECTION, CITE KIRIGAMI HERE, REFERENCE MARISSA**
 **>> TODO KIRIGAMI PATTERN FIGURE**
 
 ##Planes
