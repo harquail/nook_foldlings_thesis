@@ -1,5 +1,7 @@
 #Tool Implementation
 
+**DIAGRAM OF SKETCHVIEW CONTAINS SKETCH CONTAINS FEATURES**
+
 \singlespacing 
 \begin{pygmented}{swift}
 var horizontalFolds:[Edge] = [] //list horizontal folds
