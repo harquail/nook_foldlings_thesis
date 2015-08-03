@@ -9,6 +9,7 @@ all:
 	python includeIncludes.py
 	#do this twice, to get reference correct
 	make pdf
+	bibtex Main\ Thesis\ Style
 	make pdf
 	open Main\ Thesis\ Style.pdf
 

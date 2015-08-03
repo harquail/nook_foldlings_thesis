@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Free-form shape tutorial video.}}{4}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.}}{5}{figure.1.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.}}{6}{figure.1.2}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Options for sharing a fold pattern from the 3D preview.}}{6}{figure.1.3}
 \contentsline {figure}{\numberline {1.4}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.}}{8}{figure.1.4}
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.}}{9}{figure.1.5}

@@ -1,11 +1,6 @@
 \section{Interactions}\label{interactions}
 
-\begin{quote}
-\begin{quote}
-TODO: add tap options, how to draw, and a description of the tool-based
-interface in general
-\end{quote}
-\end{quote}
+From our design philosophy,
 
 \subsection{Tutorial}\label{tutorial}
 
@@ -27,6 +22,13 @@ to 3D preview and restoring from a saved sketch.
 
 Some interactions are common to all features. To add a feature
 
+\begin{quote}
+\begin{quote}
+TODO: add tap options, how to draw, and a description of the tool-based
+interface in general
+\end{quote}
+\end{quote}
+
 \subsubsection{Box Fold}\label{box-fold}
 
 To draw a
@@ -37,9 +39,13 @@ To draw a
 
 \subsubsection{V-Fold}\label{v-fold}
 
+The only action that can be performed on a v-fold feature is deletion.
+
 \subsection{Warnings and Errors}\label{warnings-and-errors}
 
-A central . We display warnings and error as
+We display warnings and errors as bright-red banners at the top of the
+sketch view when. These warnings are displayed in response to failing
+the validity checks performed when adding a feature to the sketch.
 
 \begin{figure}[htbp]
 \centering
@@ -48,9 +54,15 @@ A central . We display warnings and error as
 intersecting edges.}
 \end{figure}
 
+The goal of these warnings is to
+
 \subsection{Send to Laser Cutter}\label{send-to-laser-cutter}
 
-In the three-dimensional preview,
+In the three-dimensional preview, users can tap the ``send to laser
+cutter'' option. This feature sends the user an email with an attached
+SVG file. This file can be fed to a laser cutter or paper cutting
+machine, or can be opened in a vector graphics program to make further
+changes.
 
 \subsection{Print}\label{print}
 
