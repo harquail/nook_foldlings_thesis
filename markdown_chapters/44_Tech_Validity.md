@@ -1,3 +1,27 @@
-#Feature Validity
+#Validity
 
-Each feature contains a 
+One for the 
+
+\singlespacing 
+\begin{pygmented}{swift}
+override func validate() -> (passed: Bool, error: String) {
+ let validity = super.validate()	
+ if(!validity.passed){
+	return validity
+ }
+ // clever test for concave paths: close the vertical cut's
+ // path and test whether vfold end point is inside it
+ var testPath = UIBezierPath(CGPath: verticalCut.path.CGPath)
+ testPath.closePath()
+ if(testPath.containsPoint(diagonalFolds[0].end)){
+	return (false,"Angle too shallow")
+ }
+ if(!tooShortEdges().filter({
+	\$0.kind == Edge.Kind.Fold
+	}).isEmpty){
+		return (false,"Edges too short")
+ }
+	return (true,"")
+ }
+\end{pygmented}
+\doublespacing

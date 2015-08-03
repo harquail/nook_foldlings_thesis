@@ -79,7 +79,7 @@ Traditionally, kirigami patterns are based on.
 \subsection{Planes}\label{planes}
 
 Planes are an enclosed shape, bounded by edges. Plane are detected from
-edges by traversing the directed edge graph, as describe in
+edges by traversing the directed edge graph, as described in
 \textbf{\textgreater{}\textgreater{}TODO: CITE MARISSA HERE}. They are
 drawn as colored areas in the two-dimensional sketch, and simulated in
 the 3D preview as shapes that rotate about a pivot point. In order to
@@ -166,9 +166,9 @@ draws a shape on the screen. A bezier path is interpolated between these
 points using the Catmull-Romm algorithm \textbf{TODO: CITE}.
 
 Holes are a special case of FreeForm shapes, and are cut out from the
-final design, rather than folded. FreeForm shapes that do not cross a
-fold are considered holes ---~drawn in white in the 2d sketch and drawn
-as subtractions from planes in the 3d view.
+final design, rather than simulated as a separate plane. FreeForm shapes
+that do not cross a fold are considered holes ---~drawn in white in the
+2d sketch and drawn as subtractions from planes in the 3d view.
 
 \subsubsection{Polygon}\label{polygon}
 
@@ -195,8 +195,9 @@ intersects with the vertical cut at a point calculated to make a valid
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/33_UI_Interface_Data_Structures/vfold_before_after.png}
-\caption{Left: the vertical cut of a v-fold. Right: a v-fold after
-defining the point on the driving fold to create diagonal cuts.}
+\caption{Left: an unfinished v-fold, consisting only of a vertical cut.
+Right: a v-fold after defining the point on the driving fold to create
+diagonal cuts.}
 \end{figure}
 
 V-folds are only valid if they have a driving fold, and their vertical

@@ -13,7 +13,7 @@ all:
 	open Main\ Thesis\ Style.pdf
 
 pdf:
-		pdflatex Main\ Thesis\ Style.tex
+		pdflatex --shell-escape Main\ Thesis\ Style.tex
 
 clean:
 		find . -name "*.aux" -type f -delete

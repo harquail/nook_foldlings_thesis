@@ -1,8 +1,11 @@
 #Visual Aids User Study
 
-Since.  >>TODO: side other research on visual aids for folding slash other 2d to 3d vis
-
 goal: test whether users understand the mapping of 2d fold patterns to 3d, and test the degree to which plane coloring, edge patterning, and a 3d preview help users understand how a popup card will fold.
+
+Since.  >>TODO: cite other research on visual aids for folding slash other 2d to 3d vis
+
+
+##Method
 
 Each subject received a set of five laser cut cards, and we recorded the time it takes them to successfully fold the card.   
 
@@ -14,9 +17,13 @@ Each subject received a set of five laser cut cards, and we recorded the time it
 4) A still image of the card folded in dimension.
 5) No visual aid.
 
-The order of aids was shuffled randomly, and then balanced to ensure an equal distribution of orderings.  I.e. each  
+The order of aids and cards was shuffled, and then balanced to ensure an equal distribution of orderings.  Eg. each visual aid has an equal chance of being the first aid presented to a user and 
 
 Finally, we asked subjects to rank the visual aids
 
 The effect each type of aid has on folding time will help determine which types of visualization to include in Foldlings
+
+##Results and Discussion
+
+
 
