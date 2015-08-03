@@ -1,10 +1,12 @@
 #Tool Implementation
 
-**DIAGRAM OF SKETCHVIEW CONTAINS SKETCH CONTAINS FEATURES**
+**>>TODO DIAGRAM OF SKETCHVIEW CONTAINS SKETCH CONTAINS FEATURES**
+
+Below is the definition of the FoldFeature superclass — all features created using Foldlings implement these methods.  For further discussion of the FoldFeature data structure, see.  
 
 \singlespacing 
 \begin{pygmented}{swift}
-var horizontalFolds:[Edge] = [] //list horizontal folds
+var horizontalFolds:[Edge] = [] //list of horizontal folds
 var featureEdges:[Edge]?        //edges in a feature
 var children:[FoldFeature] = [] // children of feature
 var drivingFold:Edge? // driving fold of feature
@@ -61,3 +63,22 @@ func validate() -> (passed:Bool,error:String){
 }
 \end{pygmented}
 \doublespacing
+
+## Box Fold
+
+talk about fold heights
+talk about occlusion
+
+### FreeForm
+
+talk about truncation
+talk about splitting
+
+### Polygon
+
+talk about point dragging 
+talk about truncation
+
+### V-Fold
+
+talk about angle calculation
