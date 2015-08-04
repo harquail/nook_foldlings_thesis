@@ -1,14 +1,14 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Free-form shape tutorial video.}}{5}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.}}{6}{figure.1.2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Options for sharing a fold pattern from the 3D preview.}}{7}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.}}{9}{figure.1.4}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.}}{10}{figure.1.5}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.}}{11}{figure.1.6}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.}}{14}{figure.1.7}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Saved sketches displayed on the main screen.}}{15}{figure.1.8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Free-form shape tutorial video.\relax }}{6}{figure.caption.10}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{6}{figure.caption.11}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{7}{figure.caption.12}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{9}{figure.caption.14}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{10}{figure.caption.16}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.\relax }}{11}{figure.caption.18}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.\relax }}{14}{figure.caption.24}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{15}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.}}{23}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{23}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}}}{25}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{25}{figure.caption.30}
 \addvspace {10\p@ }

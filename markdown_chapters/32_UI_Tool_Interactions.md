@@ -36,6 +36,10 @@ vertical cut, then drag on driving fold
 
 **>>TODO**
 
+##Intersecting Features
+
+**>>TODO**
+
 ##Tutorial
 
 We eschewed detailed drawing instructions or a separate tutorial mode, in favor of short video tutorials that appear the first time each tool is used.  These tutorials can also be accessed by tapping the feature icons on the about page.
