@@ -5,6 +5,7 @@ define chdir
 endef
 
 all:
+	$(shell sh shell-scripts/closePreviewWindows.sh)
 	$(shell cd shell-scripts && sh markDownMaker.sh)
 	python includeIncludes.py
 	#do this twice, to get reference correct
@@ -17,6 +18,7 @@ pdf:
 		pdflatex --shell-escape Main\ Thesis\ Style.tex
 
 clean:
+		$(shell sh shell-scripts/closePreviewWindows.sh)
 		find . -name "*.aux" -type f -delete
 		find . -name "*.lot" -type f -delete
 		find . -name "*.lof" -type f -delete
