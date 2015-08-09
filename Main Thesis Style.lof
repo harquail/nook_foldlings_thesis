@@ -1,0 +1,15 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Options presented when tapping a box fold feature.\relax }}{4}{figure.caption.6}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Free-form shape tutorial video.\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{8}{figure.caption.12}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{11}{figure.caption.15}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.\relax }}{16}{figure.caption.25}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{17}{figure.caption.26}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{26}{figure.caption.34}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{28}{figure.caption.35}
+\addvspace {10\p@ }

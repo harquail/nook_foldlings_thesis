@@ -7,8 +7,10 @@ description of drawing, touch handling, etc.
 catmull rom curves
 showing feature state
 
-Cite model v (@veit2003model).
+Cite model view controller not ideal (@veit2003model).
 
 ##Touch Handling
 
-In order to create features, the first step.  In almost all cases, 
+In order to create features, we first need to capture touch input.  In almost all cases, 
+
+**>>TODO: CITE APPLE DOCS**

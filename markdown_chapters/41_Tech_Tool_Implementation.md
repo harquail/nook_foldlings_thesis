@@ -50,20 +50,45 @@ func containsPoint(point:CGPoint) -> Bool{
 
 ## Box Fold
 
+####Geometric Contraints
+
 talk about fold heights
 talk about occlusion
 
 ### FreeForm
 
+####Geometric Contraints
+
 talk about truncation
 talk about splitting
 
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{Path Splitting}
+\end{algorithm}
+
+
 ### Polygon
+
+####Geometric Contraints
 
 contrast with free-form
 talk about point dragging 
 talk about truncation
 
 ### V-Fold
+
+####Geometric Contraints
 
 talk about angle calculation
