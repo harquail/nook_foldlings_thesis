@@ -1,5 +1,7 @@
 #Interface Iteration
 
+In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, we organize.  These discrete units.   
+
 >>TODO: figure showing alpha UI
 
 discuss move from drawing cuts & folds directly to templating
@@ -24,6 +26,7 @@ discuss move from drawing cuts & folds directly to templating
 \end{tikzpicture}
 
 
+**>>TODO: separate user comments from observation**
 
 -------------------------------------------------------------
 Comments

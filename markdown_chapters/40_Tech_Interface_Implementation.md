@@ -1,16 +1,21 @@
-\chapter{Technical Contributions}
+\chapter{Algorithms and Implementation}
 #Interface Implementation
+
+This hierarchy roughly represents a Model-View-Controller relationship 
 
 **>>TODO DIAGRAM OF SKETCH VIEW CONTROLLER SKETCHVIEW CONTAINS SKETCH CONTAINS FEATURES**
 
-description of drawing, touch handling, etc.
-catmull rom curves
 showing feature state
+
+Shading planes
 
 Cite model view controller not ideal (@veit2003model).
 
 ##Touch Handling
 
-In order to create features, we first need to capture touch input.  In almost all cases, 
+description of drawing, touch handling, etc.
+
+In order to create features, we first need to capture touch input.  Foldings handle two types of touches:  
+catmull rom curves
 
 **>>TODO: CITE APPLE DOCS**

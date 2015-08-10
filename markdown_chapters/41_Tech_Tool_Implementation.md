@@ -50,14 +50,10 @@ func containsPoint(point:CGPoint) -> Bool{
 
 ## Box Fold
 
-####Geometric Contraints
-
 talk about fold heights
 talk about occlusion
 
 ### FreeForm
-
-####Geometric Contraints
 
 talk about truncation
 talk about splitting
@@ -81,14 +77,10 @@ talk about splitting
 
 ### Polygon
 
-####Geometric Contraints
-
 contrast with free-form
 talk about point dragging 
 talk about truncation
 
 ### V-Fold
-
-####Geometric Contraints
 
 talk about angle calculation
