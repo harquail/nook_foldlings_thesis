@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kr}{override} \PY{k+kd}{func} \PY{n+nf}{validate}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZhy{}\PYZgt{}} \PY{p}{(}\PY{n}{passed}\PY{p}{:} \PY{n+nb}{Bool}\PY{p}{,} \PY{n}{error}\PY{p}{:} \PY{n+nb}{String}\PY{p}{)} \PY{p}{\PYZob{}}
+ \PY{k+kd}{let} \PY{n+nv}{validity} \PY{p}{=} \PY{k+kc}{super}\PY{p}{.}\PY{n}{validate}\PY{p}{(}\PY{p}{)}
+ \PY{k}{if}\PY{p}{(}\PY{o}{!}\PY{n}{validity}\PY{p}{.}\PY{n}{passed}\PY{p}{)}\PY{p}{\PYZob{}}
+    \PY{k}{return} \PY{n}{validity}
+ \PY{p}{\PYZcb{}}
+ \PY{c+c1}{//}\PY{c+c1}{ }\PY{c+c1}{c}\PY{c+c1}{l}\PY{c+c1}{e}\PY{c+c1}{v}\PY{c+c1}{e}\PY{c+c1}{r}\PY{c+c1}{ }\PY{c+c1}{t}\PY{c+c1}{e}\PY{c+c1}{s}\PY{c+c1}{t}\PY{c+c1}{ }\PY{c+c1}{f}\PY{c+c1}{o}\PY{c+c1}{r}\PY{c+c1}{ }\PY{c+c1}{c}\PY{c+c1}{o}\PY{c+c1}{n}\PY{c+c1}{c}\PY{c+c1}{a}\PY{c+c1}{v}\PY{c+c1}{e}\PY{c+c1}{ }\PY{c+c1}{p}\PY{c+c1}{a}\PY{c+c1}{t}\PY{c+c1}{h}\PY{c+c1}{s}\PY{c+c1}{:}\PY{c+c1}{ }\PY{c+c1}{c}\PY{c+c1}{l}\PY{c+c1}{o}\PY{c+c1}{s}\PY{c+c1}{e}\PY{c+c1}{ }\PY{c+c1}{t}\PY{c+c1}{h}\PY{c+c1}{e}\PY{c+c1}{ }\PY{c+c1}{v}\PY{c+c1}{e}\PY{c+c1}{r}\PY{c+c1}{t}\PY{c+c1}{i}\PY{c+c1}{c}\PY{c+c1}{a}\PY{c+c1}{l}\PY{c+c1}{ }\PY{c+c1}{c}\PY{c+c1}{u}\PY{c+c1}{t}\PY{c+c1}{\PYZsq{}}\PY{c+c1}{s}
+ \PY{c+c1}{//}\PY{c+c1}{ }\PY{c+c1}{p}\PY{c+c1}{a}\PY{c+c1}{t}\PY{c+c1}{h}\PY{c+c1}{ }\PY{c+c1}{a}\PY{c+c1}{n}\PY{c+c1}{d}\PY{c+c1}{ }\PY{c+c1}{t}\PY{c+c1}{e}\PY{c+c1}{s}\PY{c+c1}{t}\PY{c+c1}{ }\PY{c+c1}{w}\PY{c+c1}{h}\PY{c+c1}{e}\PY{c+c1}{t}\PY{c+c1}{h}\PY{c+c1}{e}\PY{c+c1}{r}\PY{c+c1}{ }\PY{c+c1}{v}\PY{c+c1}{f}\PY{c+c1}{o}\PY{c+c1}{l}\PY{c+c1}{d}\PY{c+c1}{ }\PY{c+c1}{e}\PY{c+c1}{n}\PY{c+c1}{d}\PY{c+c1}{ }\PY{c+c1}{p}\PY{c+c1}{o}\PY{c+c1}{i}\PY{c+c1}{n}\PY{c+c1}{t}\PY{c+c1}{ }\PY{c+c1}{i}\PY{c+c1}{s}\PY{c+c1}{ }\PY{c+c1}{i}\PY{c+c1}{n}\PY{c+c1}{s}\PY{c+c1}{i}\PY{c+c1}{d}\PY{c+c1}{e}\PY{c+c1}{ }\PY{c+c1}{i}\PY{c+c1}{t}
+ \PY{k+kd}{var} \PY{n+nv}{testPath} \PY{p}{=} \PY{n+nb+bp}{UIBezierPath}\PY{p}{(}\PY{n+nb+bp}{CGPath}\PY{p}{:} \PY{n}{verticalCut}\PY{p}{.}\PY{n}{path}\PY{p}{.}\PY{n+nb+bp}{CGPath}\PY{p}{)}
+ \PY{n}{testPath}\PY{p}{.}\PY{n}{closePath}\PY{p}{(}\PY{p}{)}
+ \PY{k}{if}\PY{p}{(}\PY{n}{testPath}\PY{p}{.}\PY{n}{containsPoint}\PY{p}{(}\PY{n}{diagonalFolds}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{.}\PY{n}{end}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+    \PY{k}{return} \PY{p}{(}\PY{k+kc}{false}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Angle too shallow}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+ \PY{p}{\PYZcb{}}
+ \PY{k}{if}\PY{p}{(}\PY{o}{!}\PY{n}{tooShortEdges}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n+nb+bp}{filter}\PY{p}{(}\PY{p}{\PYZob{}}
+    \PY{err}{\PYZbs{}}\PY{n+nv}{\PYZdl{}0}\PY{p}{.}\PY{n}{kind} \PY{p}{=}\PY{p}{=} \PY{n}{Edge}\PY{p}{.}\PY{n}{Kind}\PY{p}{.}\PY{n}{Fold}
+    \PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{.}\PY{n+nb+bp}{isEmpty}\PY{p}{)}\PY{p}{\PYZob{}}
+        \PY{k}{return} \PY{p}{(}\PY{k+kc}{false}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Edges too short}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+ \PY{p}{\PYZcb{}}
+    \PY{k}{return} \PY{p}{(}\PY{k+kc}{true}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+ \PY{p}{\PYZcb{}}
+\end{Verbatim}
