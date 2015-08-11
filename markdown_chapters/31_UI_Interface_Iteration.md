@@ -1,10 +1,9 @@
 #Interface Iteration
 
-In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, we organize.  These discrete units.   
+In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, the user creates multiple cuts and folds in a single action, rather than individually.  These discrete logical units allow the user to design more quickly, and to combine multiple different feature types to create complex designs.   
 
->>TODO: figure showing alpha UI
+**>>TODO: figure showing alpha UI**
 
-discuss move from drawing cuts & folds directly to templating
 
 \begin{tikzpicture}
   \begin{axis}[

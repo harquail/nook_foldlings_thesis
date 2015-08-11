@@ -1,8 +1,8 @@
 #Tool Implementation
 
-
 Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  For further discussion of the FoldFeature data structure, see **>>TODO cite**.  
 
+\small
 \singlespacing 
 \begin{pygmented}{swift}
 var horizontalFolds:[Edge] = [] //list of horizontal folds
@@ -47,6 +47,7 @@ func containsPoint(point:CGPoint) -> Bool{
 }
 \end{pygmented}
 \doublespacing
+\normalsize
 
 ## Box Fold
 
@@ -55,8 +56,20 @@ talk about occlusion
 
 ### FreeForm
 
-talk about truncation
 talk about splitting
+catmull rom curves
+
+However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
+
+talk about truncation
+
+\small
+\singlespacing 
+\begin{pygmented}{swift}
+func truncateWithFolds()
+\end{pygmented}
+\doublespacing
+\normalsize
 
 \begin{algorithm}[H]
  \KwData{this text}
@@ -72,6 +85,22 @@ talk about splitting
   }
  }
  \caption{Path Splitting}
+\end{algorithm}
+
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{TRUNCATION}
 \end{algorithm}
 
 

@@ -1,4 +1,4 @@
-\chapter{Design Contributions}
+\chapter{Design}
 #Design Philosophy
 
 modularity

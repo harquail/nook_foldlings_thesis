@@ -3,7 +3,7 @@
 
 ![Foldlings at the Digital Arts Exhibition. **>>TODO: photo credit Julietta Gervase**](figures/50_User_Study_Dax/dax_facebook_credit_Julietta_Gervase)
 
-On April 28, 2015, we tested our system with attendees of the Digital Arts Exhibition at Dartmouth. After a brief demonstration of how to create folds and preview their design, users designed cards using Foldlings.  Users drew sketches and then sent an email containing an SVG file to the computer connected to the laser cutter.  Finally, they placed a piece of paper in the laser cutter, and watched as the laser beam cut out their design.  Over the course of two hours, users cut and folded 31 popup cards. <<TOOO: CITE DAX <<TODO:
+On April 28, 2015, we tested our system with attendees of the Digital Arts Exhibition at Dartmouth. After a brief demonstration of how to create folds and preview their design, users designed cards using Foldlings.  Users drew sketches and then sent an email containing an SVG file to the computer connected to the laser cutter.  Finally, they placed a piece of paper in the laser cutter, and watched as the laser beam cut out their design.  Over the course of two hours, users cut and folded 31 popup cards. **<<TOOO: CITE DAX <<TODO:**
 
 The system we demonstrated at the exhibition was incomplete — it contained the basic box fold and freeform shape tools, but did not include some advanced features of the final software, such as dragging folds or shading based on plane orientation.  The alpha software also contained several bugs that disrupted the experience.  However, the system was usable enough for people to create cards, and observing user behavior was invaluable in designing our final product.
 
