@@ -18,6 +18,11 @@ A driving fold is not a special type of edge, but rather a relationship between 
 
  An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the \nameref{nested-features} section on page \pageref{nested-features}.
  
+ ###Hierarchy
+ 
+ properteies eg. containment
+ cite marissa but still have brief discussion here
+ 
 ###Fold Orientation
  
  Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface.  **>>TODO: FINISH SECTION, CITE KIRIGAMI HERE, REFERENCE MARISSA**

@@ -26,7 +26,7 @@ A box fold is created by dragging to define the bounds of the box.  Box folds ar
 
 ### FreeForm
 
-Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and were able to combine the two functions into a single tool.
+Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
 
 ### Polygon
 
@@ -67,12 +67,18 @@ The goal of these warnings is to give users descriptive feedback when errors occ
 
 In the three-dimensional preview, users can tap the "send to laser cutter" option.  This feature sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, or can be opened in a vector graphics editor to make further changes.
 
-**>>TODO: physical constraints**
+The sketches are bound by physical constraints, as described in Chapter X Section Y on page RAWR. **>>TODO**.
 
 ##Print
 
 In addition to sharing an SVG file for laser cutting, users can press "share".  This version is essentially screenshot of the 2D sketch, and can be printed, emailed, or shared via social media.  Typically, this is the option a user would choose to cut and fold their design by hand.
 
 ![Options for sharing a fold pattern from the 3D preview.](figures/32_UI_Tool_Interactions/3d-share.png)
+
+##Visual Aids
+
+In order help users visualize .  Two .  Shade planes based on orientation.  In the laser cut preview we.  Mountain vs Valley.
+
+
 
 

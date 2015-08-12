@@ -11,8 +11,8 @@ Foldlings future
 
 #Algorithms & Implementation Future Work
 
-#Feature Intersections
+##Feature Intersections
 
 #Applications
 
-_This section is co-autored with Marissa Allen_
+_This section is co-authored with Marissa Allen_
