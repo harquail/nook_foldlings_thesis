@@ -1,5 +1,7 @@
 \chapter{Conclusions}
 
+Foldlings future
+
 #User Interface Future Work
 
 ##Concurrency
@@ -10,3 +12,7 @@
 #Algorithms & Implementation Future Work
 
 #Feature Intersections
+
+#Applications
+
+_This section is co-autored with Marissa Allen_

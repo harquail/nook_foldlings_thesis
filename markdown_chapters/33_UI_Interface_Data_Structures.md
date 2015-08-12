@@ -43,13 +43,19 @@ All FoldFeatures have functionality in common:
 * Each feature can perform hit-testing: given a point, it can determine whether that point is inside or outside the feature.
  [@Nobody06]. **>>TODO:REMOVE CITATION -- JUST TESTING**
 
+**>>TODO figures showing fold patterns and physical models**
+
 ###Master Card
 
 Each sketch always contains a single master feature, which is the ancestor of all other features.  It is a simplification of the box fold, in that it contains three horizontal folds with connecting vertical cuts.  Users do not create features of this type — each sketch begins with one.   All of the edges in the master feature are marked with a flag indicating that they belong to the master feature, because master feature edges and planes are sometimes treated differently than normal edges.  For example, the parent-child relationships between planes are constructed by starting at the top plane in the master feature, determined by edge type and height.
 
+![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/mastercard.pdf)
+
 ###Box Fold
 
 A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right.  The middle fold position is determined by the position of the driving fold.  Box folds are only valid if they have a driving fold.
+
+![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/box.pdf)
 
 ###Free Form
 
@@ -57,19 +63,26 @@ Free-form shapes are defined by a single, closed path.  When the feature is comp
 
 Holes are a special case of FreeForm shapes, and are cut out from the final design, rather than simulated as a separate plane.   FreeForm shapes that do not cross a fold are considered holes — drawn in white in the 2d sketch and drawn as subtractions from planes in the 3d view.
 
+![Left: fold & cut pattern of a freeform feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/free.pdf)
+
 ###Polygon
 
 Polygons are created from a list of "tap points" constructed from user input.  As in free-form shapes, these points are connected with a bezier path, and are truncated if they contain a driving fold when they are completed.  For polygons, this path consists only of straight line segments.   Unlike interpolation points, tap points can be moved at any time during the drawing process.
 
 Like FreeForm shapes, Polygons that do not have a driving fold are considered holes.
 
+![Left: fold & cut pattern of a polygon feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/poly.pdf)
+
 ### V-Fold
+
+![Left: fold & cut pattern of a v-fold feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/v.pdf)
 
 V-Folds are defined by a path that crosses the driving fold, called a "vertical cut."  This path can be an arbitrary shape that crosses the driving fold once.   They are fully-defined by adding a point on the driving fold.  From this point, we construct three diagonal folds, two to the top and bottom of the vertical cut, and one to a point that intersects with the vertical cut at a point calculated to make a valid 90-degree feature.
 
 ![Left: an unfinished v-fold, consisting only of a vertical cut.  Right: a v-fold after defining the point on the driving fold to create diagonal cuts.](figures/33_UI_Interface_Data_Structures/vfold_before_after.png)
 
 V-folds are only valid if they have a driving fold, and their vertical cut intersects the driving fold exactly once.
+
 
 ##Sketches
 

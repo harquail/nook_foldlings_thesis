@@ -138,6 +138,9 @@ All FoldFeatures have functionality in common:
   TESTING}
 \end{itemize}
 
+\textbf{\textgreater{}\textgreater{}TODO figures showing fold patterns
+and physical models}
+
 \subsubsection{Master Card}\label{master-card}
 
 Each sketch always contains a single master feature, which is the
@@ -151,12 +154,26 @@ edges. For example, the parent-child relationships between planes are
 constructed by starting at the top plane in the master feature,
 determined by edge type and height.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/mastercard.pdf}
+\caption{Left: fold \& cut pattern of the master feature. Right:
+laser-cut model of the same.}
+\end{figure}
+
 \subsubsection{Box Fold}\label{box-fold}
 
 A box fold consists entirely of straight edges, and can be constructed
 from two points: the top left point, and the bottom right. The middle
 fold position is determined by the position of the driving fold. Box
 folds are only valid if they have a driving fold.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/box.pdf}
+\caption{Left: fold \& cut pattern of the master feature. Right:
+laser-cut model of the same.}
+\end{figure}
 
 \subsubsection{Free Form}\label{free-form}
 
@@ -174,6 +191,13 @@ final design, rather than simulated as a separate plane. FreeForm shapes
 that do not cross a fold are considered holes ---~drawn in white in the
 2d sketch and drawn as subtractions from planes in the 3d view.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/free.pdf}
+\caption{Left: fold \& cut pattern of a freeform feature. Right:
+laser-cut model of the same.}
+\end{figure}
+
 \subsubsection{Polygon}\label{polygon}
 
 Polygons are created from a list of ``tap points'' constructed from user
@@ -186,7 +210,21 @@ time during the drawing process.
 Like FreeForm shapes, Polygons that do not have a driving fold are
 considered holes.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/poly.pdf}
+\caption{Left: fold \& cut pattern of a polygon feature. Right:
+laser-cut model of the same.}
+\end{figure}
+
 \subsubsection{V-Fold}\label{v-fold}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/v.pdf}
+\caption{Left: fold \& cut pattern of a v-fold feature. Right: laser-cut
+model of the same.}
+\end{figure}
 
 V-Folds are defined by a path that crosses the driving fold, called a
 ``vertical cut.'' This path can be an arbitrary shape that crosses the
