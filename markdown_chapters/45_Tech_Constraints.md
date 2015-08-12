@@ -43,7 +43,7 @@ In the more complex case, the angles between the two diagonal folds and the driv
 
 In addition, the physicality of paper place constraints on where cuts and folds can be placed.  Depending on the manufacture method, there is some minimum line length that can be cut or folded, and some minimum distance folds and cuts must be apart.  These depends on a wide number of variables ranging from paper thickness to manufacture method (for example, laser cutters have a higher tolerance for closely-drawn lines).  Even within a specific technology, there is also a wide variation in cutting precision.
 
-![A malformed laser-cut fold.  This is supposed to be a dotted line, but because the dots were too close together, the dot have merged to become a single cut.](figures/45_Tech_Constraints/tooclosecuts.jpg)
+![A malformed laser-cut fold.  This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.](figures/45_Tech_Constraints/tooclosecuts.jpg)
 
 In our software, we take this into account through the minimum edge length.  This.  Due to the wide In addition, we .  We currently 
 
