@@ -1,5 +1,7 @@
 #Visual Aids User Study
 
+![A Participant folding a card in our study on 2D to 3D visual aids for popup cards.](figures/51_User_Study_Visual_Aids/kikofoldling.jpg)
+
 The goal of this study was to determine whether users understand the mapping of 2d fold patterns to 3d, and test the degree to which plane shading, edge patterning, and a 3d preview help users understand how a popup card will fold.
 
 >>TODO: cite other research on visual aids for folding slash other 2d to 3d vis

@@ -9,19 +9,24 @@ all:
 	$(shell cd shell-scripts && sh markDownMaker.sh)
 	python includeIncludes.py
 	#do this twice, to get reference correct
-	make pdf
+	make badpdf
 	bibtex Main\ Thesis\ Style
 	make pdf
 	open Main\ Thesis\ Style.pdf
 
+badpdf:
+		pdflatex -draftmode -interaction=batchmode --shell-escape Main\ Thesis\ Style.tex
+
 pdf:
-		pdflatex --shell-escape Main\ Thesis\ Style.tex
+		pdflatex -interaction=batchmode --shell-escape Main\ Thesis\ Style.tex
+
 
 clean:
 		$(shell sh shell-scripts/closePreviewWindows.sh)
 		find . -name "*.aux" -type f -delete
 		find . -name "*.lot" -type f -delete
 		find . -name "*.lof" -type f -delete
+		find . -name "*.loa" -type f -delete
 		find . -name "*.toc" -type f -delete
 		rm chapters/*
 		rm shell-scripts/includes.md
