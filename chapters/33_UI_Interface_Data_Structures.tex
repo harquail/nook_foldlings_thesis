@@ -47,11 +47,6 @@ overlaid gray arrows.}
 
 \subsubsection{Driving Folds}\label{driving-folds}
 
-A driving fold is not a special type of edge, but rather a relationship
-between an edge in one feature and a feature ``spanning'' that edge. A
-feature is said to span a fold when it is drawn on top of an existing
-fold, so that it has horizontal folds on both sides of the middle fold.
-
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/33_UI_Interface_Data_Structures/boxfold_driving_non_driving.png}
@@ -59,6 +54,11 @@ fold, so that it has horizontal folds on both sides of the middle fold.
 fold. Right: a box-fold after the user has released the touch. The
 feature's driving fold is the master card's middle horizontal fold.}
 \end{figure}
+
+A driving fold is not a special type of edge, but rather a relationship
+between an edge in one feature and a feature ``spanning'' that edge. A
+feature is said to span a fold when it is drawn on top of an existing
+fold, so that it has horizontal folds on both sides of the middle fold.
 
 An edge can be the driving fold for more than one feature, but each
 feature has only one driving fold (if there are multiple potential
@@ -70,7 +70,7 @@ driving fold\footnote{The exception to this rule is holes ---~a hole's
 relationships are described in more detail in the
 \nameref{nested-features} section on page \pageref{nested-features}.
 
-\#\#\#Hierarchy
+\subsubsection{Hierarchy}\label{hierarchy}
 
 properteies eg. containment cite marissa but still have brief discussion
 here
