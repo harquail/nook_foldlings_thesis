@@ -3,6 +3,8 @@ We will refer to several data structures throughout the discussion of user inter
 
 ##Edges
 
+
+
 An Edge represents a cut or fold.  Edges are the basic building block of planes, and an integral element of all fold features.  An edge is minimally defined by a start point, end point, and a a type (either cut or fold).  This minimal definition represents a straight edge between two points.  In addition, an Edge can contain further information: the bezier path drawn to create it (for non-straight edges), and a reference to the plane or feature it is a part of.  Additionally, each edge contains a reference to its "twin" edge.
 
 ###Twin Edges
@@ -12,13 +14,13 @@ An Edge represents a cut or fold.  Edges are the basic building block of planes,
 
 ###Driving Folds
 
-A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds on both sides of the middle fold.
-
 ![Left: a box fold mid-drag.  The feature does not have a driving fold.  Right: a box-fold after the user has released the touch.  The feature's driving fold is the master card's middle horizontal fold.](figures/33_UI_Interface_Data_Structures/boxfold_driving_non_driving.png)  
+
+A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds on both sides of the middle fold.
 
  An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the \nameref{nested-features} section on page \pageref{nested-features}.
  
- ###Hierarchy
+###Hierarchy
  
  properteies eg. containment
  cite marissa but still have brief discussion here
