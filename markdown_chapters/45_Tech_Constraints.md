@@ -18,7 +18,7 @@ This 90-degree angle constraint applies equally to freeform and polygon features
 
 ![Geometric constraints for freeform features](figures/45_Tech_Constraints/freeformConstraints.pdf)
 
-Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation ^[described **>>TODO: CITE** ] to place the top and bottom folds of the freeform shape, we apply the ninety-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold.
+Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation^[described **>>TODO: CITE** ] to place the top and bottom folds of the freeform shape, we apply the ninety-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold.
 
 As with all features, validity constraints are separate from geometric constraints.  Freeform shapes that intersect themselves do not have a place for the middle fold, but by performing validity checks before solving for geometric constraints, we avoid many problems and edge cases that would otherwise occur.
 
@@ -45,8 +45,4 @@ In addition, the physicality of paper place constraints on where cuts and folds 
 
 ![A malformed laser-cut fold.  This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.](figures/45_Tech_Constraints/tooclosecuts.jpg)
 
-In our software, we take this into account through the minimum edge length.  This.  Due to the wide In addition, we .  We currently 
-
-Physical.  Obvious .  Minimum edge length.  This depends on the laser cutter
-
-**>>TODO: Figure showing problem**
+In our software, we take this into account by incorporating a minimum edge length constraint.  The minimum edge length is the minimum length for all edges in a feature.  If the user creates a feature with edges less than this length, a warning will appear as described in section **>>TODO:CITE**, and the feature will.  This length constraint solves a variety of potential problems: it prevents users from creating features that are too small to tap, and insures that edges can be easily cut by hand or using automated methods.  We use the same length as the minimum edge distance.  In order to be valid, all edges in a feature must be at least this distance from all other edges.  We also  adjusted the distance between score lines in folds, to prevent the problem shown in figure **>>TODO:CITE**.  Because the fold line pattern must be easy to fold while maintaining the card's integrity, there is a trade.  We adjusted the line pattern to consist of short dots spaced out slightly further than the minimum edge distance.  While we discovered the line pattern through experimentation, it performs well on multiple laser cutters, paper types, and manual cutting.  This fold pattern should work for virtually all paper cutting methods.

@@ -52,24 +52,21 @@ Tool state is maintained by the SketchViewController.  The SketchViewController 
 
 Within the specific function in SketchView, pan gestures are converted into feature edges by listening to _touchesBegan_, _touchesMoved_, and _touchesEnded_.  When a pan begins, we create a new feature of the appropriate type and set it as the currently active drawing feature.  When the pan is updated, we add and/or modify edges in the active feature.  When the pan ends, we make final modifications to edges, validate the feature, and add it to the sketch.
 
-**>>TODO, COULD ALGO HERE**
+**>>TODO, COULD ADD ALGO HERE**
 
-Of course, the implementation of pan delegate methods varie widely between  features.  For example, a diagonal pan with the box fold tool selected would create folds and cuts to form a box between the start and end point, whereas the same touch in the freeform tool would create
+Of course, the implementation of pan delegate methods varies widely between  features.  For example, a diagonal pan with the box fold tool selected would create folds and cuts to form a box between the start and end point, whereas the same touch in the freeform tool would create
 
 ##Fold Feature Preview
 
 While the user is drawing, the SketchView displays a preview  of the feature in progress, to give feedback on the drawing.  Meanwhile, the SketchView also displays the previously drawn features that have been added to the sketch.  Although the display of cuts and folds for the current feature is visually similar to those of the final feature, the method of drawing a preview version of the currently active feature varies from the generation of final feature edges.
 
-We store the currently active feature separately, it is not added to the list of features until it is completed and passes validation.   Thus, its edges are drawn by the function that draws all edges currently in the sketch.  For performance reasons, we display a preview of the active feature on top of all features in the sketch — modifications to existing features, and expensive operations such as truncation for freeform shapes, are performed only when the feature is added to the sketch.  During drawing, we display the set of preview edges stored in the feature, which are sometimes differ from the final feature edges.  
+We store the currently active feature separately, it is not added to the list of features until it is completed and passes validation.   Thus, its edges are drawn by the function that draws all edges currently in the sketch.  For performance reasons, we display a preview of the active feature on top of all features in the sketch — modifications to existing features, and expensive operations such as truncation for freeform shapes, are performed only when the feature is added to the sketch.  During drawing, we display the set of preview edges stored in the feature, which sometimes differ from the final feature edges.  
 
 For box folds, we display a preview of all the edges, but do not occlude the middle fold until the feature is completed. For freeform features, we do not perform truncation until the feature is completed (and spans a driving fold).  As a preview, the SketchView shows the user's touch path as a cut.  For polygons, we display control circles at vertices.  These circles indicate that the vertices are draggable, modifying edge endpoints dynamically.  For v-folds, we display a dynamic preview of the vertical cut and top and bottom diagonal folds.  The middle diagonal angle is not calculated until the feature is added to the sketch.
 
-**>>TODO: MOVE THE FOLLOWING**
-We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
-
 ##Feature Creation
 
-Once the user completes a feature, we add it to the sketch^[Assuming the feature is valid. **>>TODO: cite validity**].  Adding a feature to the sketch requires modifying existing features in the sketch, constructing parent-child relationships, and recalculating planes from edges.  How these tasks are achieved depends on the specific FoldFeature class.
+Once the user completes a feature, we add it to the sketch^[Assuming the feature is valid. See section on page **>>TODO: cite validity**].  Adding a feature to the sketch requires modifying existing features in the sketch, constructing parent-child relationships, and recalculating planes from edges.  How these tasks are achieved depends on the specific FoldFeature class.
 
  The specific implementations of the FoldFeature superclass are described in Chapter \ref{tool-implementation} on page \pageref{tool-implementation}.  The Sketch class contains methods for adding and removing features from the sketch.  It also contains lower-level functions for adding, removing, and replacing edges.  These methods are typically called by feature-specific methods that modify the sketch, such as _splitFoldByOcclusion_.
 

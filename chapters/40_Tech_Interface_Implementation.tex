@@ -98,9 +98,9 @@ active drawing feature. When the pan is updated, we add and/or modify
 edges in the active feature. When the pan ends, we make final
 modifications to edges, validate the feature, and add it to the sketch.
 
-\textbf{\textgreater{}\textgreater{}TODO, COULD ALGO HERE}
+\textbf{\textgreater{}\textgreater{}TODO, COULD ADD ALGO HERE}
 
-Of course, the implementation of pan delegate methods varie widely
+Of course, the implementation of pan delegate methods varies widely
 between features. For example, a diagonal pan with the box fold tool
 selected would create folds and cuts to form a box between the start and
 end point, whereas the same touch in the freeform tool would create
@@ -123,7 +123,7 @@ feature on top of all features in the sketch --- modifications to
 existing features, and expensive operations such as truncation for
 freeform shapes, are performed only when the feature is added to the
 sketch. During drawing, we display the set of preview edges stored in
-the feature, which are sometimes differ from the final feature edges.
+the feature, which sometimes differ from the final feature edges.
 
 For box folds, we display a preview of all the edges, but do not occlude
 the middle fold until the feature is completed. For freeform features,
@@ -134,14 +134,6 @@ circles indicate that the vertices are draggable, modifying edge
 endpoints dynamically. For v-folds, we display a dynamic preview of the
 vertical cut and top and bottom diagonal folds. The middle diagonal
 angle is not calculated until the feature is added to the sketch.
-
-\textbf{\textgreater{}\textgreater{}TODO: MOVE THE FOLLOWING} We capture
-interpolation points as a function of touch velocity. That is, when the
-user draws more quickly, we capture more interpolation points closer
-together. This allows us to capture the entire drawing with a similar
-level of detail throughout, and correct for the gesture recognizer
-sending relatively more frequent updates when the touch is moving more
-slowly.
 
 \subsection{Feature Creation}\label{feature-creation}
 

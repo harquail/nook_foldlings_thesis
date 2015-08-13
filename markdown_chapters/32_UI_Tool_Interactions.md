@@ -77,7 +77,9 @@ In addition to sharing an SVG file for laser cutting, users can press "share".  
 
 ##Visual Aids
 
-In order help users visualize .  Two .  Shade planes based on orientation.  In the laser cut preview we.  Mountain vs Valley.
+Foldlings utility relies on the user understanding how their design will fold while they are designing.  Two types of aids.  The simplest is the   Shade planes based on orientation.  In the laser cut preview we.  Mountain vs Valley.
+
+**>>TODO>> ADD FIGURE SHOWING A VISUAL AID**
 
 
 

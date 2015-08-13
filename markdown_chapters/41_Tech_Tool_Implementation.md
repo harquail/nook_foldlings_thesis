@@ -2,6 +2,8 @@
 
 Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  For further discussion of the FoldFeature data structure, see **>>TODO cite**.  
 
+**>>TODO more words plox, describing key functions**
+
 \small
 \singlespacing 
 \begin{pygmented}{swift}
@@ -53,6 +55,8 @@ func containsPoint(point:CGPoint) -> Bool{
 
 talk about fold heights
 talk about occlusion
+talk about feature spans fold
+startpointendpoint
 
 ### FreeForm
 
@@ -103,8 +107,15 @@ func truncateWithFolds()
  \caption{TRUNCATION}
 \end{algorithm}
 
+We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 ### Polygon
+
+Polygons are very similar to freeform shapes.  The main difference between polygon and freeform shapes is that the intersection tests for polygons are much cheaper.  For intersections between.
+
+The interpol
+
+**>>TODO:FIGURE SHOWING POINTS DRAGGING**  
 
 contrast with free-form
 talk about point dragging 
@@ -112,4 +123,5 @@ talk about truncation
 
 ### V-Fold
 
-talk about angle calculation
+talk about angle calculation.
+
