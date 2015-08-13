@@ -72,3 +72,10 @@ Once the user completes a feature, we add it to the sketch^[Assuming the feature
 
 In addition to adding a feature to the sketch, we also calculate the planes, as described in **>>MARISSA**.  This allows us to shade planes based on orientation.  After calculating planes from edges, relationships between planes are stored in the plane tree within the sketch.  Within _getPlanes_, plane orientations are set by traversing the plane tree, alternating between vertical and horizontal. 
 
+##Hierarchy
+
+A key aspect of blah blah blah is hierarchy
+
+Features contain other features
+
+both feature and plane hierarchy

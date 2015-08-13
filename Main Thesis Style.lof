@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Options presented when tapping a box fold feature.\relax }}{5}{figure.caption.9}
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Free-form shape tutorial video.\relax }}{8}{figure.caption.14}
 \contentsline {figure}{\numberline {1.5}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{9}{figure.caption.15}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{11}{figure.caption.16}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{10}{figure.caption.16}
 \contentsline {figure}{\numberline {1.7}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{13}{figure.caption.18}
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{14}{figure.caption.20}
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.\relax }}{15}{figure.caption.22}
@@ -17,14 +17,14 @@
 \contentsline {figure}{\numberline {1.16}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{21}{figure.caption.34}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{22}{figure.caption.35}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{34}{figure.caption.39}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Geometric constraints for freeform features\relax }}{35}{figure.caption.41}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Geometric constraints for freeform features\relax }}{36}{figure.caption.43}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Geometric constraints for polygon features\relax }}{37}{figure.caption.45}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Geometric constraints for freeform features\relax }}{38}{figure.caption.47}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{39}{figure.caption.48}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{33}{figure.caption.39}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Geometric constraints for freeform features\relax }}{34}{figure.caption.41}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Geometric constraints for freeform features\relax }}{35}{figure.caption.43}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Geometric constraints for polygon features\relax }}{36}{figure.caption.45}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Geometric constraints for freeform features\relax }}{37}{figure.caption.47}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{38}{figure.caption.48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{41}{figure.caption.49}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{44}{figure.caption.50}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{40}{figure.caption.49}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{43}{figure.caption.50}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

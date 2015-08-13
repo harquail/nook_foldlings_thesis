@@ -40,12 +40,16 @@ Polygons are the only feature that can be created by tapping rather than draggin
 
 V-Folds require two touches to complete.  The first touch creates a "vertical cut" that crosses a fold, the second defines the point on that fold from which diagonal folds are constructed.
 
-##intersecting Features
+##Intersecting Features
 
 Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in
 
 wrong
 /// "Nested Features" — section \ref{nested-features} on page \pageref{nested-features}.
+
+##Nested Features
+
+##Deletion
 
 ##Tutorial
 

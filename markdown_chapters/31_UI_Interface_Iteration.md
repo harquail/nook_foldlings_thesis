@@ -1,12 +1,12 @@
 #Interface Iteration
 
-In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, the user creates multiple cuts and folds in a single action, rather than individually.  These discrete logical units allow the user to design more quickly, and to combine multiple different feature types to create complex designs.   
-
 ![Initial mockups showing cards for saved sketches on the main screen.](figures/90_Appendix_UI_Mockups/001.png)
 
+In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, the user creates multiple cuts and folds in a single action, rather than individually.  These discrete logical units allow the user to design more quickly, and to combine multiple different feature types to create complex designs.   A key advantage to this design over a less structured approach is modularity.  This is both an algorithmic and an interface advantage: our algorithms benefit from collecting cuts and folds into discrete logical units, and the user benefits from a faster and more structured design process.
 
 ![Left: drawing interface as of December 2014.  Right: drawing interface as of August 2015.](figures/31_UI_Interface_Iteration/beforeafterinface.pdf)
 
+In December 2014, we had a .  
 
 \begin{tikzpicture}
   \begin{axis}[
