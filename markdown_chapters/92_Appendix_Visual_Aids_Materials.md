@@ -26,6 +26,8 @@ Shaded cards indicating plane orientation — gray for horizontal, white for ve
 
 ![](figures/92_Appendix_Visual_Aids_Materials/shaded_card2.png)
 
+\clearpage
+
 ![](figures/92_Appendix_Visual_Aids_Materials/shaded_card3.png)
 
 ![](figures/92_Appendix_Visual_Aids_Materials/shaded_card4.png)

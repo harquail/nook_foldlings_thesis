@@ -2,7 +2,10 @@
 
 In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.    The final approach is "feature-based": in other words, the user creates multiple cuts and folds in a single action, rather than individually.  These discrete logical units allow the user to design more quickly, and to combine multiple different feature types to create complex designs.   
 
-**>>TODO: figure showing alpha UI**
+![Initial mockups showing cards for saved sketches on the main screen.](figures/90_Appendix_UI_Mockups/001.png)
+
+
+![Left: drawing interface as of December 2014.  Right: drawing interface as of August 2015.](figures/31_UI_Interface_Iteration/beforeafterinface.pdf)
 
 
 \begin{tikzpicture}
