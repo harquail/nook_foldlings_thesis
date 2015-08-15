@@ -28,7 +28,8 @@ Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" o
 
 ###Hierarchy
  
-There are two primary  cite marissa but still have brief discussion here
+There are two primary 
+cite marissa but still have brief discussion here
  **>> TODO FIGURE FOR PLANE & FEATURE HIERARCHY?**
  
 
