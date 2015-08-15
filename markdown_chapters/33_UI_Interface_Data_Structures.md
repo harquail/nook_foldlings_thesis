@@ -3,7 +3,7 @@ We will refer to several data structures throughout the discussion of user inter
 
 ##Edges
 
-
+ ![In Foldlings, cuts are displayed as solid black lines.  Folds are dotted red lines.](figures/33_UI_Interface_Data_Structures/foldvsedge.pdf)  
 
 An Edge represents a cut or fold.  Edges are the basic building block of planes, and an integral element of all fold features.  An edge is minimally defined by a start point, end point, and a a type (either cut or fold).  This minimal definition represents a straight edge between two points.  In addition, an Edge can contain further information: the bezier path drawn to create it (for non-straight edges), and a reference to the plane or feature it is a part of.  Additionally, each edge contains a reference to its "twin" edge.
 
@@ -24,6 +24,7 @@ A driving fold is not a special type of edge, but rather a relationship between 
  
  properteies eg. containment
  cite marissa but still have brief discussion here
+ **>> TODO FIGURE FOR PLANE & FEATURE HIERARCHY?**
  
 ###Fold Orientation
  
@@ -35,6 +36,9 @@ A driving fold is not a special type of edge, but rather a relationship between 
 Planes are an enclosed shape, bounded by edges.  Plane are detected from edges by traversing the directed edge graph, as described in  **>>TODO: CITE MARISSA HERE**.  They are drawn as colored areas in the two-dimensional sketch, and simulated in the 3D preview as shapes that rotate about a pivot point.  In order to simulate the planes in 3D, we construct parent-child relationships between the planes, which determine how they move during simulation. 
 
 ![Planes in a simple sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.](figures/33_UI_Interface_Data_Structures/boxfold_planes.png)
+
+![Planes in a more complex sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.  Letters indicate branches within the plane tree (I.e. 3a is the child of 2a.](figures/33_UI_Interface_Data_Structures/complex_sketch.pdf)
+
 
 ##Fold Features
 
@@ -48,7 +52,6 @@ All FoldFeatures have functionality in common:
 * Features implement the encodeWithCoder and decodeWithCoder methods, allowing them to be serialized to a file on the device and restored from the saved file.
 * Each feature can provide a list of current "tap options" — actions that can be performed on the feature given its state. **>>TODO:SEE tap options in interface design**
 * Each feature can perform hit-testing: given a point, it can determine whether that point is inside or outside the feature.
- [@Nobody06]. **>>TODO:REMOVE CITATION -- JUST TESTING**
 
 **>>TODO figures showing fold patterns and physical models**
 
