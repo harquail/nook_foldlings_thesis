@@ -4,8 +4,9 @@ Foldlings future
 
 #User Interface Future Work
 
-
 ##Multiple Cards
+
+##Horizontal
 
 #Algorithms & Implementation Future Work
 
