@@ -1,8 +1,6 @@
 #Tool Implementation
 
-Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  For further discussion of the FoldFeature data structure, see **>>TODO cite**.  
-
-**>>TODO more words plox, describing key functions**
+Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  The , and.  It also contains several functions that   For further discussion of the FoldFeature data structure, see **>>TODO cite**.  
 
 \small
 \singlespacing 
@@ -50,6 +48,8 @@ func containsPoint(point:CGPoint) -> Bool{
 \end{pygmented}
 \doublespacing
 \normalsize
+
+Of the functions in  featureSpansFold, splitFoldByOcclusion
 
 ## Box Fold
 
@@ -113,7 +113,7 @@ We capture interpolation points as a function of touch velocity.  That is, when 
 
 Polygons are very similar to freeform shapes.  The main difference between polygon and freeform shapes is that the intersection tests for polygons are much cheaper.  For intersections between.
 
-The interpol
+The interpolation points are vertices
 
 **>>TODO:FIGURE SHOWING POINTS DRAGGING**  
 
@@ -124,4 +124,10 @@ talk about truncation
 ### V-Fold
 
 talk about angle calculation.
+
+##Self-intersecting Paths
+
+In all cases,  
+
+Unfortunately, as a result of 
 

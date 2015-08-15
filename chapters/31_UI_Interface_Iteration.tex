@@ -44,9 +44,7 @@ The primary goals were to test whether our existing tools were useful
 and to collect feedback on potential new features for Foldlings. When a
 user tapped a button that we had not yet implemented, we asked them to
 describe how they thought the tool would work, and talked with them
-about the behavior the button represented. While users created sketches
-using our software, we took notes on their experience and collected
-their suggestions for improvementss.
+about the behavior the button represented.
 
 \begin{tikzpicture}
   \begin{axis}[
@@ -71,67 +69,56 @@ In the graph above, the first 10 labels indicate the number of
 participants who tapped a button. The last three labels --- starting
 with ``wanted mirror'' --- show responses to unimplemented tools. To
 calculate these numbers, we asked first users to describe what they
-thought the button would do, and then . The tally represents a
-qualitative measure of whether the user was enthusiastic about the
-feature or had a more negative response. Some negative responses include
-confusion about the tool's purpose and
+thought the button would do, and then gauged their reaction as we
+described our vision for that tool. The tally represents a qualitative
+measure of whether the user was enthusiastic about the feature or had a
+more negative response. Some negative responses include confusion about
+the tool's purpose and
 
 From this test, we learned that the track and slider tools were
 confusing, and that novice users were generally not interested in
 creating features that require multiple pieces of paper.
 
-\textbf{\textgreater{}\textgreater{}TODO: separate user comments from
-observation}
+As users created sketches using our software, we also took notes on
+their experience and collected their suggestions for improvements.
+Although only a small fraction of the features requested are implemented
+in the final app, the feedback from these early user tests set us on the
+path toward feature-based design. A common theme among the responses is
+the difficulty in creating valid sketches and confusion about the
+proposed track and slider tools.
 
 \begin{longtable}[c]{@{}l@{}}
-\caption{Feedback from first user test.}\tabularnewline
+\caption{Observations of behavior from first user test.}\tabularnewline
 \toprule
 \begin{minipage}[b]{0.82\columnwidth}\raggedright\strut
-Comments
+Observations
 \strut\end{minipage}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
 \begin{minipage}[b]{0.82\columnwidth}\raggedright\strut
-Comments
+Observations
 \strut\end{minipage}\tabularnewline
 \midrule
 \endhead
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-want option to fold other way, wanted to be able to draw over existing
-line with tab tool, made a cake, crashed on returning to sketch
+made a cake using cuts \& tab, crashed on returning to sketch
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
 track and slider will need explanation; wanted to use non-horizontal
 folds
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted to fold by pinching, want to rename? delete, move them around?
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted ortho views, hold to view info about tool, examples. Interactive
-tutorial
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
 erased master fold, crashing at preview step
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted interactive tutorials, made a cat
+made a cat with cuts
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-momentary confusion getting back to sketch
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted to move around existing sketches
+momentary confusion getting back to sketch from 3D preview
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
 confused about concept of a laser cutter
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted interative tutorial
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted to fold 3d preview by hand
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
 very frustrated by tools that aren't implemented yet
@@ -143,11 +130,66 @@ confused by track \& slider
 needed heavy guidance; completely confused by track/slider
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
-wanted more snapping/guidance on creating valid designs
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
 fairly self-sufficient after tools were explained, made a house, moved
 slowly, waiting for planes to calculate
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+A common theme among the feature requests was a desire for more tutorial
+or explanation of tools. Features only appear once in Table 1.2 if they
+were request by. The most-requested feature was an interactive tutorial,
+requested by 4 (of 16) users. In the final version of our software, we
+display short example videos when users use a tool for the first
+time\textbf{\textgreater{}\textgreater{}TODO:REF}. These tutorials allow
+users to quickly get started quickly with minimal interruptions.
+
+\begin{longtable}[c]{@{}l@{}}
+\caption{Feedback from first user test.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.82\columnwidth}\raggedright\strut
+Feature Requests
+\strut\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.82\columnwidth}\raggedright\strut
+Feature Requests
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+option to reverse all folds
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+draw over existing fold with tab tool
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+non-horizontal folds
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+fold by pinching
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+rename sketches
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+delete sketches
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+orthographic views
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+long press to view information about tool
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+reorder sketches on main screen
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+interactive tutorial
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.82\columnwidth}\raggedright\strut
+more snapping/validity guidance
 \strut\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}

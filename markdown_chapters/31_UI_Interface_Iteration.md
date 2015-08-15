@@ -8,7 +8,7 @@ In arriving at our final design, we iterated through several potential designs, 
 
 ![Left: drawing interface as of December 2014.  Right: drawing interface as of August 2015.](figures/31_UI_Interface_Iteration/beforeafterinface.pdf)
 
-Throughout the development process, we collected feedback through informal user tests.  One test we performed was to present a partially-implemented version of our software to users.  The majority of buttons were functional — erase, cut, fold, and and tab, but a few.  The primary goals were to test whether our existing tools were useful and to collect feedback on potential new features for Foldlings.  When a user tapped a button that we had not yet implemented, we asked them to describe how they thought the tool would work, and talked with them about the behavior the button represented.  As users created sketches using our software, we also took notes on their experience and collected their suggestions for improvements. 
+Throughout the development process, we collected feedback through informal user tests.  One test we performed was to present a partially-implemented version of our software to users.  The majority of buttons were functional — erase, cut, fold, and and tab, but a few.  The primary goals were to test whether our existing tools were useful and to collect feedback on potential new features for Foldlings.  When a user tapped a button that we had not yet implemented, we asked them to describe how they thought the tool would work, and talked with them about the behavior the button represented.  
 
 \begin{tikzpicture}
   \begin{axis}[
@@ -33,33 +33,23 @@ Throughout the development process, we collected feedback through informal user 
     
 From this test, we learned that the track and slider tools were confusing, and that novice users were generally not interested in creating features that require multiple pieces of paper.  
  
-
-**>>TODO: separate user comments from observation**
+ 
+As users created sketches using our software, we also took notes on their experience and collected their suggestions for improvements.  Although only a small fraction of the features requested are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the responses is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
 
 -------------------------------------------------------------
-Comments
+Observations
 -------------------------------------------------------------
-want option to fold other way, wanted to be able to draw over existing line with tab tool, made a cake, crashed on returning to sketch
+made a cake using cuts & tab, crashed on returning to sketch
 
 track and slider will need explanation; wanted to use non-horizontal folds
 
-wanted to fold by pinching, want to rename? delete, move them around?
-
-wanted ortho views, hold to view info about tool, examples.  Interactive tutorial
-
 erased master fold, crashing at preview step
 
-wanted interactive tutorials, made a cat
+made a cat with cuts
 
-momentary confusion getting back to sketch
-
-wanted to move around existing sketches
+momentary confusion getting back to sketch from 3D preview
 
 confused about concept of a laser cutter
-
-wanted interative tutorial
-
-wanted to fold 3d preview by hand
 
 very frustrated by tools that aren't implemented yet
 
@@ -67,8 +57,36 @@ confused by track & slider
 
 needed heavy guidance; completely confused by track/slider
 
-wanted more snapping/guidance on creating valid designs
-
 fairly self-sufficient after tools were explained, made a house, moved slowly, waiting for planes to calculate
+-------------------------------------------------------------
+Table:  Observations of behavior from first user test.
+
+A common theme among the feature requests was a desire for more tutorial or explanation of tools.  Features only appear once in Table 1.2 if they were request by.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time**>>TODO:REF**.  These tutorials allow users to quickly get started quickly with minimal interruptions.
+
+-------------------------------------------------------------
+Feature Requests
+-------------------------------------------------------------
+option to reverse all folds
+
+draw over existing fold with tab tool
+
+non-horizontal folds
+
+fold by pinching
+
+rename sketches
+
+delete sketches
+
+orthographic views
+
+long press to view information about tool
+
+reorder sketches on main screen
+
+interactive tutorial
+
+more snapping/validity guidance
+
 -------------------------------------------------------------
 Table:  Feedback from first user test.
