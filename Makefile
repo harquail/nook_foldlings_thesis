@@ -20,6 +20,8 @@ badpdf:
 pdf:
 		pdflatex -interaction=batchmode --shell-escape Main\ Thesis\ Style.tex
 
+verbose:
+		pdflatex --shell-escape Main\ Thesis\ Style.tex
 
 clean:
 		$(shell sh shell-scripts/closePreviewWindows.sh)

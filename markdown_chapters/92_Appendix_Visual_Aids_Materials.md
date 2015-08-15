@@ -14,6 +14,8 @@ Lined cards indicating fold orientation — bold for hills, normal emphasis for
 
 ![](figures/92_Appendix_Visual_Aids_Materials/lined_card4.png)
 
+\clearpage
+
 ![](figures/92_Appendix_Visual_Aids_Materials/lined_card5.png)
 
 \clearpage
@@ -32,9 +34,10 @@ Shaded cards indicating plane orientation — gray for horizontal, white for ve
 
 ![](figures/92_Appendix_Visual_Aids_Materials/shaded_card4.png)
 
+\clearpage
+
 ![](figures/92_Appendix_Visual_Aids_Materials/shaded_card5.png)
 
-\clearpage
 
 ##Still 3D Visual Aids
 

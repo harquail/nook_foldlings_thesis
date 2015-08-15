@@ -20,17 +20,19 @@ A driving fold is not a special type of edge, but rather a relationship between 
 
  An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the \nameref{nested-features} section on page \pageref{nested-features}.
  
-###Hierarchy
- 
- properteies eg. containment
- cite marissa but still have brief discussion here
- **>> TODO FIGURE FOR PLANE & FEATURE HIERARCHY?**
- 
 ###Fold Orientation
  
- Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface.  **>>TODO: FINISH SECTION, CITE KIRIGAMI HERE, REFERENCE MARISSA**
-**>> TODO KIRIGAMI PATTERN FIGURE**
+ ![Kirigami fold pattern (@maekawas-theorem).](figures/33_UI_Interface_Data_Structures/maekawas-theorem.png)
+  
+Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface.  In Foldlings, edge orientations are determined by iterating through the plane tree structure described in **>>TODO: CITE MARISSA HERE**.
 
+###Hierarchy
+ 
+There are two primary  cite marissa but still have brief discussion here
+ **>> TODO FIGURE FOR PLANE & FEATURE HIERARCHY?**
+ 
+
+  
 ##Planes
 
 Planes are an enclosed shape, bounded by edges.  Plane are detected from edges by traversing the directed edge graph, as described in  **>>TODO: CITE MARISSA HERE**.  They are drawn as colored areas in the two-dimensional sketch, and simulated in the 3D preview as shapes that rotate about a pivot point.  In order to simulate the planes in 3D, we construct parent-child relationships between the planes, which determine how they move during simulation. 
@@ -52,8 +54,6 @@ All FoldFeatures have functionality in common:
 * Features implement the encodeWithCoder and decodeWithCoder methods, allowing them to be serialized to a file on the device and restored from the saved file.
 * Each feature can provide a list of current "tap options" — actions that can be performed on the feature given its state. **>>TODO:SEE tap options in interface design**
 * Each feature can perform hit-testing: given a point, it can determine whether that point is inside or outside the feature.
-
-**>>TODO figures showing fold patterns and physical models**
 
 ###Master Card
 
@@ -92,7 +92,6 @@ V-Folds are defined by a path that crosses the driving fold, called a "vertical 
 ![Left: an unfinished v-fold, consisting only of a vertical cut.  Right: a v-fold after defining the point on the driving fold to create diagonal cuts.](figures/33_UI_Interface_Data_Structures/vfold_before_after.png)
 
 V-folds are only valid if they have a driving fold, and their vertical cut intersects the driving fold exactly once.
-
 
 ##Sketches
 
