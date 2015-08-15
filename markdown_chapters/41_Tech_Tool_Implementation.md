@@ -121,13 +121,35 @@ contrast with free-form
 talk about point dragging 
 talk about truncation
 
+The algorithm for truncating polygons is similar to that, except that intersection tests are much cheaper.
+
 ### V-Fold
 
-talk about angle calculation.
+angle calculation, path splitting
 
 ##Self-intersecting Paths
 
-In all cases,  
+In order to be rendered by SceneKit in 3D, paths cannot have self intersections.  Thus, we attempt to repair self-intersecting paths when adding features to the sketch.  
+
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{Self-intersecting path repair}
+\end{algorithm}
+
+**>>TODO: ALGO**
+
+A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  For example, .  In cases where out algorithm fails, we 
 
 Unfortunately, as a result of 
 
