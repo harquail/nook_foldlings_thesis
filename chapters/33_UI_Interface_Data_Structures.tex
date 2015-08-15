@@ -85,13 +85,19 @@ FEATURE HIERARCHY?}
 
 \subsubsection{Fold Orientation}\label{fold-orientation}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/maekawas-theorem.png}
+\caption{Kirigami fold pattern (\citet{maekawas-theorem}).}
+\end{figure}
+
 Traditionally, kirigami patterns indicate direction for folds:
 ``mountain/hill'' or ``valley''. These folds form angles in opposite
 directions ---~mountain folds are pinched away from the paper surface,
-while valley folds are pinched into the surface.
-\textbf{\textgreater{}\textgreater{}TODO: FINISH SECTION, CITE KIRIGAMI
-HERE, REFERENCE MARISSA} \textbf{\textgreater{}\textgreater{} TODO
-KIRIGAMI PATTERN FIGURE}
+while valley folds are pinched into the surface. In Foldlings, edge
+orientations are determined by iterating through the plane tree
+structure described in \textbf{\textgreater{}\textgreater{}TODO: CITE
+MARISSA HERE}.
 
 \subsection{Planes}\label{planes}
 
@@ -157,9 +163,6 @@ All FoldFeatures have functionality in common:
   Each feature can perform hit-testing: given a point, it can determine
   whether that point is inside or outside the feature.
 \end{itemize}
-
-\textbf{\textgreater{}\textgreater{}TODO figures showing fold patterns
-and physical models}
 
 \subsubsection{Master Card}\label{master-card}
 

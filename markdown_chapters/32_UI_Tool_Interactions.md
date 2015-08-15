@@ -81,11 +81,11 @@ In addition to sharing an SVG file for laser cutting, users can press "share".  
 
 ##Visual Aids
 
-Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section 3, on page 8999, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (warm colors for planes that will be vertical when the plane is halfway folded and cool colors for horizontal planes.  In the SVG file (accessed via "send to laser cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data that suggest showing fold orientation is very helpful to users folding cards.
+**>>TODO>> ADD FIGURE SHOWING dot vs dot-dash line**
+
+Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section \ref{visual-aids-user-study}, on page  \pageref{visual-aids-user-study}, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (warm colors for planes that will be vertical when the plane is halfway folded and cool colors for horizontal planes.  In the SVG file (accessed via "send to laser cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data that suggest showing fold orientation is very helpful to users folding cards.
 
 **>>TODO>> ADD FIGURE SHOWING plane shading VISUAL AID**
-**>>TODO>> ADD FIGURE SHOWING dot vs dot-dash line**
-**>>TODO>> ADD FIGURE SHOWING 3d PREVIEW**
 
 
 
