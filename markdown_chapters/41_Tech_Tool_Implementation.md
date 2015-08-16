@@ -49,7 +49,7 @@ func containsPoint(point:CGPoint) -> Bool{
 \doublespacing
 \normalsize
 
-Of the functions, the most complex are featureSpansFold and splitFoldByOcclusion
+Of these functions, the most complex are _featureSpansFold_ and _splitFoldByOcclusion_.  _FeatureSpansFold_ is implemented depending on  
 
 ## Box Fold
 
@@ -60,6 +60,7 @@ talk about feature spans fold
 ### FreeForm
 
 **>>TODO DISCUSSION OF SPLITTING**
+FIGURE?
 talk about splitting algorithm.  Recursively subdivide
 
 catmull rom curves
@@ -125,6 +126,8 @@ calculate middle fold position
 
 talk about bitmap intersection for scanline
 
+Essentially, we use a bitmap approximation of the intersection point between bezier paths, because calculating intersections between arbitrary curves is computationally more expensive. We use this fast approximation to .  
+
 We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 ### Polygon
@@ -150,10 +153,8 @@ In order to be rendered by SceneKit in 3D, paths cannot have self intersections.
 
  \textit{segments} $\leftarrow$ bezier path discretized into straight line segments using adaptive subdivision 
  
- \textit{sanitizedSegments} $\leftarrow$ []
- 
- **>>TODO:CITE**
- 
+ \textit{sanitizedSegments} $\leftarrow$ empty array
+  
  \For{\textit{i} $\leftarrow$ 0; \textit{i} < \textit{segments}.length; \textit{i}++}{
 
 //compare with all segments after current segment

@@ -137,6 +137,11 @@ calculate middle fold position
 
 talk about bitmap intersection for scanline
 
+Essentially, we use a bitmap approximation of the intersection point
+between bezier paths, because calculating intersections between
+arbitrary curves is computationally more expensive. We use this fast
+approximation to .
+
 We capture interpolation points as a function of touch velocity. That
 is, when the user draws more quickly, we capture more interpolation
 points closer together. This allows us to capture the entire drawing
@@ -168,10 +173,8 @@ adding features to the sketch.\\\hspace*{0.333em} ~
 
  \textit{segments} $\leftarrow$ bezier path discretized into straight line segments using adaptive subdivision 
  
- \textit{sanitizedSegments} $\leftarrow$ []
- 
- **>>TODO:CITE**
- 
+ \textit{sanitizedSegments} $\leftarrow$ empty array
+  
  \For{\textit{i} $\leftarrow$ 0; \textit{i} < \textit{segments}.length; \textit{i}++}{
 
 //compare with all segments after current segment
