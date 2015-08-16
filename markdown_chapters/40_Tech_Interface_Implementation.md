@@ -74,6 +74,8 @@ In addition to adding a feature to the sketch, we also calculate the planes, as 
 
 ##Hierarchy
 
+Fold features have two types of hierarchy.  The first is .  Within each feature, 
+
 A key aspect of blah blah blah is hierarchy
 
 Features contain other features

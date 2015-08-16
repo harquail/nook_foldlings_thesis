@@ -60,12 +60,15 @@ startpointendpoint
 
 ### FreeForm
 
+**>>TODO DISCUSSION OF SPLITTING**
 talk about splitting
-catmull rom curves
 
+catmull rom curves
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
 
 talk about truncation
+
+**>>TODO FIGURE FOR TRUNCATION**
 
 \small
 \singlespacing 
@@ -74,10 +77,9 @@ func truncateWithFolds()
 \end{pygmented}
 \doublespacing
 \normalsize
-
 \begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
+ \KwData{path, the bezier path for the freeform shape}
+ \KwResult{edges for path}
  initialization\;
  \While{not at end of this document}{
   read current\;
@@ -88,24 +90,19 @@ func truncateWithFolds()
    go back to the beginning of current section\;
   }
  }
- \caption{Path Splitting}
+ \caption{Truncation}
 \end{algorithm}
 
-\begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{TRUNCATION}
-\end{algorithm}
+// create scanline at top of bounding box for feature
+// while(scanline above bottom of feature){
+	intercepts <- intersection point between scanline and freeform path
+	if(intercepts not nil){
+	break
+	}
+	fragment <- 
+}
+
+talk about bitmap intersection
 
 We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
@@ -119,7 +116,6 @@ The interpolation points are vertices
 
 contrast with free-form
 talk about point dragging 
-talk about truncation
 
 The algorithm for truncating polygons is similar to that, except that intersection tests are much cheaper.
 
@@ -149,7 +145,17 @@ In order to be rendered by SceneKit in 3D, paths cannot have self intersections.
 
 **>>TODO: ALGO**
 
-A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  For example, .  In cases where out algorithm fails, we 
+segments <- discretize bezier path into line segments, using adaptive subdivision.
+i <- 0
+forEach segment in segments
+for Each segment2 in segments where segment after segment{
+	if(segment intersects segment2){
+	remove line segments between segment and segment2
+	skip to segment2
+	}
+}
 
-Unfortunately, as a result of 
+
+
+A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  In cases where out algorithm fails, we display an error and do not add the feature to the sketch.
 
