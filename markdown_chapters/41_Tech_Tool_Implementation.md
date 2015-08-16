@@ -49,7 +49,7 @@ func containsPoint(point:CGPoint) -> Bool{
 \doublespacing
 \normalsize
 
-Of the functions in  featureSpansFold, splitFoldByOcclusion
+Of the functions, the most complex are \textIt{featureSpansFold} and \textIt{splitFoldByOcclusion}
 
 ## Box Fold
 
@@ -61,7 +61,7 @@ startpointendpoint
 ### FreeForm
 
 **>>TODO DISCUSSION OF SPLITTING**
-talk about splitting
+talk about splitting algorithm.  Recursively subdivide
 
 catmull rom curves
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
@@ -121,7 +121,7 @@ The algorithm for truncating polygons is similar to that, except that intersecti
 
 ### V-Fold
 
-angle calculation, path splitting
+angle calculation, path splitting 
 
 ##Self-intersecting Paths
 
@@ -147,12 +147,13 @@ In order to be rendered by SceneKit in 3D, paths cannot have self intersections.
 
 segments <- discretize bezier path into line segments, using adaptive subdivision.
 i <- 0
-forEach segment in segments
-for Each segment2 in segments where segment after segment{
-	if(segment intersects segment2){
-	remove line segments between segment and segment2
-	skip to segment2
-	}
+for (int i = 0; i < segments.length; i++){
+//compare with segment after current segment
+for (int j = 0; j = i; j++){
+if(segments[i] intersects segments[j]{
+   remove segments[i..j]
+	i = j //skip segments in between intersection point
+}
 }
 
 
