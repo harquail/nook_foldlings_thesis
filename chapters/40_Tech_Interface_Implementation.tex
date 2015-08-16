@@ -101,7 +101,8 @@ modifications to edges, validate the feature, and add it to the sketch.
 Of course, the implementation of pan delegate methods varies widely
 between features. For example, a diagonal pan with the box fold tool
 selected would create folds and cuts to form a box between the start and
-end point, whereas the same touch in the freeform tool would create
+end point, whereas the same touch in the freeform tool would create an
+invalid feature consisting of a line.
 
 \subsection{Fold Feature Preview}\label{fold-feature-preview}
 
@@ -113,15 +114,16 @@ current feature is visually similar to those of the final feature, the
 method of drawing a preview version of the currently active feature
 varies from the generation of final feature edges.
 
-We store the currently active feature separately, it is not added to the
+We store the currently active feature separately; it is not added to the
 list of features until it is completed and passes validation. Thus, its
 edges are drawn by the function that draws all edges currently in the
 sketch. For performance reasons, we display a preview of the active
 feature on top of all features in the sketch --- modifications to
-existing features, and expensive operations such as truncation for
-freeform shapes, are performed only when the feature is added to the
-sketch. During drawing, we display the set of preview edges stored in
-the feature, which sometimes differ from the final feature edges.
+existing features, and computationally expensive operations such as
+truncation for freeform shapes, are performed only when the feature is
+added to the sketch. During drawing, we display the set of preview edges
+stored in the feature, which sometimes differ from the final feature
+edges.
 
 For box folds, we display a preview of all the edges, but do not occlude
 the middle fold until the feature is completed. For freeform features,

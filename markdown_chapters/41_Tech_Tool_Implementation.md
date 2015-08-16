@@ -59,17 +59,15 @@ talk about feature spans fold
 
 ### FreeForm
 
-**>>TODO DISCUSSION OF SPLITTING**
-FIGURE?
-talk about splitting algorithm.  Recursively subdivide
-
-catmull rom curves
+A freeform shape consists of a series of interpolation points through which a we construct a bezier curve using the Catmull-Rom algorithm.  **>>TODO:CITE** We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
 
-talk about truncation
 
-**>>TODO FIGURE FOR TRUNCATION**
+
+When a freeform shape has a driving fold, we must add 
+
+![](figures/41_Tech_Tool_Implementation/truncationBeforeAfter.pdf)
 
 \small
 \singlespacing 
@@ -126,9 +124,13 @@ calculate middle fold position
 
 talk about bitmap intersection for scanline
 
+
+
 Essentially, we use a bitmap approximation of the intersection point between bezier paths, because calculating intersections between arbitrary curves is computationally more expensive. We use this fast approximation to .  
 
-We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
+**>>TODO DISCUSSION OF SPLITTING**
+talk about splitting algorithm.  Recursively subdivide
+
 
 ### Polygon
 
@@ -144,9 +146,11 @@ angle calculation, path splitting
 
 ##Self-intersecting Paths
 
-In order to be rendered by SceneKit in 3D, paths cannot have self intersections.  Thus, we attempt to repair self-intersecting paths when adding features to the sketch.  
+In order to be rendered by SceneKit in 3D, paths cannot have self intersections.  Thus, we attempt to repair self-intersecting paths when adding features to the sketch.  Self intersections occur in two ways: the user creates a self-intersecting path, or paths self-intersect as a result of imprecision in performing intersections or capturing touch interpolation points. 
 \  
 \  
+
+![](figures/41_Tech_Tool_Implementation/loopBeforeAfter.pdf)
 
 
 \begin{algorithm}[H]
@@ -182,4 +186,6 @@ In order to be rendered by SceneKit in 3D, paths cannot have self intersections.
 
 
 A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  In cases where our algorithm fails, we display an error and do not add the feature to the sketch.
+
+![](figures/41_Tech_Tool_Implementation/succeedFailSelfIntersections.pdf)
 

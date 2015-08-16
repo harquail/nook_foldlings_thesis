@@ -27,6 +27,12 @@ remove \textit{fragment} from \textit{sketch}
 
 }
 
+}
+
+}
+
+}
+
 reassign \textit{fragments} as edges of \textit{feature}
 
 }
@@ -34,11 +40,9 @@ reassign \textit{fragments} as edges of \textit{feature}
 }
 
 recalculate planes for \textit{sketch}
-
-}
-
-}
-
-}
+\
+\
 \caption{Feature Intersections}
 \end{algorithm}
+
+![](figures/43_Tech_Intersections_Between_Features/featureIntBeforeAfter.pdf)
