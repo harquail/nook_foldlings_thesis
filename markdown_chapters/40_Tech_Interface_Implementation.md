@@ -52,8 +52,6 @@ Tool state is maintained by the SketchViewController.  The SketchViewController 
 
 Within the specific function in SketchView, pan gestures are converted into feature edges by listening to _touchesBegan_, _touchesMoved_, and _touchesEnded_.  When a pan begins, we create a new feature of the appropriate type and set it as the currently active drawing feature.  When the pan is updated, we add and/or modify edges in the active feature.  When the pan ends, we make final modifications to edges, validate the feature, and add it to the sketch.
 
-**>>TODO, COULD ADD ALGO HERE**
-
 Of course, the implementation of pan delegate methods varies widely between  features.  For example, a diagonal pan with the box fold tool selected would create folds and cuts to form a box between the start and end point, whereas the same touch in the freeform tool would create
 
 ##Fold Feature Preview

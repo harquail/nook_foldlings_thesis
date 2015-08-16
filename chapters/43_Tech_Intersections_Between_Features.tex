@@ -27,10 +27,7 @@ have any folds less than the minimum edge length after intersection. A
 more complete implementation would analyze the resulting geometry for
 potential problems.
 
-\singlespacing
-
 \begin{algorithm}[H]
-
 \ForEach{\textit{feature} in \textit{sketch}}{
 
 \If{\textit{feature} intersects with current drawing feature}{
@@ -54,12 +51,15 @@ remove \textit{fragment} from \textit{sketch}
 reassign \textit{fragments} as edges of \textit{feature}
 
 }
+
 }
+
 recalculate planes for \textit{sketch}
+
 }
+
 }
+
 }
 \caption{Feature Intersections}
 \end{algorithm}
-
-\doublespacing

@@ -55,16 +55,21 @@ func containsPoint(point:CGPoint) -> Bool{
 \doublespacing
 \normalsize
 
-Of the functions in featureSpansFold, splitFoldByOcclusion
+Of the functions, the most complex are featureSpansFold and
+splitFoldByOcclusion
 
 \subsection{Box Fold}\label{box-fold}
 
-talk about fold heights talk about occlusion talk about feature spans
-fold startpointendpoint
+talk about occlusion
+
+talk about feature spans fold
 
 \subsubsection{FreeForm}\label{freeform}
 
-talk about splitting catmull rom curves
+\textbf{\textgreater{}\textgreater{}TODO DISCUSSION OF SPLITTING} talk
+about splitting algorithm. Recursively subdivide
+
+catmull rom curves
 
 However, the catmull-Rom algorithm only draws a full path when the start
 and end points of the curve are coincident. We use an alpha value of
@@ -72,6 +77,8 @@ and end points of the curve are coincident. We use an alpha value of
 through informal user studies.
 
 talk about truncation
+
+\textbf{\textgreater{}\textgreater{}TODO FIGURE FOR TRUNCATION}
 
 \small
 \singlespacing 
@@ -84,23 +91,51 @@ func truncateWithFolds()
 \normalsize
 
 \begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{Truncation}
+
+\KwData{\textit{path}, the bezier path for the freeform shape}
+
+\KwResult{edges for truncated shape}
+
+create \textit{scanline} at top of bounding box for \textit{feature}
+
+\While{\textit{scanline} above bottom of \textit{feature}}{
+
+\textit{intercepts} $\leftarrow$ intersection points between \textit{scanline} and \textit{path}
+
+\If{\textit{intercepts} not nil}{
+
+    \textit{fragments} $\leftarrow$ \textit{path} split by \textit{intercepts}
+    
+    \ForEach{\textit{fragment} in \textit{fragments}}{
+    
+    \If{\textit{fragment} center is above top fold or below bottom fold}{
+    
+    remove \textit{fragment} from \textit{fragments}
+    
+    }
+    
+    }
+    
+\bf{break}
+
+}
+
+translate \textit{scanline} down
+
+}
+ 
+repeat \textit{scanline} operation from bottom to find bottom fold
+    
+calculate middle fold position
+    
+\textit{folds} $\leftarrow$ top, middle, and bottom folds
+    
+\Return{\textit{folds} + \textit{fragments}}  
+
+\caption{Truncation}
 \end{algorithm}
 
-// create scanline at top of bounding box for feature // while(scanline
-above bottom of feature)\{ intercepts \textless{}- \}
+talk about bitmap intersection for scanline
 
 We capture interpolation points as a function of touch velocity. That
 is, when the user draws more quickly, we capture more interpolation
@@ -113,47 +148,55 @@ moving more slowly.
 
 Polygons are very similar to freeform shapes. The main difference
 between polygon and freeform shapes is that the intersection tests for
-polygons are much cheaper. For intersections between.
+polygons are much cheaper. For intersections between polygons, we can
+use a simple system of equations, rather than the bitmap intersection
+technique described above.
 
-The interpolation points are vertices
-
-\textbf{\textgreater{}\textgreater{}TODO:FIGURE SHOWING POINTS DRAGGING}
-
-contrast with free-form talk about point dragging talk about truncation
-
-The algorithm for truncating polygons is similar to that, except that
-intersection tests are much cheaper.
+The interpolation points are vertices of the polygon
 
 \subsubsection{V-Fold}\label{v-fold}
 
-angle calculation, path splitting
+Geometric constraints as described in angle calculation, path splitting
 
 \subsection{Self-intersecting Paths}\label{self-intersecting-paths}
 
 In order to be rendered by SceneKit in 3D, paths cannot have self
 intersections. Thus, we attempt to repair self-intersecting paths when
-adding features to the sketch.
+adding features to the sketch.\\\hspace*{0.333em} ~
 
 \begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{Self-intersecting path repair}
+
+ \textit{segments} $\leftarrow$ bezier path discretized into straight line segments using adaptive subdivision 
+ 
+ \textit{sanitizedSegments} $\leftarrow$ []
+ 
+ **>>TODO:CITE**
+ 
+ \For{\textit{i} $\leftarrow$ 0; \textit{i} < \textit{segments}.length; \textit{i}++}{
+
+//compare with all segments after current segment
+
+\For{\textit{j}  $\leftarrow$ \textit{i}; \textit{j} < \textit{segments}.length; \textit{j}++}{
+
+\If{\textit{segments}[\textit{i}] intersects \textit{segments}[\textit{j}]}{
+
+    remove \textit{segments}[\textit{i}..\textit{j}] from path
+
+    \textit{i} $\leftarrow$ \textit{j}  //skip segments inbetween intersecting segments, thereby repairing the "loop"
+
+}
+
+\textit{sanitizedSegments}.append(\textit{segments}[\textit{i}])
+
+}
+
+}
+ 
+ \Return{sanitizedSegments} \
+ 
+\caption{Self-intersecting path repair}
 \end{algorithm}
 
-\textbf{\textgreater{}\textgreater{}TODO: ALGO}
-
 A convoluted design with many overlapping self intersections can fail to
-resolve to a valid shape. For example, . In cases where out algorithm
-fails, we
-
-Unfortunately, as a result of
+resolve to a valid shape. In cases where our algorithm fails, we display
+an error and do not add the feature to the sketch.

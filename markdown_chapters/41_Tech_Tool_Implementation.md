@@ -49,14 +49,13 @@ func containsPoint(point:CGPoint) -> Bool{
 \doublespacing
 \normalsize
 
-Of the functions, the most complex are \textIt{featureSpansFold} and \textIt{splitFoldByOcclusion}
+Of the functions, the most complex are featureSpansFold and splitFoldByOcclusion
 
 ## Box Fold
 
-talk about fold heights
 talk about occlusion
+
 talk about feature spans fold
-startpointendpoint
 
 ### FreeForm
 
@@ -64,6 +63,7 @@ startpointendpoint
 talk about splitting algorithm.  Recursively subdivide
 
 catmull rom curves
+
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
 
 talk about truncation
@@ -77,86 +77,108 @@ func truncateWithFolds()
 \end{pygmented}
 \doublespacing
 \normalsize
-\begin{algorithm}[H]
- \KwData{path, the bezier path for the freeform shape}
- \KwResult{edges for path}
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{Truncation}
-\end{algorithm}
 
-// create scanline at top of bounding box for feature
-// while(scanline above bottom of feature){
-	intercepts <- intersection point between scanline and freeform path
-	if(intercepts not nil){
-	break
+\begin{algorithm}[H]
+
+\KwData{\textit{path}, the bezier path for the freeform shape}
+
+\KwResult{edges for truncated shape}
+
+create \textit{scanline} at top of bounding box for \textit{feature}
+
+\While{\textit{scanline} above bottom of \textit{feature}}{
+
+\textit{intercepts} $\leftarrow$ intersection points between \textit{scanline} and \textit{path}
+
+\If{\textit{intercepts} not nil}{
+
+	\textit{fragments} $\leftarrow$ \textit{path} split by \textit{intercepts}
+	
+	\ForEach{\textit{fragment} in \textit{fragments}}{
+	
+	\If{\textit{fragment} center is above top fold or below bottom fold}{
+	
+	remove \textit{fragment} from \textit{fragments}
+	
 	}
-	fragment <- 
+	
+	}
+	
+\bf{break}
+
 }
 
-talk about bitmap intersection
+translate \textit{scanline} down
+
+}
+ 
+repeat \textit{scanline} operation from bottom to find bottom fold
+ 	
+calculate middle fold position
+	
+\textit{folds} $\leftarrow$ top, middle, and bottom folds
+	
+\Return{\textit{folds} + \textit{fragments}}  
+
+\caption{Truncation}
+\end{algorithm}
+
+talk about bitmap intersection for scanline
 
 We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 ### Polygon
 
-Polygons are very similar to freeform shapes.  The main difference between polygon and freeform shapes is that the intersection tests for polygons are much cheaper.  For intersections between.
+Polygons are very similar to freeform shapes.  The main difference between polygon and freeform shapes is that the intersection tests for polygons are much cheaper.  For intersections between polygons, we can use a simple system of equations, rather than the bitmap intersection technique described above.
 
-The interpolation points are vertices
+The interpolation points are vertices of the polygon
 
-**>>TODO:FIGURE SHOWING POINTS DRAGGING**  
-
-contrast with free-form
-talk about point dragging 
-
-The algorithm for truncating polygons is similar to that, except that intersection tests are much cheaper.
 
 ### V-Fold
 
+Geometric constraints as described in
 angle calculation, path splitting 
 
 ##Self-intersecting Paths
 
 In order to be rendered by SceneKit in 3D, paths cannot have self intersections.  Thus, we attempt to repair self-intersecting paths when adding features to the sketch.  
+\  
+\  
+
 
 \begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{Self-intersecting path repair}
+
+ \textit{segments} $\leftarrow$ bezier path discretized into straight line segments using adaptive subdivision 
+ 
+ \textit{sanitizedSegments} $\leftarrow$ []
+ 
+ **>>TODO:CITE**
+ 
+ \For{\textit{i} $\leftarrow$ 0; \textit{i} < \textit{segments}.length; \textit{i}++}{
+
+//compare with all segments after current segment
+
+\For{\textit{j}  $\leftarrow$ \textit{i}; \textit{j} < \textit{segments}.length; \textit{j}++}{
+
+\If{\textit{segments}[\textit{i}] intersects \textit{segments}[\textit{j}]}{
+
+	remove \textit{segments}[\textit{i}..\textit{j}] from path
+
+	\textit{i} $\leftarrow$ \textit{j}  //skip segments inbetween intersecting segments, thereby repairing the "loop"
+
+}
+
+\textit{sanitizedSegments}.append(\textit{segments}[\textit{i}])
+
+}
+
+}
+ 
+ \Return{sanitizedSegments} \
+ 
+\caption{Self-intersecting path repair}
 \end{algorithm}
 
-**>>TODO: ALGO**
 
-segments <- discretize bezier path into line segments, using adaptive subdivision.
-i <- 0
-for (int i = 0; i < segments.length; i++){
-//compare with segment after current segment
-for (int j = 0; j = i; j++){
-if(segments[i] intersects segments[j]{
-   remove segments[i..j]
-	i = j //skip segments in between intersection point
-}
-}
-
-
-
-A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  In cases where out algorithm fails, we display an error and do not add the feature to the sketch.
+A convoluted design with many overlapping self intersections can fail to resolve to a valid shape.  In cases where our algorithm fails, we display an error and do not add the feature to the sketch.
 

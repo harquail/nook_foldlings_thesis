@@ -20,15 +20,15 @@
 \contentsline {figure}{\numberline {1.19}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{24}{figure.caption.38}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{25}{figure.caption.39}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces An attempted sketch with overlapping features.\relax }}{34}{figure.caption.43}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{37}{figure.caption.44}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Geometric constraints for freeform features\relax }}{38}{figure.caption.46}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Geometric constraints for freeform features\relax }}{39}{figure.caption.48}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Geometric constraints for polygon features\relax }}{40}{figure.caption.50}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Geometric constraints for freeform features\relax }}{41}{figure.caption.52}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{42}{figure.caption.53}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An attempted sketch with overlapping features.\relax }}{35}{figure.caption.43}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{38}{figure.caption.44}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Geometric constraints for freeform features\relax }}{39}{figure.caption.46}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Geometric constraints for freeform features\relax }}{40}{figure.caption.48}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Geometric constraints for polygon features\relax }}{41}{figure.caption.50}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Geometric constraints for freeform features\relax }}{42}{figure.caption.52}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{43}{figure.caption.53}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{44}{figure.caption.54}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{47}{figure.caption.55}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{45}{figure.caption.54}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{48}{figure.caption.55}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
