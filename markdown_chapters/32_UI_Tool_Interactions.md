@@ -40,6 +40,10 @@ Polygons are the only feature that can be created by tapping rather than draggin
 
 V-Folds require two touches to complete.  The first touch creates a "vertical cut" that crosses a fold, the second defines the point on that fold from which diagonal folds are constructed.
 
+##Intersecting Features
+
+Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in **>>TODO REF**
+
 ##Tutorial
 
 We eschewed detailed drawing instructions or a separate tutorial mode, in favor of short video tutorials that appear the first time each tool is used.  These tutorials can also be accessed by tapping the feature icons on the about page.
@@ -64,7 +68,7 @@ Some features can be drawn over cuts and folds of existing features.  When a new
 
 In the three-dimensional preview, users can tap the "send to laser cutter" option.  This feature sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, and can be opened in a vector graphics editor to make further changes.
 
-The sketches are bound by physical constraints, as described in Chapter X Section Y on page RAWR. **>>TODO: REF**.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable. 
+The sketches are bound by physical constraints, as described in Chapter X Section Y on page RAWR. **>>TODO: REF**.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
 
 ##Print
 
@@ -79,6 +83,3 @@ In addition to sharing an SVG file for laser cutting, users can press "print".  
 Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section \ref{visual-aids-user-study}, on page  \pageref{visual-aids-user-study}, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (cool colors for planes that will be vertical when the card is halfway folded and warm colors for horizontal planes.  In the SVG file (accessed via "send to laser cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data suggesting that displaying fold orientation is very helpful to users when folding pop-up cards.
 
 ![Plane shading is one of many visual aids in Foldlings.](figures/32_UI_Tool_Interactions/currentInterface.png)
-
-
-

@@ -115,6 +115,14 @@ V-Folds require two touches to complete. The first touch creates a
 ``vertical cut'' that crosses a fold, the second defines the point on
 that fold from which diagonal folds are constructed.
 
+\subsection{Intersecting Features}\label{intersecting-features}
+
+Some features can be drawn over cuts and folds of existing features.
+When a new feature intersects a previously-drawn feature, it occludes
+existing cuts and folds --- creating the new feature on top of existing
+features. The implementation of these intersections is incomplete, and
+is described in \textbf{\textgreater{}\textgreater{}TODO REF}
+
 \subsection{Tutorial}\label{tutorial}
 
 We eschewed detailed drawing instructions or a separate tutorial mode,
@@ -150,7 +158,7 @@ The goal of these warnings is to give users descriptive feedback when
 errors occur, and to give them an intuitive sense of which actions
 create invalid features.
 
-\subsection{Intersecting Features}\label{intersecting-features}
+\subsection{Intersecting Features}\label{intersecting-features-1}
 
 Some features can be drawn over cuts and folds of existing features.
 When a new feature intersects a previously-drawn feature, it occludes
