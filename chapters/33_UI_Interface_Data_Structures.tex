@@ -200,11 +200,11 @@ laser-cut model of the same.}
 Freeform shapes are defined by a single, closed path. When the feature
 is completed (by releasing the touch), the shape is truncated,
 horizontal folds are added, and the path is split into multiple edges
-(assuming the shape spanned a fold)\footnote{\textbf{\textgreater{}\textgreater{}TODO:SEE
-  SECTION}}. The curved path is defined by a set of ``interpolation
+(assuming the shape spanned a fold\footnote{\textbf{\textgreater{}\textgreater{}TODO:SEE
+  SECTION}}). The curved path is defined by a set of ``interpolation
 points'' ---~points captured by sampling touch positions while a user
-draws a shape on the screen. A bezier path is interpolated between these
-points using the Catmull-Rom algorithm (\citet{catmull1974class}).
+draws a shape on the screen. A path is interpolated between these points
+using the Catmull-Rom algorithm (\citet{catmull1974class}).
 
 Holes are a special case of FreeForm shapes, and are cut out from the
 final design, rather than simulated as a separate plane. FreeForm shapes

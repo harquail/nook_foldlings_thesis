@@ -62,7 +62,7 @@ A box fold consists entirely of straight edges, and can be constructed from two 
 
 ###Free Form
 
-Freeform shapes are defined by a single, closed path.  When the feature is completed (by releasing the touch), the shape is truncated, horizontal folds are added, and the path is split into multiple edges (assuming the shape spanned a fold)^[**>>TODO:SEE SECTION**].  The curved path is defined by a set of "interpolation points" — points captured by sampling touch positions while a user draws a shape on the screen.  A bezier path is interpolated between these points using the Catmull-Rom algorithm (@catmull1974class).
+Freeform shapes are defined by a single, closed path.  When the feature is completed (by releasing the touch), the shape is truncated, horizontal folds are added, and the path is split into multiple edges (assuming the shape spanned a fold^[**>>TODO:SEE SECTION**]).  The curved path is defined by a set of "interpolation points" — points captured by sampling touch positions while a user draws a shape on the screen.  A path is interpolated between these points using the Catmull-Rom algorithm (@catmull1974class).
 
 Holes are a special case of FreeForm shapes, and are cut out from the final design, rather than simulated as a separate plane.   FreeForm shapes that do not cross a fold are considered holes — drawn in white in the 2d sketch and drawn as subtractions from planes in the 3d view.
 
