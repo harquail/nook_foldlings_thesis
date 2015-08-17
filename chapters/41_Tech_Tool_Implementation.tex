@@ -2,11 +2,11 @@
 
 Below is the definition of the FoldFeature superclass --- all features
 created using Foldlings can override these methods to provide specific
-functionality. The structure hold properties common to all features,
+functionality. This structure holds properties common to all features,
 such as a list of edges and parent-child relationships between features.
 It also contains several functions that allow the other classes to
-modify the feature or sketch. For further discussion of the FoldFeature
-data structure, see \textbf{\textgreater{}\textgreater{}TODO cite}.
+modify the feature and sketch. For further discussion of the FoldFeature
+data structure, see \textbf{\textgreater{}\textgreater{}TODO REF}.
 
 \small
 \singlespacing 
@@ -59,9 +59,9 @@ func containsPoint(point:CGPoint) -> Bool{
 
 Of these functions, the most complex are \emph{featureSpansFold} and
 \emph{splitFoldByOcclusion}. \emph{FeatureSpansFold} is the test to find
-the driving for a feature ---~i.e.~the fold that the feature is drawn on
-top of. The implementation varies by feature, but the general algorithm
-is as follow:
+the driving for a feature ---~i.e.~the fold over which a feature is
+drawn. The implementation of this function varies by feature, but the
+general algorithm is as follow:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -99,7 +99,7 @@ We can analytically determine intersection points for box folds, which
 makes testing for fold spanning and other operations very fast. We
 dynamically update edges for feature (including the middle fold), as the
 user drags out the box. Box folds are the only feature for which we can
-display a live preview of the middle fold, due to the simple
+display a live preview of the middle fold, as a result of the simple
 intersection tests.
 
 \subsubsection{FreeForm}\label{freeform}
@@ -114,9 +114,11 @@ throughout, and correct for the gesture recognizer sending relatively
 more frequent updates when the touch is moving more slowly.
 
 However, the catmull-Rom algorithm only draws a full path when the start
-and end points of the curve are coincident. We use an alpha value of
-1.0, which we found to be the closest to the intended touch shape
-through informal user studies.
+and end points of the curve are coincident, so we manually construct
+straight line segments to and from the touch start and end points for
+unclosed freeform shapes. We use an alpha value of 1.0, which we found
+to be the closest to the intended touch shape through informal user
+studies.
 
 \paragraph{Truncation}\label{truncation}
 
@@ -133,11 +135,11 @@ locations for top and bottom folds that will yield folds longer than the
 minimum edge length. Then, we split the existing path at those
 intersection points, and remove paths that lie outside the top and
 bottom folds of the new shape. Thus, we ``truncate'' the shape, adding
-horizontal folds and trimming edges that . Finally, we place the middle
-fold as described by the geometric constraints in chapter,
-page\textbf{\textgreater{}\textgreater{}TODO: REF}. If the user desires
-different truncation positions, they can drag folds after the feature is
-added to the sketch.
+horizontal folds and trimming edges that lie outside the new shape.
+Finally, we place the middle fold as described by the geometric
+constraints in chapter, page\textbf{\textgreater{}\textgreater{}TODO:
+REF}. If the user desires different truncation positions, they can drag
+folds after the feature is added to the sketch.
 
 \begin{algorithm}[H]
 
@@ -184,7 +186,7 @@ calculate middle fold position
 \caption{Truncation}
 \end{algorithm}
 
-This algorithm depends on the ability to get intersections between
+This algorithm depends on the ability to calculate intersections between
 bezier paths. We use a bitmap approximation of the intersection point
 between bezier paths, because calculating intersections between
 arbitrary curves is computationally more expensive. We use the
@@ -220,9 +222,9 @@ intersection point and any interpolated point is less than five pixels).
 
 Polygons are very similar to freeform shapes. The main difference
 between polygon and freeform shapes is that the intersection tests for
-polygons are much cheaper. For intersections between polygons, we can
-use a simple system of equations, rather than the bitmap intersection
-technique described above.
+polygons are much cheaper. To calculate intersections between polygons
+and folds, we can use a simple system of equations, rather than the
+bitmap intersection technique described above.
 
 The interpolation points are vertices of the polygon, and can be
 modified by the user at any time. As the user drags points, we delete
@@ -234,10 +236,10 @@ V-Folds are constrained by the angle restriction described in Chapter X
 on page Y \textbf{\textgreater{}\textgreater{}TODO}. To satisfy this
 constraint, we first construct a line along one of the diagonal folds.
 We then rotate the line about the point on the v-fold's driving fold,
-and perform the intersection tests described in the Freeform section
-(page X) \textbf{\textgreater{}\textgreater{}TODO} to find the
+and perform the intersection tests described in the freeform section
+(page X) \textbf{\textgreater{}\textgreater{}TODO REF} to find the
 intersection point for the middle fold. Lastly, we perform path
-splitting as described above and add the feature to the sketch.
+splitting (also as described above) and add the feature to the sketch.
 
 \subsection{Self-intersecting Paths}\label{self-intersecting-paths}
 
@@ -287,15 +289,15 @@ Right: the feature after the self-intersection has been resolved.}
 \end{algorithm}
 
 A convoluted design with many overlapping self intersections can fail to
-resolve to a valid shape \footnote{I.e. a shape that does not intersect
-  with itself and has more than zero enclosed area.}. In cases where our
-algorithm fails, we display an error and do not add the feature to the
-sketch.
+resolve to a valid shape \footnote{I.e. a valid shape being one that
+  does not intersect with itself and has more than zero enclosed area.}.
+In cases where our algorithm fails, we display an error and do not add
+the feature to the sketch.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/41_Tech_Tool_Implementation/succeedFailSelfIntersections.pdf}
-\caption{Left: a feature with multiple self-intersecting loops that our
-algorithm can repair. Right: a feature with multiple overlapping
+\caption{Left: a feature with multiple self-intersecting loops, which
+our algorithm can repair. Right: a feature with multiple overlapping
 intersections, which our algorithm fails to repair.}
 \end{figure}

@@ -21,14 +21,14 @@ often becomes muddy, with much information shared between the separate
 modules (\citet{veit2003model}). In our case, we separate modules not
 purely based on MVC encapsulation but based on functionality. For
 example, rather that strictly separating all touch handling into the
-view controller or all drawing into the view, these responsibilities are
-shared between the classes as needed to perform their roles. See section
-\ref{touch-handling}, below, for more information.
+view controller (or all drawing into the view), these responsibilities
+are shared between the classes as needed to perform their roles. See
+section \ref{touch-handling}, below, for more information.
 
 \subsection{Touch Handling}\label{touch-handling}
 
 In order to create features, we first need to capture touch input.
-Foldings handles two types of touches: pan gestures, and tap gestures.
+Foldings handles two types of touches: pan gestures and tap gestures.
 Apple describes gesture recognizers in the documentation for the
 \emph{UIGestureRecognizer} class:
 
@@ -41,22 +41,24 @@ specific gesture, such as a swipe, pinch, or rotation. If they recognize
 their assigned gesture, they send an action message to a target object.
 The target object is typically the view's view controller, which
 responds to the gesture\ldots{}
+\textbf{\textgreater{}\textgreater{}TODO: CITE APPL}
 \end{quote}
 
-In Foldlings, all gestures are captured by the SketchViewController,
+In Foldlings, all gestures are captured by the )SketchViewController\_ ,
 which passes un-handled gestures on to classes lower down the chain. In
-general, all taps are handled at the SketchViewController level; the
-only exception to this rule is the Polygon feature, described in section
-on page. \textbf{\textgreater{}\textgreater{}TODO PAGES}
+general, all taps are handled at the view controller level; the only
+exception to this rule is the Polygon feature, described in section on
+page. \textbf{\textgreater{}\textgreater{}TODO PAGES}
 
 \subsection{Tool Selection}\label{tool-selection}
 
-Tool state is maintained by the SketchViewController. The
-SketchViewController handles taps on tool buttons and features, and
-passes pan gestures to the SketchView. The method called on the
-SketchView depends on what feature was selected. The function below in
-SketchView captures pan gestures, and calls the appropriate function
-depending on the tool selected and the drawing state.
+Tool state is maintained by the view controller. The
+\emph{SketchViewController} class handles taps on tool buttons and
+features, and passes pan gestures to the \emph{SketchView}. The function
+called on the \emph{SketchView} in response to pan gestures depends on
+what feature is selected. The function below in \emph{SketchView}
+captures pan gestures, and calls the appropriate function depending on
+the tool selected and the drawing state.
 
 \small
 \singlespacing 
@@ -111,8 +113,8 @@ feature in progress, to give feedback on the drawing. Meanwhile, the
 SketchView also displays the previously drawn features that have been
 added to the sketch. Although the display of cuts and folds for the
 current feature is visually similar to those of the final feature, the
-method of drawing a preview version of the currently active feature
-varies from the generation of final feature edges.
+method of drawing a preview of the currently active feature varies from
+the generation of final feature edges.
 
 We store the currently active feature separately; it is not added to the
 list of features until it is completed and passes validation. Thus, its
@@ -128,22 +130,24 @@ edges.
 For box folds, we display a preview of all the edges, but do not occlude
 the middle fold until the feature is completed. For freeform features,
 we do not perform truncation until the feature is completed (and spans a
-driving fold). As a preview, the SketchView shows the user's touch path
-as a cut. For polygons, we display control circles at vertices. These
-circles indicate that the vertices are draggable, modifying edge
-endpoints dynamically. For v-folds, we display a dynamic preview of the
-vertical cut and top and bottom diagonal folds. The middle diagonal
-angle is not calculated until the feature is added to the sketch.
+driving fold) \footnote{A description of truncation can be found in
+  \textbf{\textgreater{}\textgreater{}TODO: REF}}. As a preview, the
+SketchView shows the user's touch path as a cut. For polygons, we
+display control circles at vertices. These circles indicate that the
+vertices are draggable, modifying edge endpoints dynamically. For
+v-folds, we display a dynamic preview of the vertical cut and top and
+bottom diagonal folds. The middle diagonal angle is not calculated until
+the feature is added to the sketch.
 
 \subsection{Feature Creation}\label{feature-creation}
 
-Once the user completes a feature, we add it to the sketch\footnote{Assuming
+When the user completes a feature, we add it to the sketch\footnote{Assuming
   the feature is valid. See section on page
-  \textbf{\textgreater{}\textgreater{}TODO: cite validity}}. Adding a
+  \textbf{\textgreater{}\textgreater{}TODO: REF validity}}. Adding a
 feature to the sketch requires modifying existing features in the
 sketch, constructing parent-child relationships, and recalculating
 planes from edges. How these tasks are achieved depends on the specific
-FoldFeature class.
+fold feature type.
 
 The specific implementations of the FoldFeature superclass are described
 in Chapter \ref{tool-implementation} on page
@@ -154,7 +158,7 @@ methods are typically called by feature-specific methods that modify the
 sketch, such as \emph{splitFoldByOcclusion}.
 
 In addition to adding a feature to the sketch, we also calculate the
-planes, as described in \textbf{\textgreater{}\textgreater{}MARISSA}.
+planes as described in \textbf{\textgreater{}\textgreater{}MARISSA}.
 This allows us to shade planes based on orientation. After calculating
 planes from edges, relationships between planes are stored in the plane
 tree within the sketch. Within \emph{getPlanes}, plane orientations are

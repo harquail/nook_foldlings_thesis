@@ -1,0 +1,3 @@
+#Appendix E: Separation of Work
+
+I collaborated on this project with Marissa Allen.  Although we worked collaboratively on the software, each of us present an individual thesis paper.  Our responsibilities on the software were as follows: Nook concentrated on tools and interactions, including performing user studies and processing user input, while Marissa concentrated on 3D interactions and data structures, including the algorithms for shading and traversing planes.

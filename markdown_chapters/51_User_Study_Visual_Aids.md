@@ -2,13 +2,13 @@
 
 ![A Participant folding a card in our study on 2D to 3D visual aids for popup cards.](figures/51_User_Study_Visual_Aids/kikofoldling.jpg)
 
-The goal of this study was to determine whether users understand the mapping of 2d fold patterns to 3d, and test the degree to which plane shading, edge patterning, and a 3d preview help users understand how a popup card will fold.
+The goal of this study was to determine whether users understand the mapping of 2d fold patterns to 3D, and test the degree to which plane shading, edge patterning, and a 3D preview help users understand how a popup card will fold.
 
->>TODO: cite other research on visual aids for folding slash other 2d to 3d vis
+**>>TODO: cite other research on visual aids for folding slash other 2d to 3D vis**
 
 ##Method
 
-We performed this study with 22 participants, who spent an average of 18 minutes with us.  Each subject received a set of five laser cut cards, and we recorded the time for them to successfully fold the card.  Although there was some variety in age and background, but the largest demographic was undergraduate Dartmouth students.  10 of the participants were male, 12 female.  
+We performed this study with 22 participants, who spent an average of 18 minutes with us.  Each subject received a set of five laser cut cards, and we recorded the time for them to successfully fold the card.  Although there was some variety in age and background, but the largest demographic was undergraduate Dartmouth students.  10 of the participants were male, 12 were female.  
 
  For each card, each subject was randomly given one of of the following five aids:
 
@@ -67,7 +67,7 @@ The time to fold varied significantly depending on the visual aid used to fold t
   \end{axis}
 \end{tikzpicture}
 
-Some trials were not completed successfully: either users incorrectly folded the design.  In some cases, they folded the design incorrectly — in others, they refused to fold the card, feeling lost without a visual aid.  Unsurprisingly, users were far more likely to fail to fold the card when they did not have a visual aid.  The times for these failures were not recorded in the Number of Figures graph above.
+Some trials were not completed successfully.  In some cases, users folded the design incorrectly — in others, they refused to fold the card, feeling lost without a visual aid.  Unsurprisingly, users were far more likely to fail to fold the card when they did not have a visual aid.  The times for these failures were not recorded in the Number of Figures graph above.
 
 \begin{tikzpicture}
   \begin{axis}[
@@ -87,11 +87,11 @@ Some trials were not completed successfully: either users incorrectly folded the
   \end{axis}
 \end{tikzpicture}
 
-We asked subjects to rank the cards from most to least helpful.  In this graph, the data is averaged and inverted (5 being the most helpful), to show the relatively helpfulness of each aid.  Participants rated the lined aid as the most helpful — with small differences among the other aids, and the lack of visual aid rating very poorly.
+We asked subjects to rank the visual aids from most to least helpful.  In this graph, the data is averaged and inverted (5 being the most helpful), to show the relatively helpfulness of each aid.  Participants rated the lined aid as the most helpful — with small differences among the other aids.  The lack of visual aid rated very poorly.
 
- While this study gives persuasive evidence for the relative helpfulness of lines showing fold orientation, it is possible that other aids are more helpful in completing other 2D to 3D visualization tasks.  For example, it would be interesting to compare the results if we asked users to simply label horizontal and vertical planes instead of folding a card.  It may be that the lined visual aid was most valuable to this task because it was closest to the action participants performed: fold orientation is very closely related to the task of folding a card.  
+ While this study gives persuasive evidence for the relative helpfulness of lines showing fold orientation, it is possible that other aids are more helpful in completing other 2D to 3D visualization tasks.  For example, it would be interesting to compare the results if we asked users to simply label horizontal and vertical planes instead of folding a card.  Perhaps the lined visual aid was most valuable to this task because it was closest to the action participants performed: fold orientation is very closely related to the task of folding a card.  
  
-  Another limitation of this study is that we fully test the effectiveness of our interactive 3D preview in helping users visualize the folded card.  We chose to limit the 3D video aid to a non-interactive aid, to make it more directly comparable to the other visual aids^[If we allowed users to interact with the aid, they would have been physically split between interacting with the card and interacting with the 3D preview.  Also, differences in familiarity with iPad  use might have been a confounding factor if we had used a tablet to display the 3D preview].  However, a key benefit of the 3D preview in our software is that users can directly manipulate and rotate the simulated card, which was not fully tested in this study. 
+  Another limitation of this study is that we do not fully test the effectiveness of our interactive 3D preview in helping users visualize the folded card.  We chose to limit the 3D video aid to a non-interactive aid, to make it more directly comparable to the other visual aids^[If we allowed users to interact with the aid, they would have been physically split between interacting with the card and interacting with the 3D preview.  Also, differences in familiarity with iPad  use might have been a confounding factor if we had used a tablet to display the 3D preview.].  However, a key benefit of the 3D preview in our software is that users can directly manipulate and rotate the simulated card, which was not possible in this study. 
  
  In Foldlings, we implement many of these visual aids.  In the 2D sketch, we shade planes based on orientation, and display a 3D preview that users can manipulate in the 3D preview.  As a result of our findings in this study, we also implemented line patterning based on fold orientation for the SVG export. 
 

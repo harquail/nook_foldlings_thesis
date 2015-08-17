@@ -1,16 +1,22 @@
 \chapter{Design}
 #Design Philosophy
 
-Our design philosophy is simple: follow the user.  Following a methodology roughly .  Development driven rather than design driven.
+Our design philosophy is simple: follow the user.  Following a methodology roughly following agile methodologies, we .  Development driven rather than design driven.
 
-
+mention affordances of iPad — cite Gibson/teapot guy.  We chose to design for the iPad to 
 
 In practice, this has taken the form.  
 
+
+Throughout, 
+
+
+
+We strive to design an interface that is modular, friendly, and delightful.  Modularity stems from the decoupling of.  
+
+Friendliness is seen in the careful structuring of our experience to make the design process .  Delight comes from small details that .  For example, we 
+
 Construction paper
-
-
-
 
 
 modularity
