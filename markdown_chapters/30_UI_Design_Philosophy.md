@@ -9,7 +9,7 @@ Following a methodology roughly following agile methodologies, we designed and d
 
 **>>TODO: FIX CAPTION**
 
-mention affordances of iPad — cite Gibson/teapot guy.  We chose to design for the iPad as a way of forcing the interface.  With a simple, gesture-based interface, we were forced to 
+mention affordances of iPad — cite Gibson/teapot guy.  We chose to design for the iPad as a way of forcing the interface.  With a simple, gesture-based interface, we were forced to  **>>TODO: FINISH SENTENCE**
 
 Throughout the design process, we explored the conflict between creativity and rigid geometric constraints.  That is, interfaces that give the user more room for creative generally tend to make it more difficult to create designs that will fold correctly in 3D.  We aimed for an interface that provides a great deal of flexibility and creativity, while guaranteeing that all popup card designs created with it are valid.  Two primary systems maintain this balance. 
 

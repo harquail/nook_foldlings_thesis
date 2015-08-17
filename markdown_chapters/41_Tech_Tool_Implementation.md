@@ -64,13 +64,13 @@ _SplitFoldByOcclusion_ takes as a fold as its input, typically the driving fold 
 
 We can analytically determine intersection points for box folds, which makes testing for fold spanning and other operations very fast.  We dynamically update edges for feature (including the middle fold), as the user drags out the box.  Box folds are the only feature for which we can display a live preview of the middle fold, as a result of the simple intersection tests.   
 
-### FreeForm
+## FreeForm
 
 A freeform shape consists of a series of interpolation points — through which we construct a curve using the Catmull-Rom algorithm.  **>>TODO:CITE** We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident, so we manually construct straight line segments to and from the touch start and end points for unclosed freeform shapes.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
 
-####Truncation
+###Truncation
 
 ![Left: A freeform feature before truncation.  Right: A freeform feature after truncation](figures/41_Tech_Tool_Implementation/truncationBeforeAfter.pdf)
 
@@ -125,17 +125,17 @@ This algorithm depends on the ability to calculate intersections between bezier 
 
 After finding the intersection points, we split the existing path at the intersection points.  The freeform shape's path is composed of many cubic bezier curves.   In order to split the path, we must first find the closest cubic bezier curve to the intersection point, and then find a value, $t$, that gives interpolated position at the intersection point.  First, we iterate through all bezier segments in the path, comparing representative points to find the closest curved segment to the intersection point.  Within that segment, we recursively subdivide the curve to find a $t$ value very close to the intersection point (@phillips1997casteljau).  For example, we start with $t$ value of 0.0 (at the beginning of the curve), 0.5 (at the middle of the curve), and 1.0 (at the end of the curve).  We evaluate the curve to find the point at each $t$ value.  Next, we measure the distance between the interpolated points and our intersection point.  Of these three points, we then take the two closest points to the intersection point, and repeat the process to find the new search area.  For example, $t$ at 0.5, 0.75, and 1.0, and then $t$ at 0.5, 0.625, and 0.75 would approach an intersection point found at $t$ = 0.6.  After performing this process several times, we reach a point very close to the interpolated point (arbitrarily, we stop when the distance between the intersection point and any interpolated point is less than five pixels). 
 
-### Polygon
+## Polygon
 
 Polygons are very similar to freeform shapes.  The main difference between polygon and freeform shapes is that the intersection tests for polygons are much cheaper.  To calculate intersections between polygons and folds, we can use a simple system of equations, rather than the bitmap intersection technique described above.
 
 The interpolation points are vertices of the polygon, and can be modified by the user at any time.  As the user drags points, we delete and recreate edges dynamically to match the new vertex positions.
 
-### V-Fold
+## V-Fold
 
 V-Folds are constrained by the angle restriction described in Chapter X on page Y **>>TODO**.  To satisfy this constraint, we first construct a line along one of the diagonal folds.  We then rotate the line about the point on the v-fold's driving fold, and perform the intersection tests described in the freeform section (page X) **>>TODO REF** to find the intersection point for the middle fold.  Lastly, we perform path splitting (also as described above) and add the feature to the sketch.
 
-##Self-intersecting Paths
+#Self-intersecting Paths
 
 In order to be rendered by SceneKit in 3D, paths cannot have self intersections.  Thus, we attempt to repair self-intersecting paths when adding features to the sketch.  Self intersections occur in two ways: the user creates a self-intersecting path, or paths self-intersect as a result of imprecision in performing intersections or capturing touch interpolation points. 
 \  

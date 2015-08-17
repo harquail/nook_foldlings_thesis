@@ -4,9 +4,10 @@ Through the iterations described in the previous chapter, we arrived at
 Foldlings' tool-based system for card design. Each tool creates a
 specific type of feature --- a group of cuts and folds that define
 planes that will fold together in 3D\footnote{Described in more detail
-  in section \ref{interface-data-structures}, Interface Data Structures,
-  on page \pageref{interface-data-structures}.}. The core interaction is
-as follows:
+  in section \ref{interface-data-structures},
+  \nameref{interface-data-structures}, on page
+  \pageref{interface-data-structures}.}. The core interaction is as
+follows:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -65,20 +66,20 @@ are always defined with a single touch: Box Fold and Free Form. The
 multi-step tools: Polygon and V-Fold ---~require more than one touch to
 define.
 
-\subsubsection{Box Fold}\label{box-fold}
+\subsubsection{Box Fold Interactions}\label{box-fold-interactions}
 
 A box fold is created by dragging to define the bounds of the box. Box
 folds are only valid if they span a driving fold.
 
-\subsubsection{FreeForm}\label{freeform}
+\subsubsection{Free Form Interactions}\label{free-form-interactions}
 
 Free-form shapes are created by dragging a single closed shape.
-Free-form shapes that cross a fold are truncated\footnote{See X for a
-  description of the truncation process
-  \textbf{\textgreater{}\textgreater{}TODO: REF}.}, and a center fold is
-automatically added at the correct height. If a free-form shape does not
-cross a fold\footnote{More formally, if a feature does not span a fold,
-  as determined by the function described in section on page
+Free-form shapes that cross a fold are truncated\footnote{See Chapter
+  \textbf{\textgreater{}\textgreater{}TODO} for a description of the
+  truncation process.}, and a center fold is automatically added at the
+correct height. If a free-form shape does not cross a fold\footnote{More
+  formally, if a feature does not span a fold, as determined by the
+  \emph{featureSpansFold} function described in section on page
   \textbf{\textgreater{}\textgreater{}TODO: REF}} it is considered a
 hole, and no folds are added. Initially, we considered having a separate
 tool for creating holes. However, through informal user tests we
@@ -86,7 +87,7 @@ discovered that users intuitively understood that free-form shape that
 do not cross a fold will become holes --- and therefore we were able to
 combine the two functions into a single tool.
 
-\subsubsection{Polygon}\label{polygon}
+\subsubsection{Polygon Interactions}\label{polygon-interactions}
 
 Polygons are constructed one vertex at a time. Points are added by
 tapping or dragging on the sketch, adding edges between successive
@@ -109,7 +110,7 @@ either start polygon within the master card or use a drag to add the
 first point, if they wish to construct a polygon inside another fold
 feature.
 
-\subsubsection{V-Fold}\label{v-fold}
+\subsubsection{V-Fold Interactions}\label{v-fold-interactions}
 
 V-Folds require two touches to complete. The first touch creates a
 ``vertical cut'' that crosses a fold, the second defines the point on

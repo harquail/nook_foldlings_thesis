@@ -1,6 +1,6 @@
 #Tool Interactions
 
-Through the iterations described in the previous chapter, we arrived at Foldlings' tool-based system for card design.  Each tool creates a specific type of feature — a group of cuts and folds that define planes that will fold together in 3D^[Described in more detail in section \ref{interface-data-structures}, Interface Data Structures, on page \pageref{interface-data-structures}.].  The core interaction is as follows:
+Through the iterations described in the previous chapter, we arrived at Foldlings' tool-based system for card design.  Each tool creates a specific type of feature — a group of cuts and folds that define planes that will fold together in 3D^[Described in more detail in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.].  The core interaction is as follows:
 
 1. User selects a tool
 2. User drags on the screen to define a feature
@@ -20,15 +20,15 @@ Some interactions are common to all features.  To add a feature, you select the 
 We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
 
 
-### Box Fold
+###Box Fold Interactions
 
 A box fold is created by dragging to define the bounds of the box.  Box folds are only valid if they span a driving fold.
 
-### FreeForm
+###Free Form Interactions
 
-Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated^[See X for a description of the truncation process **>>TODO: REF**.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the function described in section on page **>>TODO: REF**] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
+Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated^[See Chapter **>>TODO** for a description of the truncation process.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the _featureSpansFold_ function described in section on page **>>TODO: REF**] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
 
-### Polygon
+###Polygon Interactions
 
 Polygons are constructed one vertex at a time.  Points are added by tapping or dragging on the sketch, adding edges between successive points with each tap.  Once a vertex is (nearly) coincident with the initial point, the feature is complete.  Users can also drag existing points in the polygon to modify the shape.
 
@@ -36,7 +36,7 @@ Initially, tapping was they only way to add points to a polygon — we added dra
 
 Polygons are the only feature that can be created by tapping rather than dragging.  This creates a conflict with tap options, which are also accessed using a tap.  If the user is in the polygon tool and taps inside an existing feature, it is ambiguous whether they want to start a new polygon or select a tap option. To resolve this conflict, if the first tap of a polygon is inside another feature (other than the master card), we display the tap options rather than creating a polygon.  Users can either start polygon within the master card or use a drag to add the first point, if they wish to construct a polygon inside another fold feature.
 
-### V-Fold
+### V-Fold Interactions
 
 V-Folds require two touches to complete.  The first touch creates a "vertical cut" that crosses a fold, the second defines the point on that fold from which diagonal folds are constructed.
 

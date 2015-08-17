@@ -102,7 +102,7 @@ user drags out the box. Box folds are the only feature for which we can
 display a live preview of the middle fold, as a result of the simple
 intersection tests.
 
-\subsubsection{FreeForm}\label{freeform}
+\subsection{FreeForm}\label{freeform}
 
 A freeform shape consists of a series of interpolation points
 ---~through which we construct a curve using the Catmull-Rom algorithm.
@@ -120,7 +120,7 @@ unclosed freeform shapes. We use an alpha value of 1.0, which we found
 to be the closest to the intended touch shape through informal user
 studies.
 
-\paragraph{Truncation}\label{truncation}
+\subsubsection{Truncation}\label{truncation}
 
 \begin{figure}[htbp]
 \centering
@@ -218,7 +218,7 @@ this process several times, we reach a point very close to the
 interpolated point (arbitrarily, we stop when the distance between the
 intersection point and any interpolated point is less than five pixels).
 
-\subsubsection{Polygon}\label{polygon}
+\subsection{Polygon}\label{polygon}
 
 Polygons are very similar to freeform shapes. The main difference
 between polygon and freeform shapes is that the intersection tests for
@@ -230,7 +230,7 @@ The interpolation points are vertices of the polygon, and can be
 modified by the user at any time. As the user drags points, we delete
 and recreate edges dynamically to match the new vertex positions.
 
-\subsubsection{V-Fold}\label{v-fold}
+\subsection{V-Fold}\label{v-fold}
 
 V-Folds are constrained by the angle restriction described in Chapter X
 on page Y \textbf{\textgreater{}\textgreater{}TODO}. To satisfy this
@@ -241,7 +241,7 @@ and perform the intersection tests described in the freeform section
 intersection point for the middle fold. Lastly, we perform path
 splitting (also as described above) and add the feature to the sketch.
 
-\subsection{Self-intersecting Paths}\label{self-intersecting-paths}
+\section{Self-intersecting Paths}\label{self-intersecting-paths}
 
 In order to be rendered by SceneKit in 3D, paths cannot have self
 intersections. Thus, we attempt to repair self-intersecting paths when
