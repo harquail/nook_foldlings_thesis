@@ -3,7 +3,7 @@ We will refer to several data structures throughout the discussion of user inter
 
 ##Edges
 
- ![In Foldlings, cuts are displayed as solid black lines.  Folds are dotted red lines.](figures/33_UI_Interface_Data_Structures/foldvsedge.pdf)  
+ ![In Foldlings, cuts are displayed as solid black lines.  Folds are displayed as dotted red lines.  This convention is familiar to those who use traditional instructional books (@berenson1972kirigami,3).](figures/33_UI_Interface_Data_Structures/foldvsedge.pdf)  
 
 An Edge represents a cut or fold.  Edges are the basic building block of planes, and an integral element of all fold features.  An edge is minimally defined by a start point, end point, and a a type (either cut or fold).  This minimal definition represents a straight edge between two points.  In addition, an Edge can contain further information: the bezier path drawn to create it (for non-straight edges), and a reference to the plane or feature it is a part of.  Additionally, each edge contains a reference to its "twin" edge.
 
@@ -25,14 +25,6 @@ A driving fold is not a special type of edge, but rather a relationship between 
  ![Kirigami fold pattern (@maekawas-theorem).](figures/33_UI_Interface_Data_Structures/maekawas-theorem.png)
   
 Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface.  In Foldlings, edge orientations are determined by iterating through the plane tree structure described in **>>TODO: CITE MARISSA HERE**.
-
-###Hierarchy
- 
-There are two primary 
-cite marissa but still have brief discussion here
- **>> TODO FIGURE FOR PLANE & FEATURE HIERARCHY?**
- 
-
   
 ##Planes
 
@@ -93,6 +85,10 @@ V-Folds are defined by a path that crosses the driving fold, called a "vertical 
 ![Left: an unfinished v-fold, consisting only of a vertical cut.  Right: a v-fold after defining the point on the driving fold to create diagonal cuts.](figures/33_UI_Interface_Data_Structures/vfold_before_after.png)
 
 V-folds are only valid if they have a driving fold, and their vertical cut intersects the driving fold exactly once.
+
+###Hierarchy
+
+Fold features have two types of hierarchy.  The first is feature hierarchy: each feature can have other features as children.  When a feature is drawn spanning a fold, its driving fold is set as the fold it spans, and its parent is the feature that contains this driving fold.  Feature hierarchy allows us to consider each feature individually or as a chain of features.  For actions that only affect a single feature, we need only consider the edges in the feature and it's driving fold.  We can also traverse the tree to perform actions on a chain of features.  The second type of hierarchy is parent-child relationships between planes.  Each plane has one or more children, forming a branching tree that starts at the top plane of the master card and ends with the master card's bottom plane as one of its leaf nodes.  This hierarchy is described in **>>TODO**, and is most important for rendering the scene in 3D.
 
 ##Sketches
 

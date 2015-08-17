@@ -15,7 +15,7 @@ all:
 	open Main\ Thesis\ Style.pdf
 
 badpdf:
-		pdflatex -draftmode -interaction=batchmode --shell-escape Main\ Thesis\ Style.tex
+		pdflatex -draftmode --shell-escape Main\ Thesis\ Style.tex
 
 pdf:
 		pdflatex -interaction=batchmode --shell-escape Main\ Thesis\ Style.tex

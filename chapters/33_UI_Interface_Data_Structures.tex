@@ -18,7 +18,9 @@ algorithms to draw designs in 2D and simulate them 3D\footnote{This
 \centering
 \includegraphics{figures/33_UI_Interface_Data_Structures/foldvsedge.pdf}
 \caption{In Foldlings, cuts are displayed as solid black lines. Folds
-are dotted red lines.}
+are displayed as dotted red lines. This convention is familiar to those
+who use traditional instructional books
+(\citet{berenson1972kirigami},3).}
 \end{figure}
 
 An Edge represents a cut or fold. Edges are the basic building block of
@@ -76,12 +78,6 @@ driving fold\footnote{The exception to this rule is holes ---~a hole's
   parent is the feature that contains it.}. These parent-child
 relationships are described in more detail in the
 \nameref{nested-features} section on page \pageref{nested-features}.
-
-\subsubsection{Hierarchy}\label{hierarchy}
-
-properteies eg. containment cite marissa but still have brief discussion
-here \textbf{\textgreater{}\textgreater{} TODO FIGURE FOR PLANE \&
-FEATURE HIERARCHY?}
 
 \subsubsection{Fold Orientation}\label{fold-orientation}
 
@@ -207,7 +203,7 @@ horizontal folds are added, and the path is split into multiple edges
   SECTION}}. The curved path is defined by a set of ``interpolation
 points'' ---~points captured by sampling touch positions while a user
 draws a shape on the screen. A bezier path is interpolated between these
-points using the Catmull-Romm algorithm \textbf{TODO: CITE}.
+points using the Catmull-Rom algorithm \textbf{TODO: CITE}.
 
 Holes are a special case of FreeForm shapes, and are cut out from the
 final design, rather than simulated as a separate plane. FreeForm shapes
@@ -267,6 +263,23 @@ diagonal cuts.}
 
 V-folds are only valid if they have a driving fold, and their vertical
 cut intersects the driving fold exactly once.
+
+\subsubsection{Hierarchy}\label{hierarchy}
+
+Fold features have two types of hierarchy. The first is feature
+hierarchy: each feature can have other features as children. When a
+feature is drawn spanning a fold, its driving fold is set as the fold it
+spans, and its parent is the feature that contains this driving fold.
+Feature hierarchy allows us to consider each feature individually or as
+a chain of features. For actions that only affect a single feature, we
+need only consider the edges in the feature and it's driving fold. We
+can also traverse the tree to perform actions on a chain of features.
+The second type of hierarchy is parent-child relationships between
+planes. Each plane has one or more children, forming a branching tree
+that starts at the top plane of the master card and ends with the master
+card's bottom plane as one of its leaf nodes. This hierarchy is
+described in \textbf{\textgreater{}\textgreater{}TODO}, and is most
+important for rendering the scene in 3D.
 
 \subsection{Sketches}\label{sketches}
 

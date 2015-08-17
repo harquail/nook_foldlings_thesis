@@ -2,7 +2,7 @@
 
 ![Initial mockups showing cards for saved sketches on the main screen.](figures/90_Appendix_UI_Mockups/001.png)
 
-In December 2014, we had a functional prototype of our popup card design software.  Users could create cuts and folds and.  However, in many ways our software was no better than manually creating popup cards.  In order to create a valid and beautiful design, users needed some prior knowledge.  Although we provided.  Performance problems also hampered users' ability to create designs.  Our goal was to improve both of these aspects of Foldlings dramatically, to arrive at an intuitive and functional tool.
+In December 2014, we had a functional prototype of our popup card design software.  Users could create cuts and folds and.  However, in many ways our software was no better than manually creating popup cards.  In order to create a valid and beautiful design, users needed some prior knowledge.  Although we provided.  Performance problems also hampered users' ability to create designs.  Our goal was to improve both of these aspects of Foldlings dramatically, to arrive at an intuitive and functional tool.  Paper mockups were an integral part of our design process. We used these paper mockups to drive interface development, and also to quickly get feedback from users before investing development resources.  ^[See Appendix X: for **>>TODO REF**].
 
 In arriving at our final design, we iterated through several potential designs, each time getting feedback through informal user studies.  We made many changes to the toolset and experience based on feedback from users.  The final approach is "feature-based": in other words, the user creates multiple cuts and folds in a single action, rather than individually.  These discrete logical units allow the user to design more quickly, and to combine multiple different feature types to create complex designs.   A key advantage to this design over a less structured approach is modularity.  This is both an algorithmic and an interface advantage: our algorithms benefit from collecting cuts and folds into discrete logical units, and the user benefits from a faster and more structured design process.
 
@@ -34,7 +34,7 @@ Throughout the development process, we collected feedback through informal user 
 From this test, we learned that the track and slider tools were confusing, and that novice users were generally not interested in creating features that require multiple pieces of paper.  
  
  
-As users created sketches using our software, we also took notes on their experience and collected their suggestions for improvements.  Although only a small fraction of the features requested are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the responses is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
+As users created sketches using our software, we also took notes on their experience and collected suggestions for improvements.  Although only a small fraction of the features requested are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the responses is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
 
 -------------------------------------------------------------
 Observations

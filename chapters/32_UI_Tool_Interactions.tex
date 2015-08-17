@@ -116,14 +116,7 @@ Some features can be drawn over cuts and folds of existing features.
 When a new feature intersects a previously-drawn feature, it occludes
 existing cuts and folds --- creating the new feature on top of existing
 features. The implementation of these intersections is incomplete, and
-is described in
-
-wrong /// ``Nested Features'' ---~section \ref{nested-features} on page
-\pageref{nested-features}.
-
-\subsection{Nested Features}\label{nested-features}
-
-\subsection{Deletion}\label{deletion}
+is described in \textbf{\textgreater{}\textgreater{}TODO REF}
 
 \subsection{Tutorial}\label{tutorial}
 
@@ -199,8 +192,8 @@ we adjusted our interface to include more cues to help users visualize
 the design. The primary visual aid is the 3D preview, which displays an
 interactive preview of the folded card. Users can interact with this
 card through an intuitive ``pinch'' gesture. In addition, we shade
-planes based on orientation (warm colors for planes that will be
-vertical when the plane is halfway folded and cool colors for horizontal
+planes based on orientation (cool colors for planes that will be
+vertical when the plane is halfway folded and warm colors for horizontal
 planes. In the SVG file (accessed via ``send to laser cutter''), we
 adjust line dash patterns for folds based on orientation: dotted lines
 are mountains, creased away from the main fold --- dot-dash lines are
@@ -208,5 +201,8 @@ valleys, creased in the same direction as the main fold. From the visual
 aids user study, we ~have data that suggest showing fold orientation is
 very helpful to users folding cards.
 
-\textbf{\textgreater{}\textgreater{}TODO\textgreater{}\textgreater{} ADD
-FIGURE SHOWING plane shading VISUAL AID}
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/32_UI_Tool_Interactions/currentInterface.png}
+\caption{Plane shading is one of many visual aids in Foldlings.}
+\end{figure}
