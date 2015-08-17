@@ -3,7 +3,7 @@ We will refer to several data structures throughout the discussion of user inter
 
 ##Edges
 
- ![In Foldlings, cuts are displayed as solid black lines.  Folds are dotted red lines.](figures/33_UI_Interface_Data_Structures/foldvsedge.pdf)  
+ ![In Foldlings, cuts are displayed as solid black lines.  Folds are displayed as dotted red lines.  This convention is familiar to those who use traditional instructional books (@berenson1972kirigami,3).](figures/33_UI_Interface_Data_Structures/foldvsedge.pdf)  
 
 An Edge represents a cut or fold.  Edges are the basic building block of planes, and an integral element of all fold features.  An edge is minimally defined by a start point, end point, and a a type (either cut or fold).  This minimal definition represents a straight edge between two points.  In addition, an Edge can contain further information: the bezier path drawn to create it (for non-straight edges), and a reference to the plane or feature it is a part of.  Additionally, each edge contains a reference to its "twin" edge.
 

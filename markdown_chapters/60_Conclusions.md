@@ -1,10 +1,12 @@
 \chapter{Conclusions}
 
-Foldlings future
+Foldlings.  Plan to release Foldlings in the Apple app store.  In many ways, the  
 
 #User Interface Future Work
 
 ##Multiple Cards
+
+@hart2007modular
 
 ##Horizontal
 

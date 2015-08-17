@@ -25,4 +25,13 @@
 
 ![](figures/90_Appendix_UI_Mockups/011.png)
 
+![](figures/90_Appendix_UI_Mockups/scan01.pdf)
+
+![](figures/90_Appendix_UI_Mockups/scan02.pdf)
+
+![](figures/90_Appendix_UI_Mockups/scan03.pdf)
+
+![](figures/90_Appendix_UI_Mockups/scan04.pdf)
+
+
 \clearpage

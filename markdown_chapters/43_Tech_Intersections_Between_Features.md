@@ -45,4 +45,4 @@ recalculate planes for \textit{sketch}
 \caption{Feature Intersections}
 \end{algorithm}
 
-![](figures/43_Tech_Intersections_Between_Features/featureIntBeforeAfter.pdf)
+![New polygon feature intersecting with an existing freeform shape.](figures/43_Tech_Intersections_Between_Features/featureIntBeforeAfter.pdf)

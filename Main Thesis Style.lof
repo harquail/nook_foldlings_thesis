@@ -6,7 +6,7 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{11}{figure.caption.15}
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{12}{figure.caption.16}
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Plane shading is one of many visual aids in Foldlings.\relax }}{13}{figure.caption.17}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces In Foldlings, cuts are displayed as solid black lines. Folds are dotted red lines.\relax }}{14}{figure.caption.18}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces In Foldlings, cuts are displayed as solid black lines. Folds are displayed as dotted red lines. This convention is familiar to those who use traditional instructional books (\citet {berenson1972kirigami},3).\relax }}{14}{figure.caption.18}
 \contentsline {figure}{\numberline {1.9}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{15}{figure.caption.20}
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{16}{figure.caption.22}
 \contentsline {figure}{\numberline {1.11}{\ignorespaces Kirigami fold pattern (\citet {maekawas-theorem}).\relax }}{17}{figure.caption.24}
@@ -21,19 +21,20 @@
 \contentsline {figure}{\numberline {1.20}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{24}{figure.caption.39}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{25}{figure.caption.40}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \relax }}{32}{figure.caption.42}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \relax }}{34}{figure.caption.45}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces \relax }}{35}{figure.caption.46}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces An attempted sketch with overlapping features.\relax }}{36}{figure.caption.47}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces \relax }}{38}{figure.caption.48}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{40}{figure.caption.49}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Geometric constraints for freeform features\relax }}{41}{figure.caption.51}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Geometric constraints for freeform features\relax }}{42}{figure.caption.53}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Geometric constraints for polygon features\relax }}{43}{figure.caption.55}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Geometric constraints for freeform features\relax }}{44}{figure.caption.57}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{45}{figure.caption.58}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Left: a freeform shape before performing \emph {SplitFoldByOcclusion}. Right: a freeform feature after performing \emph {SplitFoldByOcclusion}.\relax }}{31}{figure.caption.41}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: A freeform feature before truncation. Right: A freeform feature after truncation\relax }}{33}{figure.caption.44}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Left: a feature with a self-intersection before processing. Right: the feature after the self-intersection has been resolved.\relax }}{36}{figure.caption.47}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Left: a feature with multiple self-intersecting loops that our algorithm can repair. Right: a feature with multiple overlapping intersections, which our algorithm fails to repair.\relax }}{37}{figure.caption.48}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces An attempted sketch with overlapping features.\relax }}{38}{figure.caption.49}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces New polygon feature intersecting with an existing freeform shape.\relax }}{40}{figure.caption.50}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{42}{figure.caption.51}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Geometric constraints for freeform features\relax }}{43}{figure.caption.53}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Geometric constraints for freeform features\relax }}{44}{figure.caption.55}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Geometric constraints for polygon features\relax }}{45}{figure.caption.57}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Geometric constraints for freeform features\relax }}{46}{figure.caption.59}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{47}{figure.caption.60}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{47}{figure.caption.59}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{50}{figure.caption.60}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Foldlings at the Digital Arts Exhibition. \textbf {\textgreater {}\textgreater {}TODO: photo credit Julietta Gervase}\relax }}{49}{figure.caption.61}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{52}{figure.caption.62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
