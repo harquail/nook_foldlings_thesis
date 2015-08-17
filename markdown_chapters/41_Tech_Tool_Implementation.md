@@ -1,6 +1,6 @@
 #Tool Implementation
 
-Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  This structure holds properties common to all features, such as a list of edges and parent-child relationships between features.  It also contains several functions that allow the other classes to modify the feature and sketch.  For further discussion of the FoldFeature data structure, see **>>TODO REF**.  
+Below is the definition of the FoldFeature superclass — all features created using Foldlings can override these methods to provide specific functionality.  This structure holds properties common to all features, such as a list of edges and parent-child relationships between features.  It also contains several functions that allow the other classes to modify the feature and sketch.  For further discussion of the FoldFeature data structure, see Chapter 2 section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  
 
 \small
 \singlespacing 
@@ -66,7 +66,7 @@ We can analytically determine intersection points for box folds, which makes tes
 
 ## FreeForm
 
-A freeform shape consists of a series of interpolation points — through which we construct a curve using the Catmull-Rom algorithm.  **>>TODO:CITE** We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
+A freeform shape consists of a series of interpolation points — through which we construct a curve using the Catmull-Rom algorithm (@catmull1974class).  We capture interpolation points as a function of touch velocity.  That is, when the user draws more quickly, we capture more interpolation points closer together.  This allows us to capture the entire drawing with a similar level of detail throughout, and correct for the gesture recognizer sending relatively more frequent updates when the touch is moving more slowly.
 
 However, the catmull-Rom algorithm only draws a full path when the start and end points of the curve are coincident, so we manually construct straight line segments to and from the touch start and end points for unclosed freeform shapes.  We use an alpha value of 1.0, which we found to be the closest to the intended touch shape through informal user studies. 
 
@@ -74,7 +74,7 @@ However, the catmull-Rom algorithm only draws a full path when the start and end
 
 ![Left: A freeform feature before truncation.  Right: A freeform feature after truncation](figures/41_Tech_Tool_Implementation/truncationBeforeAfter.pdf)
 
-Truncation is the process of converting a closed free-form shape into a valid feature with a driving fold.  To truncate a shape, we first find locations for top and bottom folds that will yield folds longer than the minimum edge length.   Then, we split the existing path at those intersection points, and remove paths that lie outside the top and bottom folds of the new shape.  Thus, we "truncate" the shape, adding horizontal folds and trimming edges that lie outside the new shape.  Finally, we place the middle fold as described by the geometric constraints in chapter, page**>>TODO: REF**.  If the user desires different truncation positions, they can drag folds after the feature is added to the sketch.
+Truncation is the process of converting a closed free-form shape into a valid feature with a driving fold.  To truncate a shape, we first find locations for top and bottom folds that will yield folds longer than the minimum edge length.   Then, we split the existing path at those intersection points, and remove paths that lie outside the top and bottom folds of the new shape.  Thus, we "truncate" the shape, adding horizontal folds and trimming edges that lie outside the new shape.  Finally, we place the middle fold as described by the geometric constraints in Chapter 3, section \ref{constraints-on-fold-features}, \nameref{geometric-constraints}, on page \pageref{geometric-constraints}.  If the user desires different truncation positions, they can drag folds after the feature is added to the sketch.
 
 \begin{algorithm}[H]
 
@@ -133,7 +133,7 @@ The interpolation points are vertices of the polygon, and can be modified by the
 
 ## V-Fold
 
-V-Folds are constrained by the angle restriction described in Chapter X on page Y **>>TODO: REF**.  To satisfy this constraint, we first construct a line along one of the diagonal folds.  We then rotate the line about the point on the v-fold's driving fold, and perform the intersection tests described in the freeform section (page X) **>>TODO REF** to find the intersection point for the middle fold.  Lastly, we perform path splitting (also as described above) and add the feature to the sketch.
+V-Folds are constrained by the angle restriction described in Chapter 3, section \ref{constraints-on-fold-features}, \nameref{geometric-constraints}, on page \pageref{geometric-constraints}.  To satisfy this constraint, we first construct a line along one of the diagonal folds.  We then rotate the line about the point on the v-fold's driving fold, and perform the intersection tests described in  section \ref{truncation}, \nameref{truncation}, on page \pageref{truncation} to find the intersection point for the middle fold.  Lastly, we perform path splitting (also as described above) and add the feature to the sketch.
 
 #Self-intersecting Paths
 

@@ -26,7 +26,7 @@ A box fold is created by dragging to define the bounds of the box.  Box folds ar
 
 ###Free Form Interactions
 
-Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated^[See Chapter **>>TODO** for a description of the truncation process.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the _featureSpansFold_ function described in section on page **>>TODO: REF**] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
+Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated^[See Chapter 3 section \ref{tool-implementation} on page \pageref{truncation} for a description of the truncation process.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the _featureSpansFold_ function described in Chapter 3 section \ref{tool-implementation} on page \pageref{tool-implementation}.] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
 
 ###Polygon Interactions
 
@@ -40,10 +40,6 @@ Polygons are the only feature that can be created by tapping rather than draggin
 
 V-Folds require two touches to complete.  The first touch creates a "vertical cut" that crosses a fold, the second defines the point on that fold from which diagonal folds are constructed.
 
-##Intersecting Features
-
-Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in **>>TODO REF**
-
 ##Tutorial
 
 We eschewed detailed drawing instructions or a separate tutorial mode, in favor of short video tutorials that appear the first time each tool is used.  These tutorials can also be accessed by tapping the feature icons on the about page.
@@ -54,7 +50,7 @@ We also show helpful tips between screens — for example, when moving to 3D pre
 
 ##Warnings and Errors
 
-We display warnings and errors as bright-red banners above the sketch work area. These warnings are displayed in response to failing the validity checks performed when adding a feature to the sketch^[The system for validating fold features is described section on page **>>TODO: REF**].
+We display warnings and errors as bright-red banners above the sketch work area. These warnings are displayed in response to failing the validity checks performed when adding a feature to the sketch^[The system for validating fold features is described section Chapter 3 section \ref{validity}, \nameref{validity} on page \pageref{validity}].
 
 ![An error message shown when rejecting a polygon with intersecting edges.](figures/32_UI_Tool_Interactions/error_message.png)
 
@@ -62,13 +58,13 @@ The goal of these warnings is to give users descriptive feedback when errors occ
 
 ##Intersecting Features
 
-Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in **>> TODO: REF**
+Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in Chapter 3, section \ref{intersections-between-features} on page \pageref{intersections-between-features}.
 
 ##Send to Laser Cutter
 
 In the three-dimensional preview, users can tap the "send to laser cutter" option.  This feature sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, and can be opened in a vector graphics editor to make further changes.
 
-The sketches are bound by physical constraints, as described in Chapter X Section Y on page RAWR. **>>TODO: REF**.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
+The sketches are bound by physical constraints, as described in  Chapter 3 section \ref{constraints-on-fold-features} \ref{physical-constraints}, \nameref{physical-constraints} on page \pageref{physical-constraints}.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
 
 ##Print
 

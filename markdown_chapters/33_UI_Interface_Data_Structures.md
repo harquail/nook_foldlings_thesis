@@ -1,5 +1,5 @@
 #Interface Data Structures
-We will refer to several data structures throughout the discussion of user interface design and implementation.  These are the primary means of storing user input, and are processed by our algorithms to draw designs in 2D and simulate them 3D^[This section only describes the primary data structures necessary for constructing fold and patterns from user input, detecting planes, and determining the relationships between, not the systems for drawing features in 2D or 3D.  For a discussion of 2D drawing, see Chapter \ref{interface-implementation}, \nameref{interface-implementation}, on page \pageref{interface-implementation}.  For a discussion of the algorithms that act on these features, see @mallen.
+We will refer to several data structures throughout the discussion of user interface design and implementation.  These are the primary means of storing user input, and are processed by our algorithms to draw designs in 2D and simulate them 3D^[This section only describes the primary data structures necessary for constructing fold and patterns from user input, detecting planes, and determining the relationships between, not the systems for drawing features in 2D or 3D.  For a discussion of 2D drawing, see Chapter 3, section \ref{interface-implementation}, \nameref{interface-implementation}, on page \pageref{interface-implementation}.  For a discussion of the algorithms that act on these features, see @mallen.
 
 ##Edges
 
@@ -18,7 +18,7 @@ An edge represents a cut or fold.  Edges are the basic building block of planes,
 
 A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds both above and below the fold it spans — as shown in figure 1.12.
 
- An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the Chapter \ref{inteface-data-structures}, section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
+ An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
  
 ###Fold Orientation
 
@@ -56,7 +56,7 @@ Each sketch always contains a single master feature, which is the ancestor of al
 
 ###Box Fold
 
-A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right point.  The middle fold position is determined by the position of the driving fold, as described in Chapter \ref{algorithms-and-implementation}, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.  Box folds are only valid if they span a driving fold.
+A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right point.  The middle fold position is determined by the position of the driving fold, as described in Chapter 3, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.  Box folds are only valid if they span a driving fold.
 
 ![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/box.pdf)
 
@@ -80,7 +80,7 @@ Like freeform shapes, polygons that do not have a driving fold are considered ho
 
 ![Left: fold & cut pattern of a v-fold feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/v.pdf)
 
-V-folds are partially defined by a path that crosses the driving fold, called a "vertical cut."  This path can be an arbitrary shape that crosses the driving fold once.   They are fully-defined by adding a point on the driving fold.  From this point, we construct three diagonal folds, two to the top and bottom of the vertical cut, and one to a point that intersects with the vertical cut at a point calculated to make a valid 90-degree feature ^[See Chapter \ref{algorithms-and-implementation}, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.].
+V-folds are partially defined by a path that crosses the driving fold, called a "vertical cut."  This path can be an arbitrary shape that crosses the driving fold once.   They are fully-defined by adding a point on the driving fold.  From this point, we construct three diagonal folds, two to the top and bottom of the vertical cut, and one to a point that intersects with the vertical cut at a point calculated to make a valid 90-degree feature ^[See Chapter 3, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.].
 
 ![Left: an unfinished v-fold, consisting only of a vertical cut.  Right: a v-fold after defining the point on the driving fold to create diagonal cuts.](figures/33_UI_Interface_Data_Structures/vfold_before_after.png)
 

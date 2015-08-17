@@ -74,18 +74,19 @@ folds are only valid if they span a driving fold.
 \subsubsection{Free Form Interactions}\label{free-form-interactions}
 
 Free-form shapes are created by dragging a single closed shape.
-Free-form shapes that cross a fold are truncated\footnote{See Chapter
-  \textbf{\textgreater{}\textgreater{}TODO} for a description of the
-  truncation process.}, and a center fold is automatically added at the
-correct height. If a free-form shape does not cross a fold\footnote{More
-  formally, if a feature does not span a fold, as determined by the
-  \emph{featureSpansFold} function described in section on page
-  \textbf{\textgreater{}\textgreater{}TODO: REF}} it is considered a
-hole, and no folds are added. Initially, we considered having a separate
-tool for creating holes. However, through informal user tests we
-discovered that users intuitively understood that free-form shape that
-do not cross a fold will become holes --- and therefore we were able to
-combine the two functions into a single tool.
+Free-form shapes that cross a fold are truncated\footnote{See Chapter 3
+  section \ref{tool-implementation} on page \pageref{truncation} for a
+  description of the truncation process.}, and a center fold is
+automatically added at the correct height. If a free-form shape does not
+cross a fold\footnote{More formally, if a feature does not span a fold,
+  as determined by the \emph{featureSpansFold} function described in
+  Chapter 3 section \ref{tool-implementation} on page
+  \pageref{tool-implementation}.} it is considered a hole, and no folds
+are added. Initially, we considered having a separate tool for creating
+holes. However, through informal user tests we discovered that users
+intuitively understood that free-form shape that do not cross a fold
+will become holes --- and therefore we were able to combine the two
+functions into a single tool.
 
 \subsubsection{Polygon Interactions}\label{polygon-interactions}
 
@@ -116,14 +117,6 @@ V-Folds require two touches to complete. The first touch creates a
 ``vertical cut'' that crosses a fold, the second defines the point on
 that fold from which diagonal folds are constructed.
 
-\subsection{Intersecting Features}\label{intersecting-features}
-
-Some features can be drawn over cuts and folds of existing features.
-When a new feature intersects a previously-drawn feature, it occludes
-existing cuts and folds --- creating the new feature on top of existing
-features. The implementation of these intersections is incomplete, and
-is described in \textbf{\textgreater{}\textgreater{}TODO REF}
-
 \subsection{Tutorial}\label{tutorial}
 
 We eschewed detailed drawing instructions or a separate tutorial mode,
@@ -145,8 +138,8 @@ to 3D preview and restoring from a saved sketch.
 We display warnings and errors as bright-red banners above the sketch
 work area. These warnings are displayed in response to failing the
 validity checks performed when adding a feature to the sketch\footnote{The
-  system for validating fold features is described section on page
-  \textbf{\textgreater{}\textgreater{}TODO: REF}}.
+  system for validating fold features is described section Chapter 3
+  section \ref{validity}, \nameref{validity} on page \pageref{validity}}.
 
 \begin{figure}[htbp]
 \centering
@@ -159,13 +152,14 @@ The goal of these warnings is to give users descriptive feedback when
 errors occur, and to give them an intuitive sense of which actions
 create invalid features.
 
-\subsection{Intersecting Features}\label{intersecting-features-1}
+\subsection{Intersecting Features}\label{intersecting-features}
 
 Some features can be drawn over cuts and folds of existing features.
 When a new feature intersects a previously-drawn feature, it occludes
 existing cuts and folds --- creating the new feature on top of existing
 features. The implementation of these intersections is incomplete, and
-is described in \textbf{\textgreater{}\textgreater{} TODO: REF}
+is described in Chapter 3, section \ref{intersections-between-features}
+on page \pageref{intersections-between-features}.
 
 \subsection{Send to Laser Cutter}\label{send-to-laser-cutter}
 
@@ -176,11 +170,12 @@ machine, and can be opened in a vector graphics editor to make further
 changes.
 
 The sketches are bound by physical constraints, as described in Chapter
-X Section Y on page RAWR. \textbf{\textgreater{}\textgreater{}TODO:
-REF}. One constraint is the precision of the cutter, which limits how
-closely cuts and folds can be drawn to each other. We take these
-physical constraints into account during the sketching process, so the
-user's design is foldable.
+3 section \ref{constraints-on-fold-features} \ref{physical-constraints},
+\nameref{physical-constraints} on page \pageref{physical-constraints}.
+One constraint is the precision of the cutter, which limits how closely
+cuts and folds can be drawn to each other. We take these physical
+constraints into account during the sketching process, so the user's
+design is foldable.
 
 \subsection{Print}\label{print}
 

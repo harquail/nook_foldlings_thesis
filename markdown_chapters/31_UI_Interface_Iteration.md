@@ -61,7 +61,7 @@ fairly self-sufficient after tools were explained, made a house, moved slowly, w
 -------------------------------------------------------------
 Table:  Observations of behavior from first user test.
 
-A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 1.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time **>>TODO:REF**.  These tutorials allow users to quickly get started quickly with minimal interruptions.
+A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 1.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time. See Chapter 2, section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on page \pageref{tutorial} for more discussion.  These tutorials allow users to quickly get started quickly with minimal interruptions.
 
 -------------------------------------------------------------
 Feature Requests
