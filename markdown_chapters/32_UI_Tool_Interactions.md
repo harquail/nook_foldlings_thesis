@@ -15,7 +15,7 @@ Tap options are actions that can be performed on a feature.  These options allow
 
 ## Feature Interactions
 
-Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketches.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Having consistent tool interactions helps reduce the burden of learning new tools, and allows for a scaffolded user experience. **>>TODO cite scaffolding/play lit**
+Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketches.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Having consistent tool interactions helps reduce the burden of learning new tools, and allows for a scaffolded user experience (@wood2001scaffolding). 
 
 We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
 
@@ -78,7 +78,7 @@ In addition to sharing an SVG file for laser cutting, users can press "print".  
 
 ##Visual Aids
 
-**>>TODO>> ADD FIGURE SHOWING dot vs dot-dash line**
+![Line patterns in SVG export](figures/32_UI_Tool_Interactions/dot-dash.pdf)
 
 Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section \ref{visual-aids-user-study}, on page  \pageref{visual-aids-user-study}, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (cool colors for planes that will be vertical when the card is halfway folded and warm colors for horizontal planes.  In the SVG file (accessed via "send to laser cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data suggesting that displaying fold orientation is very helpful to users when folding pop-up cards.
 
