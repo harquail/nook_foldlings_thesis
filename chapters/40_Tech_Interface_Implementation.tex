@@ -40,8 +40,7 @@ recognizers interpret touches to determine whether they correspond to a
 specific gesture, such as a swipe, pinch, or rotation. If they recognize
 their assigned gesture, they send an action message to a target object.
 The target object is typically the view's view controller, which
-responds to the gesture\ldots{}
-\textbf{\textgreater{}\textgreater{}TODO: CITE APPL}
+responds to the gesture\ldots{} (\citet{appledocs}).
 \end{quote}
 
 In Foldlings, all gestures are captured by the )SketchViewController\_ ,
@@ -158,9 +157,8 @@ methods are typically called by feature-specific methods that modify the
 sketch, such as \emph{splitFoldByOcclusion}.
 
 In addition to adding a feature to the sketch, we also calculate the
-planes as described in \textbf{\textgreater{}\textgreater{}MARISSA}.
-This allows us to shade planes based on orientation. After calculating
-planes from edges, relationships between planes are stored in the plane
-tree within the sketch. Within \emph{getPlanes}, plane orientations are
-set by traversing the plane tree, alternating between vertical and
-horizontal.
+planes as described by \citet{mallen}. This allows us to shade planes
+based on orientation. After calculating planes from edges, relationships
+between planes are stored in the plane tree within the sketch. Within
+\emph{getPlanes}, plane orientations are set by traversing the plane
+tree, alternating between vertical and horizontal.

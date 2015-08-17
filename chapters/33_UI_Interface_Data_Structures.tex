@@ -3,14 +3,14 @@
 We will refer to several data structures throughout the discussion of
 user interface design and implementation. These are the primary means of
 storing user input, and are processed by our algorithms to draw designs
-in 2D and simulate them 3D\footnote{This section only describes the
-  primary data structures necessary for constructing fold and patterns
-  from user input, detecting planes, and determining the relationships
-  between, not the systems for drawing features in 2D or 3D. For a
-  discussion of 2D drawing, see sections. For a discussion of the
-  algorithms that auto on these features, see .
-  \textbf{\textgreater{}\textgreater{}TODO:cite marissa
-  \textgreater{}\textgreater{}TODO REF REF}}.
+in 2D and simulate them 3D\^{}{[}This section only describes the primary
+data structures necessary for constructing fold and patterns from user
+input, detecting planes, and determining the relationships between, not
+the systems for drawing features in 2D or 3D. For a discussion of 2D
+drawing, see Chapter \ref{interface-implementation}, Interface
+Implemetation, on page \pageref{interface-implementation}. For a
+discussion of the algorithms that act on these features, see
+\citet{mallen}.
 
 \subsection{Edges}\label{edges}
 
@@ -40,12 +40,11 @@ complicated. For each edge that the user creates using a tool, two edges
 are created. We create edges with direction, such that there is an edge
 from the start point to the end point of the edge, and another edge
 starts at the endpoint and has the reverse path of the original edge.
-This distinction is most important when detecting planes from
-edges\footnote{\textbf{\textgreater{}\textgreater{}TODO cite marissa's
-  planes}}, but must also be taken into account whenever edges are
-processed. For example, when drawing the 2D view of a sketch, we skip
-drawing the twins of edges already drawn, which reduces drawing work by
-half.
+This distinction is most important when detecting planes from edges, but
+must also be taken into account whenever edges are processed
+(\citet{mallen}). For example, when drawing the 2D view of a sketch, we
+skip drawing the twins of edges already drawn, which reduces drawing
+work by half.
 
 \begin{figure}[htbp]
 \centering
@@ -77,8 +76,8 @@ driving fold is important for calculating parent-child relationships
 between features: a feature's parent is the feature that contains it's
 driving fold\footnote{The exception to this rule is holes ---~a hole's
   parent is the feature that contains it.}. These parent-child
-relationships are described in more detail in the
-\nameref{nested-features} section on page \pageref{nested-features}.
+relationships are described in more detail in the Chapter \ref{} section
+\nameref{nested-features} on page \pageref{nested-features}.
 \textbf{\textgreater{}\textgreater{}TODO: FIX BROKEN REF}
 
 \subsubsection{Fold Orientation}\label{fold-orientation}
@@ -95,19 +94,17 @@ directions ---~mountain folds are pinched away from the paper surface,
 while valley folds are pinched into the surface.
 \textbf{\textgreater{}\textgreater{}TODO: CITE A BOOK} In Foldlings,
 edge orientations are determined by iterating through the plane tree
-structure described in \textbf{\textgreater{}\textgreater{}TODO: CITE
-MARISSA HERE}.
+structure described by \citet{mallen}.
 
 \subsection{Planes}\label{planes}
 
 Planes are an enclosed shape, bounded by edges. Plane are detected from
 edges by traversing the directed edge graph, as described in
-\textbf{\textgreater{}\textgreater{}TODO: CITE MARISSA HERE}. They are
-drawn as colored areas in the two-dimensional sketch, and simulated in
-the 3D preview as extruded shapes that rotate about a pivot point. In
-order to simulate the planes in 3D, we construct parent-child
-relationships between the planes, which determine how they move during
-simulation.
+\citet{mallen}. They are drawn as colored areas in the two-dimensional
+sketch, and simulated in the 3D preview as extruded shapes that rotate
+about a pivot point. In order to simulate the planes in 3D, we construct
+parent-child relationships between the planes, which determine how they
+move during simulation.
 
 \begin{figure}[htbp]
 \centering
@@ -207,7 +204,7 @@ horizontal folds are added, and the path is split into multiple edges
   SECTION}}. The curved path is defined by a set of ``interpolation
 points'' ---~points captured by sampling touch positions while a user
 draws a shape on the screen. A bezier path is interpolated between these
-points using the Catmull-Rom algorithm \textbf{TODO: CITE}.
+points using the Catmull-Rom algorithm (\citet{catmull1974class}).
 
 Holes are a special case of FreeForm shapes, and are cut out from the
 final design, rather than simulated as a separate plane. FreeForm shapes
@@ -255,7 +252,7 @@ crosses the driving fold once. They are fully-defined by adding a point
 on the driving fold. From this point, we construct three diagonal folds,
 two to the top and bottom of the vertical cut, and one to a point that
 intersects with the vertical cut at a point calculated to make a valid
-90-degree feature \footnote{See Geometric Contestants
+90-degree feature \footnote{See Geometric Contraints
   \textbf{\textgreater{}\textgreater{}TODO: REF}}.
 
 \begin{figure}[htbp]
