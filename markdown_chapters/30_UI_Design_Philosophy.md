@@ -5,7 +5,9 @@ Our design philosophy is simple: follow the user.  As often as possible, we pres
 
 Following a methodology roughly following agile methodologies, we designed and developed the application collaboratively (@martin2003agile).  Our process was driven by user experience design, rather than graphic design.  That is, we spent relatively little time polishing aesthetic interface details, and instead focussed on the core interactions of the application.
 
-![To collaborate, we used .  ](figures/30_UI_Design_Philosophy/gitflow.png) **>>TODO: FIX**
+![To collaborate, we used .  ](figures/30_UI_Design_Philosophy/gitflow.png) 
+
+**>>TODO: FIX CAPTION**
 
 mention affordances of iPad — cite Gibson/teapot guy.  We chose to design for the iPad as a way of forcing the interface.  With a simple, gesture-based interface, we were forced to 
 

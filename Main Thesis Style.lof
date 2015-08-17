@@ -1,0 +1,43 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces To collaborate, we used .\relax }}{4}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Initial mockups showing cards for saved sketches on the main screen.\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: drawing interface as of December 2014. Right: drawing interface as of August 2015.\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Options presented when tapping a box fold feature.\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Free-form shape tutorial video.\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{17}{figure.caption.17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Line patterns in SVG export\relax }}{17}{figure.caption.18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Plane shading is one of many visual aids in Foldlings.\relax }}{18}{figure.caption.19}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces In Foldlings, cuts are displayed as solid black lines. Folds are displayed as dotted red lines. This convention is familiar to those who use traditional instructional books (\citet {berenson1972kirigami},3).\relax }}{19}{figure.caption.20}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{20}{figure.caption.22}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{21}{figure.caption.24}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Kirigami fold pattern (\citet {maekawas-theorem}).\relax }}{22}{figure.caption.26}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane.\relax }}{23}{figure.caption.27}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Planes in a more complex sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane. Letters indicate branches within the plane tree (I.e. 3a is the child of 2a.\relax }}{23}{figure.caption.28}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Left: fold \& cut pattern of the master feature. Right: laser-cut model of the same.\relax }}{25}{figure.caption.30}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Left: fold \& cut pattern of the master feature. Right: laser-cut model of the same.\relax }}{25}{figure.caption.32}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Left: fold \& cut pattern of a freeform feature. Right: laser-cut model of the same.\relax }}{26}{figure.caption.34}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Left: fold \& cut pattern of a polygon feature. Right: laser-cut model of the same.\relax }}{27}{figure.caption.36}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Left: fold \& cut pattern of a v-fold feature. Right: laser-cut model of the same.\relax }}{27}{figure.caption.38}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.\relax }}{28}{figure.caption.39}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{30}{figure.caption.41}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{31}{figure.caption.42}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Left: a freeform shape before performing \emph {SplitFoldByOcclusion}. Right: a freeform feature after performing \emph {SplitFoldByOcclusion}.\relax }}{37}{figure.caption.43}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Left: A freeform feature before truncation. Right: A freeform feature after truncation\relax }}{39}{figure.caption.46}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Left: a feature with a self-intersection before processing. Right: the feature after the self-intersection has been resolved.\relax }}{42}{figure.caption.49}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Left: a feature with multiple self-intersecting loops, which our algorithm can repair. Right: a feature with multiple overlapping intersections, which our algorithm fails to repair.\relax }}{43}{figure.caption.50}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces An attempted sketch with overlapping features.\relax }}{44}{figure.caption.51}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces New polygon feature intersecting with an existing freeform shape.\relax }}{46}{figure.caption.52}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{48}{figure.caption.53}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Geometric constraints for freeform features\relax }}{49}{figure.caption.55}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Geometric constraints for freeform features\relax }}{50}{figure.caption.57}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Geometric constraints for polygon features\relax }}{51}{figure.caption.59}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Geometric constraints for freeform features\relax }}{52}{figure.caption.61}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{53}{figure.caption.62}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Foldlings at the Digital Arts Exhibition (\citet {daxphoto}).\relax }}{55}{figure.caption.63}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{58}{figure.caption.64}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
