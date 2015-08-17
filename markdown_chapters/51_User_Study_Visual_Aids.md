@@ -18,6 +18,8 @@ We performed this study with 22 participants, who spent an average of 18 minutes
 4) A still image of the card folded in dimension.
 5) No visual aid.
 
+![The four visual aids.  Left to right: planes shaded by orientation, edges patterned based on orientation, video simulation, still image.](figures/51_User_Study_Visual_Aids/visualAids.pdf)
+
 The order of aids and cards was shuffled, and then balanced to ensure an equal distribution of orderings.  I.e each visual aid has an equal chance of being the first aid presented to a user and the last aid presented. 
 
 Finally, we asked subjects to rank the visual aids in order of most to least helpful.  For materials used in the study, see Appendix A.
