@@ -1,5 +1,5 @@
 #Interface Data Structures
-We will refer to several data structures throughout the discussion of user interface design and implementation.  These are the primary means of storing user input, and are processed by our algorithms to draw designs in 2D and simulate them 3D^[This section only describes the primary data structures necessary for constructing fold and patterns from user input, detecting planes, and determining the relationships between, not the systems for drawing features in 2D or 3D.  For a discussion of 2D drawing, see Chapter \ref{interface-implementation}, Interface Implemetation, on page \pageref{interface-implementation}.  For a discussion of the algorithms that act on these features, see @mallen.
+We will refer to several data structures throughout the discussion of user interface design and implementation.  These are the primary means of storing user input, and are processed by our algorithms to draw designs in 2D and simulate them 3D^[This section only describes the primary data structures necessary for constructing fold and patterns from user input, detecting planes, and determining the relationships between, not the systems for drawing features in 2D or 3D.  For a discussion of 2D drawing, see Chapter \ref{interface-implementation}, \nameref{interface-implementation}, on page \pageref{interface-implementation}.  For a discussion of the algorithms that act on these features, see @mallen.
 
 ##Edges
 
@@ -18,13 +18,13 @@ An edge represents a cut or fold.  Edges are the basic building block of planes,
 
 A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds both above and below the fold it spans — as shown in figure 1.12.
 
- An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the Chapter \ref{} section \nameref{nested-features} on page \pageref{nested-features}. **>>TODO: FIX BROKEN REF**
-
+ An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the Chapter \ref{inteface-data-structures}, section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
+ 
 ###Fold Orientation
 
  ![Kirigami fold pattern (@maekawas-theorem).](figures/33_UI_Interface_Data_Structures/maekawas-theorem.png)
 
-Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface. **>>TODO: CITE A BOOK**  In Foldlings, edge orientations are determined by iterating through the plane tree structure described by @mallen.
+Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" or "valley".  These folds form angles in opposite directions — mountain folds are pinched away from the paper surface, while valley folds are pinched into the surface (@chatani_pop-up_1986).  In Foldlings, edge orientations are determined by iterating through the plane tree structure described by @mallen.
 
 ##Planes
 
@@ -43,7 +43,7 @@ All fold features have functionality in common:
 
 * Each feature contains a list of edges in the feature — cuts and folds, including twins.
 * Each feature has a driving fold — in the case of unconnected features, such as the master card and holes, the driving fold is nil.
-* Each feature can be deleted from the dketch, "healing" the sketch by closing gaps left in any existing cuts and folds.
+* Each feature can be deleted from the sketch, "healing" the sketch by closing gaps left in any existing cuts and folds.
 * Features implement apples _NSEncoding_ protocol, allowing them to be serialized to a file on the device and restored from the saved file.
 * Each feature can provide a list of current "tap options" — actions that can be performed on the feature given its state.
 * Each feature can perform hit-testing: given a point, it can determine whether that point is inside or outside the feature.
@@ -56,13 +56,13 @@ Each sketch always contains a single master feature, which is the ancestor of al
 
 ###Box Fold
 
-A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right point.  The middle fold position is determined by the position of the driving fold, as described in section on page **>>TODO: REF**.  Box folds are only valid if they span a driving fold.
+A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right point.  The middle fold position is determined by the position of the driving fold, as described in Chapter \ref{algorithms-and-implementation}, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.  Box folds are only valid if they span a driving fold.
 
 ![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/box.pdf)
 
 ###Free Form
 
-Freeform shapes are defined by a single, closed path.  When the feature is completed (by releasing the touch), the shape is truncated, horizontal folds are added, and the path is split into multiple edges (assuming the shape spanned a fold^[**>>TODO:SEE SECTION**]).  The curved path is defined by a set of "interpolation points" — points captured by sampling touch positions while a user draws a shape on the screen.  A path is interpolated between these points using the Catmull-Rom algorithm (@catmull1974class).
+Freeform shapes are defined by a single, closed path.  When the feature is completed (by releasing the touch), the shape is truncated, horizontal folds are added, and the path is split into multiple edges (assuming the shape spanned a fold).  The curved path is defined by a set of "interpolation points" — points captured by sampling touch positions while a user draws a shape on the screen.  A path is interpolated between these points using the Catmull-Rom algorithm (@catmull1974class).
 
 Holes are a special case of FreeForm shapes, and are cut out from the final design, rather than simulated as a separate plane.   FreeForm shapes that do not cross a fold are considered holes — drawn in white in the 2d sketch and drawn as subtractions from planes in the 3d view.
 
@@ -80,7 +80,7 @@ Like freeform shapes, polygons that do not have a driving fold are considered ho
 
 ![Left: fold & cut pattern of a v-fold feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/v.pdf)
 
-V-folds are partially defined by a path that crosses the driving fold, called a "vertical cut."  This path can be an arbitrary shape that crosses the driving fold once.   They are fully-defined by adding a point on the driving fold.  From this point, we construct three diagonal folds, two to the top and bottom of the vertical cut, and one to a point that intersects with the vertical cut at a point calculated to make a valid 90-degree feature ^[See Geometric Contraints **>>TODO: REF**].
+V-folds are partially defined by a path that crosses the driving fold, called a "vertical cut."  This path can be an arbitrary shape that crosses the driving fold once.   They are fully-defined by adding a point on the driving fold.  From this point, we construct three diagonal folds, two to the top and bottom of the vertical cut, and one to a point that intersects with the vertical cut at a point calculated to make a valid 90-degree feature ^[See Chapter \ref{algorithms-and-implementation}, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.].
 
 ![Left: an unfinished v-fold, consisting only of a vertical cut.  Right: a v-fold after defining the point on the driving fold to create diagonal cuts.](figures/33_UI_Interface_Data_Structures/vfold_before_after.png)
 
@@ -88,7 +88,7 @@ V-folds are only valid if they have a driving fold, and their vertical cut inter
 
 ###Hierarchy
 
-Fold features have two types of hierarchy.  The first is feature hierarchy: each feature can have other features as children.  When a feature is drawn spanning a fold, its driving fold is set as the fold it spans, and its parent is the feature that contains this driving fold.  Feature hierarchy allows us to consider each feature individually or as a chain of features.  For actions that only affect a single feature, we need only consider the edges in the feature and it's driving fold.  We can also traverse the tree to perform actions on a chain of features.  The second type of hierarchy is parent-child relationships between planes.  Each plane has one or more children, forming a branching tree that starts at the top plane of the master card and ends with the master card's bottom plane as one of its leaf nodes.  This hierarchy is described in **>>TODO: REF**, and is most important for rendering the scene in 3D.
+Fold features have two types of hierarchy.  The first is feature hierarchy: each feature can have other features as children.  When a feature is drawn spanning a fold, its driving fold is set as the fold it spans, and its parent is the feature that contains this driving fold.  Feature hierarchy allows us to consider each feature individually or as a chain of features.  For actions that only affect a single feature, we need only consider the edges in the feature and it's driving fold.  We can also traverse the tree to perform actions on a chain of features.  The second type of hierarchy is parent-child relationships between planes.  Each plane has one or more children, forming a branching tree that starts at the top plane of the master card and ends with the master card's bottom plane as one of its leaf nodes.  This hierarchy is described in @mallen, and is most important for rendering the scene in 3D.
 
 ##Sketches
 

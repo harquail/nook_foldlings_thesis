@@ -7,10 +7,10 @@ in 2D and simulate them 3D\^{}{[}This section only describes the primary
 data structures necessary for constructing fold and patterns from user
 input, detecting planes, and determining the relationships between, not
 the systems for drawing features in 2D or 3D. For a discussion of 2D
-drawing, see Chapter \ref{interface-implementation}, Interface
-Implemetation, on page \pageref{interface-implementation}. For a
-discussion of the algorithms that act on these features, see
-\citet{mallen}.
+drawing, see Chapter \ref{interface-implementation},
+\nameref{interface-implementation}, on page
+\pageref{interface-implementation}. For a discussion of the algorithms
+that act on these features, see \citet{mallen}.
 
 \subsection{Edges}\label{edges}
 
@@ -76,9 +76,9 @@ driving fold is important for calculating parent-child relationships
 between features: a feature's parent is the feature that contains it's
 driving fold\footnote{The exception to this rule is holes ---~a hole's
   parent is the feature that contains it.}. These parent-child
-relationships are described in more detail in the Chapter \ref{} section
-\nameref{nested-features} on page \pageref{nested-features}.
-\textbf{\textgreater{}\textgreater{}TODO: FIX BROKEN REF}
+relationships are described in more detail in the Chapter
+\ref{inteface-data-structures}, section \nameref{hierarchy} on page
+\pageref{hierarchy} and in \citet{mallen}.
 
 \subsubsection{Fold Orientation}\label{fold-orientation}
 
@@ -91,10 +91,10 @@ relationships are described in more detail in the Chapter \ref{} section
 Traditionally, kirigami patterns indicate direction for folds:
 ``mountain/hill'' or ``valley''. These folds form angles in opposite
 directions ---~mountain folds are pinched away from the paper surface,
-while valley folds are pinched into the surface.
-\textbf{\textgreater{}\textgreater{}TODO: CITE A BOOK} In Foldlings,
-edge orientations are determined by iterating through the plane tree
-structure described by \citet{mallen}.
+while valley folds are pinched into the surface
+(\citet{chatani_pop-up_1986}). In Foldlings, edge orientations are
+determined by iterating through the plane tree structure described by
+\citet{mallen}.
 
 \subsection{Planes}\label{planes}
 
@@ -145,7 +145,7 @@ All fold features have functionality in common:
   Each feature has a driving fold --- in the case of unconnected
   features, such as the master card and holes, the driving fold is nil.
 \item
-  Each feature can be deleted from the dketch, ``healing'' the sketch by
+  Each feature can be deleted from the sketch, ``healing'' the sketch by
   closing gaps left in any existing cuts and folds.
 \item
   Features implement apples \emph{NSEncoding} protocol, allowing them to
@@ -184,9 +184,11 @@ laser-cut model of the same.}
 A box fold consists entirely of straight edges, and can be constructed
 from two points: the top left point, and the bottom right point. The
 middle fold position is determined by the position of the driving fold,
-as described in section on page
-\textbf{\textgreater{}\textgreater{}TODO: REF}. Box folds are only valid
-if they span a driving fold.
+as described in Chapter \ref{algorithms-and-implementation}, section
+\ref{constraints-on-fold-features} ,
+\nameref{constraints-on-fold-features} on page
+\pageref{geometric-constraints}. Box folds are only valid if they span a
+driving fold.
 
 \begin{figure}[htbp]
 \centering
@@ -200,11 +202,11 @@ laser-cut model of the same.}
 Freeform shapes are defined by a single, closed path. When the feature
 is completed (by releasing the touch), the shape is truncated,
 horizontal folds are added, and the path is split into multiple edges
-(assuming the shape spanned a fold\footnote{\textbf{\textgreater{}\textgreater{}TODO:SEE
-  SECTION}}). The curved path is defined by a set of ``interpolation
-points'' ---~points captured by sampling touch positions while a user
-draws a shape on the screen. A path is interpolated between these points
-using the Catmull-Rom algorithm (\citet{catmull1974class}).
+(assuming the shape spanned a fold). The curved path is defined by a set
+of ``interpolation points'' ---~points captured by sampling touch
+positions while a user draws a shape on the screen. A path is
+interpolated between these points using the Catmull-Rom algorithm
+(\citet{catmull1974class}).
 
 Holes are a special case of FreeForm shapes, and are cut out from the
 final design, rather than simulated as a separate plane. FreeForm shapes
@@ -252,8 +254,11 @@ crosses the driving fold once. They are fully-defined by adding a point
 on the driving fold. From this point, we construct three diagonal folds,
 two to the top and bottom of the vertical cut, and one to a point that
 intersects with the vertical cut at a point calculated to make a valid
-90-degree feature \footnote{See Geometric Contraints
-  \textbf{\textgreater{}\textgreater{}TODO: REF}}.
+90-degree feature \footnote{See Chapter
+  \ref{algorithms-and-implementation}, section
+  \ref{constraints-on-fold-features} ,
+  \nameref{constraints-on-fold-features} on page
+  \pageref{geometric-constraints}.}.
 
 \begin{figure}[htbp]
 \centering
@@ -280,8 +285,8 @@ The second type of hierarchy is parent-child relationships between
 planes. Each plane has one or more children, forming a branching tree
 that starts at the top plane of the master card and ends with the master
 card's bottom plane as one of its leaf nodes. This hierarchy is
-described in \textbf{\textgreater{}\textgreater{}TODO: REF}, and is most
-important for rendering the scene in 3D.
+described in \citet{mallen}, and is most important for rendering the
+scene in 3D.
 
 \subsection{Sketches}\label{sketches}
 

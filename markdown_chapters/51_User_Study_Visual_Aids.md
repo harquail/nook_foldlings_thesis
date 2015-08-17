@@ -4,8 +4,6 @@
 
 The goal of this study was to determine whether users understand the mapping of 2d fold patterns to 3D, and test the degree to which plane shading, edge patterning, and a 3D preview help users understand how a popup card will fold.
 
-**>>TODO: cite other research on visual aids for folding slash other 2d to 3D vis**
-
 ##Method
 
 We performed this study with 22 participants, who spent an average of 18 minutes with us.  Each subject received a set of five laser cut cards, and we recorded the time for them to successfully fold the card.  Although there was some variety in age and background, but the largest demographic was undergraduate Dartmouth students.  10 of the participants were male, 12 were female.  

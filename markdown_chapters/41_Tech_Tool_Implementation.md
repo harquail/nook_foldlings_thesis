@@ -133,7 +133,7 @@ The interpolation points are vertices of the polygon, and can be modified by the
 
 ## V-Fold
 
-V-Folds are constrained by the angle restriction described in Chapter X on page Y **>>TODO**.  To satisfy this constraint, we first construct a line along one of the diagonal folds.  We then rotate the line about the point on the v-fold's driving fold, and perform the intersection tests described in the freeform section (page X) **>>TODO REF** to find the intersection point for the middle fold.  Lastly, we perform path splitting (also as described above) and add the feature to the sketch.
+V-Folds are constrained by the angle restriction described in Chapter X on page Y **>>TODO: REF**.  To satisfy this constraint, we first construct a line along one of the diagonal folds.  We then rotate the line about the point on the v-fold's driving fold, and perform the intersection tests described in the freeform section (page X) **>>TODO REF** to find the intersection point for the middle fold.  Lastly, we perform path splitting (also as described above) and add the feature to the sketch.
 
 #Self-intersecting Paths
 

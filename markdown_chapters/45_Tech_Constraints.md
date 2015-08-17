@@ -18,7 +18,7 @@ This 90-degree angle constraint applies equally to freeform and polygon features
 
 ![Geometric constraints for freeform features](figures/45_Tech_Constraints/freeformConstraints.pdf)
 
-Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation^[Described in section \ref{box-fold}, Box Fold, on page \pageref{box-fold}.] to place the top and bottom folds of the freeform shape, we apply the 90-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold.
+Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation^[Described in section \ref{tool-implementation}, \nameref{tool-implementation}, on page \pageref{tool-implementation}.] to place the top and bottom folds of the freeform shape, we apply the 90-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold.
 
 As with all features, validity constraints are separate from geometric constraints.  Freeform shapes that intersect themselves do not have a place for the middle fold, but by performing validity checks before solving for geometric constraints, we avoid many problems and edge cases that would otherwise occur.
 
