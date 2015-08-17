@@ -27,6 +27,7 @@ Feature intersections are only partially implemented, and do not always succeed.
 A key limitation of Foldlings is that all functions currently run on a single thread.  As a consequence, the user is sometimes blocked by operations that could be performed in the background.  For example, when completing a feature, out app ignores touch input until the feature is added to the sketch and planes are calculated.  This can cause a slight but noticeable delay between  Restructuring our algorithms to perform computationally-heavy operations in the background would reduce lag between action, allowing users to design more quickly and fluidly.
 
 #Potential Applications
+
 _This section is co-authored with Marissa Allen_
 
 As a general-purpose design tool for cuts and folds, Foldlings has a wide variety of potential applications.
