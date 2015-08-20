@@ -14,6 +14,14 @@ all:
 	make pdf
 	open Main\ Thesis\ Style.pdf
 
+shared:
+	$(shell sh shell-scripts/closePreviewWindows.sh)
+	$(shell cd shell-scripts && sh markDownMaker.sh)
+	pdflatex -draftmode --shell-escape SharedSections.tex
+	bibtex SharedSections
+	pdflatex --shell-escape SharedSections.tex
+	open SharedSections.pdf
+
 badpdf:
 		pdflatex -draftmode --shell-escape Main\ Thesis\ Style.tex
 
