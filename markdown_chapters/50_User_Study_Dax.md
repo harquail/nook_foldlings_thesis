@@ -1,6 +1,6 @@
 \chapter{User Studies}
 
-While we performed frequent informal tests of our software with users, these often consisted of a single user.  The user tests described in this chapter were larger-scale tests of key pieces of our software, and were a major driving force in 
+While we performed frequent informal tests of our software with users, these often consisted of a single user.  The user tests described in this chapter were larger-scale tests of key pieces of our software, and were a major driving force in our design process.
 
 #User Test at the	 Digital Arts Exhibition 
 

@@ -10,7 +10,8 @@ the systems for drawing features in 2D or 3D. For a discussion of 2D
 drawing, see Chapter 3, section \ref{interface-implementation},
 \nameref{interface-implementation}, on page
 \pageref{interface-implementation}. For a discussion of the algorithms
-that act on these features, see \citet{mallen}.
+that act on these features to form planes and the 3D simulation, see
+\citet{mallen}.
 
 \subsection{Edges}\label{edges}
 
@@ -40,11 +41,11 @@ complicated. For each edge that the user creates using a tool, two edges
 are created. We create edges with direction, such that there is an edge
 from the start point to the end point of the edge, and another edge
 starts at the endpoint and has the reverse path of the original edge.
-This distinction is most important when detecting planes from edges, but
-must also be taken into account whenever edges are processed
-(\citet{mallen}). For example, when drawing the 2D view of a sketch, we
-skip drawing the twins of edges already drawn, which reduces drawing
-work by half.
+This distinction is necessary for the plane detection algorithm
+described in \citet{mallen}, but must also be taken into account
+whenever edges are processed. For example, when drawing the 2D view of a
+sketch, we skip drawing the twins of edges already drawn, which reduces
+drawing work by half.
 
 \begin{figure}[htbp]
 \centering

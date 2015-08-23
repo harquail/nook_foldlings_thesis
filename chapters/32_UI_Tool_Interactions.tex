@@ -27,25 +27,6 @@ follows:
   The feature is added to the sketch on releasing the drag
 \end{enumerate}
 
-\subsection{Tap Options}\label{tap-options}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/32_UI_Tool_Interactions/tap-options.png}
-\caption{Options presented when tapping a box fold feature.}
-\end{figure}
-
-Tap options are actions that can be performed on a feature. These
-options allow the user to modify or delete features in the sketch.
-Different options are presented based on the feature type and state. For
-example, currently only leaf nodes in the feature tree have the ``Drag
-Folds'' option. That is, you can only move folds within a feature that
-has no children. Since moving folds within a feature with children would
-require modifying the folds of all of their children\footnote{Dragging
-  folds in a parent feature can also cause child features to become
-  invalid, depending on their fold positions.}, implementing fold
-dragging in features with children is future work.
-
 \subsection{Feature Interactions}\label{feature-interactions}
 
 Some interactions are common to all features. To add a feature, you
@@ -60,11 +41,15 @@ tools, and allows for a scaffolded user experience
 (\citet{wood2001scaffolding}).
 
 We can infer that the user has completed a sketch when a touch completes
-the feature. Completion conditions are different depending on the on the
+the feature. Completion conditions are different depending on the
 feature, but the completion state is never ambiguous. Two feature types
 are always defined with a single touch: Box Fold and Free Form. The
 multi-step tools: Polygon and V-Fold ---~require more than one touch to
 define.
+
+The fold features are fully defined in section
+\ref{interface-data-structures}, \nameref{interface-data-structures}, on
+page \pageref{interface-data-structures}.
 
 \subsubsection{Box Fold Interactions}\label{box-fold-interactions}
 
@@ -117,6 +102,25 @@ V-Folds require two touches to complete. The first touch creates a
 ``vertical cut'' that crosses a fold, the second defines the point on
 that fold from which diagonal folds are constructed.
 
+\subsection{Tap Options}\label{tap-options}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/32_UI_Tool_Interactions/tap-options.png}
+\caption{Options presented when tapping a box fold feature.}
+\end{figure}
+
+Tap options are actions that can be performed on a feature. These
+options allow the user to modify or delete features in the sketch.
+Different options are presented based on the feature type and state. For
+example, currently only leaf nodes in the feature tree have the ``Drag
+Folds'' option. That is, you can only move folds within a feature that
+has no children. Since moving folds within a feature with children would
+require modifying the folds of all of their children\footnote{Dragging
+  folds in a parent feature can also cause child features to become
+  invalid, depending on their fold positions.}, implementing fold
+dragging in features with children is future work.
+
 \subsection{Tutorial}\label{tutorial}
 
 We eschewed detailed drawing instructions or a separate tutorial mode,
@@ -157,17 +161,16 @@ create invalid features.
 Some features can be drawn over cuts and folds of existing features.
 When a new feature intersects a previously-drawn feature, it occludes
 existing cuts and folds --- creating the new feature on top of existing
-features. The implementation of these intersections is incomplete, and
-is described in Chapter 3, section \ref{intersections-between-features}
-on page \pageref{intersections-between-features}.
+features. The implementation of these intersections is described in
+Chapter 3, section \ref{intersections-between-features} on page
+\pageref{intersections-between-features}.
 
 \subsection{Send to Laser Cutter}\label{send-to-laser-cutter}
 
-In the three-dimensional preview, users can tap the ``send to laser
-cutter'' option. This feature sends the user an email with an attached
-SVG file. This file can be fed to a laser cutter or paper cutting
-machine, and can be opened in a vector graphics editor to make further
-changes.
+Users can tap the ``send to laser cutter'' option; this sends the user
+an email with an attached SVG file. This file can be fed to a laser
+cutter or paper cutting machine, and can be opened in a vector graphics
+editor to make further changes.
 
 The sketches are bound by physical constraints, as described in Chapter
 3 section \ref{constraints-on-fold-features} \ref{physical-constraints},

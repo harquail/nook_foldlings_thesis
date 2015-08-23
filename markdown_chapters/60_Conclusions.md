@@ -10,11 +10,11 @@ Currently, our software only allows for one size and type of master card feature
 
 ##Multiple Cards
 
-Currently, our software.  In order to support combinations of interlocking sketches, we would need to create an interface that allow for connecting pop-up card elements in 3D.  Although very complex to implement, this interface could ultimately allow for a far more complex arrangement of features that our software currently affords (@hart2007modular).
+Currently, our software simulates cuts and folds performed on a single piece of paper.  In order to support combinations of interlocking sketches, we would need to create an interface that allow for connecting pop-up card elements in 3D.  Although very complex to implement, this interface could ultimately allow for a far more complex arrangement of features that our software currently affords (@hart2007modular).
 
 ##Safe Area Guides
 
-Often, users wish construct a fully-contained popup card.  That is, a card that can close fully, with no portions of internal fold features visible when the card is closed.  In order to achieve this design in a symmetrical card, all features with a driving fold must be within the middle third of the card.  We could add "safe area" guides and warnings to indicate this area to users that want add that additional constraint to their design.
+Often, users wish construct a fully-contained popup card.  That is, a card that can close fully, with no portions of internal fold features visible when the card is closed.  In order to achieve this design in a symmetrical card, all features with a driving fold must be created such that their planes will not extend beyond the bound of the master card when fully folded.  We could add "safe area" guides and warnings to indicate this area to users that want to add that additional constraint to their design.
 
 #Algorithms & Implementation Future Work
 

@@ -7,18 +7,13 @@ Through the iterations described in the previous chapter, we arrived at Foldling
 	a. (Some features require more than one touch to define)
 3. The feature is added to the sketch on releasing the drag
 
-##Tap Options
-
-![Options presented when tapping a box fold feature.](figures/32_UI_Tool_Interactions/tap-options.png)
-
-Tap options are actions that can be performed on a feature.  These options allow the user to modify or delete features in the sketch.  Different options are presented based on the feature type and state.  For example, currently only leaf nodes in the feature tree have the "Drag Folds" option.  That is, you can only move folds within a feature that has no children.  Since moving folds within a feature with children would require modifying the folds of all of their children^[Dragging folds in a parent feature can also cause child features to become invalid, depending on their fold positions.], implementing fold dragging in features with children is future work.
-
 ## Feature Interactions
 
 Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketches.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Having consistent tool interactions helps reduce the burden of learning new tools, and allows for a scaffolded user experience (@wood2001scaffolding). 
 
-We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
+We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
 
+The fold features are fully defined in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  
 
 ###Box Fold Interactions
 
@@ -40,6 +35,12 @@ Polygons are the only feature that can be created by tapping rather than draggin
 
 V-Folds require two touches to complete.  The first touch creates a "vertical cut" that crosses a fold, the second defines the point on that fold from which diagonal folds are constructed.
 
+##Tap Options
+
+![Options presented when tapping a box fold feature.](figures/32_UI_Tool_Interactions/tap-options.png)
+
+Tap options are actions that can be performed on a feature.  These options allow the user to modify or delete features in the sketch.  Different options are presented based on the feature type and state.  For example, currently only leaf nodes in the feature tree have the "Drag Folds" option.  That is, you can only move folds within a feature that has no children.  Since moving folds within a feature with children would require modifying the folds of all of their children^[Dragging folds in a parent feature can also cause child features to become invalid, depending on their fold positions.], implementing fold dragging in features with children is future work.
+
 ##Tutorial
 
 We eschewed detailed drawing instructions or a separate tutorial mode, in favor of short video tutorials that appear the first time each tool is used.  These tutorials can also be accessed by tapping the feature icons on the about page.
@@ -58,11 +59,11 @@ The goal of these warnings is to give users descriptive feedback when errors occ
 
 ##Intersecting Features
 
-Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is incomplete, and is described in Chapter 3, section \ref{intersections-between-features} on page \pageref{intersections-between-features}.
+Some features can be drawn over cuts and folds of existing features.  When a new feature intersects a previously-drawn feature, it occludes existing cuts and folds — creating the new feature on top of existing features.  The implementation of these intersections is described in Chapter 3, section \ref{intersections-between-features} on page \pageref{intersections-between-features}.
 
 ##Send to Laser Cutter
 
-In the three-dimensional preview, users can tap the "send to laser cutter" option.  This feature sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, and can be opened in a vector graphics editor to make further changes.
+Users can tap the "send to laser cutter" option; this sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, and can be opened in a vector graphics editor to make further changes.
 
 The sketches are bound by physical constraints, as described in  Chapter 3 section \ref{constraints-on-fold-features} \ref{physical-constraints}, \nameref{physical-constraints} on page \pageref{physical-constraints}.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
 
