@@ -1,0 +1,102 @@
+\documentclass[12pt,american]{report}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{grffile}
+\usepackage{ulem}
+\usepackage{booktabs}
+\usepackage{fancyvrb}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{ifxetex}
+\usepackage{ifluatex}
+\geometry{verbose,letterpaper,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1in} %% sets paper size and margins
+\usepackage{setspace}
+\usepackage[square]{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{texments}
+% \usepackage{amssymb}
+\usepackage[]{algorithm2e}
+\usestyle{xcode}
+
+
+%\singlespacing        %% 1-spacing (default)
+%\onehalfspacing       %% 1,5-spacing
+%\doublespacing        %% 2-spacing
+
+\pagestyle{plain}      %% select plain page style: no headers, page numbers center bottom
+
+%% uncomment the following to include headers (e.g., to keep track of draft versions). Also change pagestyle to fancyplain:
+%\rhead[\fancyplain{}{\leftmark}]%0
+%      {\fancyplain{}{Draft 04/08 -- \thepage}}
+%\cfoot[\fancyplain{Draft 04/08 -- \thepage}{}]{\fancyplain{Draft 04/08 -- \thepage}{}}
+
+\begin{document}
+
+\pagenumbering{roman}        %% roman page numbers for front matter
+
+\renewcommand\thepage{}
+% \include{Nook_Title}
+% \include{TitlePage}
+% \include{TitlePage2}
+\newpage
+% a blank page follows the title page, this page is not numbered
+\mbox{}
+\newpage
+
+\renewcommand\thepage{\arabic{page}}
+\pagenumbering{roman}        %% roman page numbers for front matterstarting with page ii
+\setcounter{page}{2}
+
+
+% \renewcommand\thechapter{\arabic{chapter}.}
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{(\alph{subsection})}
+
+\doublespacing               %% set spacing to double
+
+\include{Abstract}
+
+\singlespacing
+\tableofcontents             %% include TOC
+\listoftables                %% include list of tables
+\listoffigures               %% include list of figures
+\listofalgorithms        %% list of algos
+\cleardoublepage             %% start new page
+
+\pagenumbering{arabic}       %% arabic page numbers for body of text starting with page 1
+
+\doublespacing
+% \include{Introduction}
+
+%START_INCLUDES
+
+\include{chapters/01_Background}
+\include{chapters/02_Overview}
+\include{chapters/03_Related_Work}
+\include{chapters/61_Applications}
+\include{chapters/99_Separation_Of_Work}
+%END_INCLUDES
+
+% \appendix
+% \include{appendixA}
+% \include{appendixB}
+% \include{appendixC}
+% \include{appendixD}
+
+\singlespacing
+
+\bibliography{nook_citations}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+
+
+\end{document}
