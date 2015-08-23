@@ -1,4 +1,7 @@
 \chapter{Introduction}
+
+![A complex design created with our software.](figures/shared/01_Background/complexFoldlings.pdf)
+
 #Background
 
 **>>TODO: Complete w/Marissa**

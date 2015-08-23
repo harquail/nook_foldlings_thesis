@@ -15,6 +15,8 @@ We can infer that the user has completed a sketch when a touch completes the fea
 
 The fold features are fully defined in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  
 
+![Examples of the four fold features created by the tools. Left to right: box fold, freeform, polygon, v-fold.](figures/32_UI_Tool_Interactions/foldFeatures.png)
+
 ###Box Fold Interactions
 
 A box fold is created by dragging to define the bounds of the box.  Box folds are only valid if they span a driving fold.
@@ -53,7 +55,7 @@ We also show helpful tips between screens — for example, when moving to 3D pre
 
 We display warnings and errors as bright-red banners above the sketch work area. These warnings are displayed in response to failing the validity checks performed when adding a feature to the sketch^[The system for validating fold features is described section Chapter 3 section \ref{validity}, \nameref{validity} on page \pageref{validity}].
 
-![An error message shown when rejecting a polygon with intersecting edges.](figures/32_UI_Tool_Interactions/error_message.png)
+![An error message shown when rejecting a polygon with intersecting edges.](figures/32_UI_Tool_Interactions/error_message.pdf)
 
 The goal of these warnings is to give users descriptive feedback when errors occur, and to give them an intuitive sense of which actions create invalid features.
 
