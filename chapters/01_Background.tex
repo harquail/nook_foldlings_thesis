@@ -8,43 +8,41 @@
 
 \section{Background}\label{background}
 
-\textbf{\textgreater{}\textgreater{}TODO: Complete w/Marissa} \emph{This
-section is co-authored with Marissa Allen}
-
-introduce kirigami, then popup cards, then maybe trees/graphs?
+\emph{This section is co-authored with Marissa Allen}
 
 Kirigami is the art of papercraft originating from 17th century Japan
-\citet{temko1978magic}. In contrast with origami, which only permits
-folds, kirigami designs incorporate cuts. Thus, kirigami can represent a
-wide range of 2D and 3D constructions. For example, ---~as long as the
-design was. Further constraints define subsets of kirigami. In
-particular, Foldlings is concerned with 90-degree pop-up cards, which
-have the further constraint that orthogonal relationships exist between
-planes. We do not use glue or other attachment in building pop-up cards;
-all designs are cut from a single piece of paper, in the tradition of
-kirigami (\citet{temko1978magic}).
+(\citet{temko1978magic}). Kirigami structures vary widely in form and
+scale ---~from sub-microscopic creations to large sculptures
+(\citet{grosso2015bending} to \citet{andrewscreating}). Kirigami can
+represent a wide range of 2D and 3D constructions. For example, a design
+can be a 2D lace-like pattern, or a large architectural structure ---~as
+long as the paper design does not require glue or other attachments, it
+is kirigami. Further constraints define subsets of kirigami, such as
+origami, which only allows folds\footnote{Purist origami adds further
+  restrictions, including the requirement that the starting piece of
+  paper be square (\citet{burczykul}).}. In particular, Foldlings is
+concerned with 90-degree pop-up cards, which have the additional
+constraint that orthogonal relationships exist between planes. We do not
+use glue or other attachments in building pop-up cards; all designs are
+cut from a single piece of paper, in the tradition of kirigami
+(\citet{temko1978magic}). Thus, Foldlings creates orthogonal, kirigami
+popup cards.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/shared/01_Background/popup-diagram.pdf}
 \caption{Cross-section of a popup card Figure modified from
-https://en.wikipedia.org/wiki/File:Popup-diagram.svg.}
+https://en.wikipedia.org/ wiki/File:Popup-diagram.svg.}
 \end{figure}
 
-The 90-degree popup card presents a tightly-constrained problem, with
-opportunities for both interface design and algorithm innovations. We
-present a system for designing popup cards, whose audience is
-deliberately broad. We aim to make the pop-up card design process easier
-and more fun.
-
-Typically, users create popup cards through manual methods. For example,
-a user might sketch out shape on a card in pencil, and then measure with
-a rule to find locations to place folds. Or, they might fold the paper
-while cutting, discovering correct fold positions experimentally. The
-second method works well for simple designs, but becomes difficult with
-complex and nested geometries\footnote{These are behaviors we observed
-  by watching users create pop-up cards.}. Constructing popup cards
-manually presents sever problems:
+Typically, users create popup cards manually. For example, a user might
+sketch out shape on a card in pencil, and then measure with a rule to
+determine locations to place folds. Or, they might fold the paper while
+cutting, discovering correct fold positions experimentally. The second
+method works well for simple designs, but becomes difficult with complex
+and nested geometries\footnote{These are behaviors we observed by
+  watching users create pop-up cards.}. Constructing popup cards
+manually is difficult for several reasons:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -56,3 +54,10 @@ manually presents sever problems:
 \item
   c
 \end{enumerate}
+
+The 90-degree popup card presents a tightly-constrained problem, with
+opportunities for both interface design and algorithm innovations. We
+present a system for designing popup cards, whose audience is
+deliberately broad. That is, our tool aims to make the design process
+easier and more fun for users with all degrees of popup card design
+experience.

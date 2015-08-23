@@ -21,7 +21,7 @@ have a central main valley fold --- from there we can determine the
 orientation, as alternating folds have opposite orientations. The card
 then folds to a 90 degree angle; this implies parallelogram constraints
 between all the edges in a sideways cross-section with the exception of
-V-Fold features and Polygon features.
+V-Fold features .
 
 All fold endpoints must have cuts between them --- although these cuts
 can be arbitrary shapes. Cuts can also form holes (regions bounded by
@@ -42,6 +42,14 @@ structure to store associations between logical geometric units.
 
 The full source for our software is available on github.com, at
 \url{http://github.com/harquail/foldlings/}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/30_UI_Design_Philosophy/gitflow.png}
+\caption{We used github to build Foldlings collaboratively. Our workflow
+involved creating new code branches for each feature, and reviewing the
+changes before merging back into the master branch of the codebase.}
+\end{figure}
 
 \subsection{Pipeline Overview}\label{pipeline-overview}
 
