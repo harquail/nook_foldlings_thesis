@@ -8,9 +8,9 @@ Several geometric constraints drive Foldling's algorithms.  These constraints ar
 
 ###Box Fold
 
-![Geometric constraints for freeform features](figures/45_Tech_Constraints/boxfoldConstraints.pdf)
+![Geometric constraints for box fold features](figures/45_Tech_Constraints/boxfoldConstraints.pdf)
 
-A box fold is constrained by a relationship between its folds.  Given a top fold and bottom fold at fixed height, with a driving fold with a height between the other two folds, the vertical distance between the bottom fold and the driving fold must be equal to the distance between the top fold and the middle fold of the feature.
+A box fold is constrained by a relationship between its folds.  Given a top fold and bottom fold at fixed height, with a driving fold with a height between the other two folds, the vertical distance between the bottom fold and the driving fold must be equal to the distance between the top fold and the middle fold of the feature (see figure 3.9).
 
 This 90-degree angle constraint applies equally to freeform and polygon features (at least, those that span a fold).
 
@@ -18,7 +18,7 @@ This 90-degree angle constraint applies equally to freeform and polygon features
 
 ![Geometric constraints for freeform features](figures/45_Tech_Constraints/freeformConstraints.pdf)
 
-Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation^[Described in section \ref{tool-implementation}, \nameref{tool-implementation}, on page \pageref{tool-implementation}.] to place the top and bottom folds of the freeform shape, we apply the 90-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold.
+Freeform fold heights are calculated similarly to those in a box fold.  After performing truncation^[Described in section \ref{tool-implementation}, \nameref{tool-implementation}, on page \pageref{tool-implementation}.] to place the top and bottom folds of the freeform shape, we apply the 90-degree constraint to place the middle fold in the feature.  Of course, holes are not bound by this constraint, because they do not have a driving fold (see figure 3.10).
 
 As with all features, validity constraints are separate from geometric constraints.  Freeform shapes that intersect themselves do not have a place for the middle fold, but by performing validity checks before solving for geometric constraints, we avoid many problems and edge cases that would otherwise occur.
 
@@ -27,7 +27,7 @@ As with all features, validity constraints are separate from geometric constrain
 
 ![Geometric constraints for polygon features](figures/45_Tech_Constraints/polygonConstraints.pdf)
 
-The same constraints that apply to freeform shape apply to polygons.   Although the edges are constructed differently, polygons are essentially a subset of freeform shapes, composed only of straight lines.
+The same constraints that apply to freeform shape apply to polygons.   Although the edges are constructed differently, polygons are essentially a subset of freeform shapes, composed only of straight lines (see figure 3.11).
 
 ###V-Fold
 
@@ -37,7 +37,7 @@ Although a v-fold also folds from zero to 180 degrees with the card, its planes 
 
 The simplest case of v-folds — and the one most popularly constructed by our user testers using manual methods — is a symmetric v-fold.  In this case, the top and bottom angles of the fold are equal.  The shape approximates an isosceles triangle.
 
-In the more complex case, the angles between the two diagonal folds and the driving fold differ.  Andrew Glassner demonstrates that for any "single slit mechanism," the angle from the driving fold to either the top or bottom fold must be equal to the angle between the opposite fold and the middle fold (@glassner1998interactive, 3).  This constraint is only solvable if the sum of the angles between each diagonal fold and driving fold is less than 180 degrees.  Intuitively, this constraint is not dissimilar from the constraint for box folds — the position of the middle fold is constrained by the driving fold's relationship to the top and bottom folds.   
+In the more complex case, the angles between the two diagonal folds and the driving fold differ.  Andrew Glassner demonstrates that for any "single slit mechanism," the angle from the driving fold to either the top or bottom fold must be equal to the angle between the opposite fold and the middle fold (@glassner1998interactive, 3).  This constraint is only solvable if the sum of the angles between each diagonal fold and driving fold is less than 180 degrees.  Intuitively, this constraint is not dissimilar from the constraint for box folds — the position of the middle fold is constrained by the driving fold's relationship to the top and bottom folds (see figure 3.12).   
 
 ##Physical Constraints
 

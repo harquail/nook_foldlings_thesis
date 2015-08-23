@@ -33,7 +33,7 @@ ybar]
 
   In the graph above, the first ten labels indicate the number of participants who tapped a button.  The last three labels — starting with "wanted mirror," show responses to unimplemented tools.  To calculate these numbers, we asked first users to describe what they thought the button would do, and then gauged their reaction as we described our vision for that tool.  The tally represents a qualitative measure of whether the user was enthusiastic about the feature or had a more negative response.  Some negative responses include confusion about the tool's purpose and statements such as "I don't think I would want to use that." 
     
-The unimeplemtneed tools were:
+The unimeplemented tools were:
 
 1. Mirror: a tool that would take an existing group of edges and reflect them about a fold in the sketch
 2. Track: a tool that would create a cut in the sketch, and a second shape that would move within the cut, with folded tabs on the opposite side of the card.  This tool required multiple pieces of paper.
@@ -44,16 +44,16 @@ Each of these tools was inspired by features often found in commercially-designe
 From this test, we learned that the track and slider tools were confusing, and that novice users were generally not interested in creating features that require multiple pieces of paper.  
  
 
-As users created sketches using our software, we also took notes on their experience and collected suggestions for improvements.  Although only a small fraction of the features requested by users are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the observation in Table 2.1 is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
+As users created sketches using our software, we also took notes on their experience and collected suggestions for improvements.  Although only a small fraction of the features requested by users are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the observations in Table 2.1 is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
 
 -------------------------------------------------------------
 Observations
 -------------------------------------------------------------
-made a cake using cuts & tab, crashed on returning to sketch
+made a cake using cuts & tab
 
 track and slider will need explanation; wanted to use non-horizontal folds
 
-erased master fold, crashing at preview step
+erased master fold, causing preview to fail
 
 made a cat with cuts
 
@@ -71,7 +71,7 @@ fairly self-sufficient after tools were explained, made a house, moved slowly, w
 -------------------------------------------------------------
 Table:  Observations of behavior from first user test.
 
-A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 2.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time. See Chapter 2, section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on page \pageref{tutorial} for more discussion.  These tutorials allow users to quickly get started quickly with minimal interruptions.
+A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 2.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time. See Chapter 2, section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on page \pageref{tutorial} for more discussion.  These tutorials allow users to quickly get started quickly with minimal interruptions.  In addition, a commonality between our observations of user behavior and the feature requests is a desire for more guidance in creating valid cards.  This indicates that the geometric constraints of popup cards were not sufficiently intuitive or discoverable in this version of Foldlings.
 
 -------------------------------------------------------------
 Feature Requests
@@ -100,3 +100,5 @@ more snapping/validity guidance
 
 -------------------------------------------------------------
 Table:  Feedback from first user test.
+
+Through this and other informal user tests, we modified our software based on user feedback.  One of the key findings from this early test was that our toolset was very difficult for amateur users to use.  Due to the difficulty in creating valid designs with our software, we completely overhauled our interface to focus on keeping the user's design in a valid state.  In our final interface, users cannot add an element to sketch that will cause it to become invalid.  Along with the system that validates cuts and folds before adding them to the sketch, our modular tools help ensure validity.  Rather than individual cuts and folds, our tools create modular folding units, which solve geometric constraints transparently and display an interactive preview of edges during feature creation.  Although we considered a system based on automatically correcting the user's arbitrary folds and cuts, we believe our tools-based system allows for a similar level of creativity, while guaranteeing a valid pop-up card.

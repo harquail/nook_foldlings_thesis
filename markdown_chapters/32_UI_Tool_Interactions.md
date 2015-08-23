@@ -1,6 +1,6 @@
 #Tool Interactions
 
-Through the iterations described in the previous chapter, we arrived at Foldlings' tool-based system for card design.  Each tool creates a specific type of feature — a group of cuts and folds that define planes that will fold together in 3D^[Described in more detail in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.].  The core interaction is as follows:
+Through the iterations described in the previous chapter, we arrived at Foldlings' tool-based system for card design.  Each tool creates a specific type of feature — a group of cuts and folds that define planes that will fold together in 3D^[Described in more detail in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.].  The four feature types: box fold, freeform, polygon, and v-fold, help users design complex cards while maintaining the card's foldability at all stages of design.  The core interaction is as follows:
 
 1. User selects a tool
 2. User drags on the screen to define a feature

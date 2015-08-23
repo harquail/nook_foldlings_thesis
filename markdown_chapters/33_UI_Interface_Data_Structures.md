@@ -16,9 +16,9 @@ An edge represents a cut or fold.  Edges are the basic building block of planes,
 
 ![Left: a box fold mid-drag.  The feature does not have a driving fold.  Right: a box-fold after the user has released the touch.  The feature's driving fold is the master card's middle horizontal fold.](figures/33_UI_Interface_Data_Structures/boxfold_driving_non_driving.png)  
 
-A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds both above and below the fold it spans — as shown in figure 1.12.
+A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds both above and below the fold it spans — as shown in figure 2.12.
 
- An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
+ An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  That is, there is a many-to-one relationship between children and their parent feature	.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
  
 ###Fold Orientation
 
@@ -28,11 +28,11 @@ Traditionally, kirigami patterns indicate direction for folds: "mountain/hill" o
 
 ##Planes
 
-Planes are an enclosed shape, bounded by edges.  Plane are detected from edges by traversing the directed edge graph, as described in @mallen.  They are drawn as colored areas in the two-dimensional sketch, and simulated in the 3D preview as extruded shapes that rotate about a pivot point.  In order to simulate the planes in 3D, we construct parent-child relationships between the planes, which determine how they move during simulation.
+Planes are an enclosed shape, bounded by edges.  Plane are detected from edges by traversing the directed edge graph, as described in @mallen.  They are drawn as colored areas in the two-dimensional sketch, and simulated in the 3D preview as extruded shapes that rotate about a pivot point.  In order to simulate the planes in 3D, we construct parent-child relationships between the planes, which determine how they move during simulation.  Each plane's parent is the plane that contains its topmost edge, as shown in figure 2.15.
 
-![Planes in a simple sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.](figures/33_UI_Interface_Data_Structures/boxfold_planes.png)
+![Planes in a simple sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.  2b is the child of plane 1.](figures/33_UI_Interface_Data_Structures/boxfold_planes.pdf)
 
-![Planes in a more complex sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.  Letters indicate branches within the plane tree (I.e. 3a is the child of 2a.](figures/33_UI_Interface_Data_Structures/complex_sketch.pdf)
+![Planes in a more complex sketch, numbered by ancestry.  Starting at the root plane 1, each successive plane is the child of the previous numbered plane.  Letters indicate branches within the plane tree (I.e. 3a is the child of 2a).](figures/33_UI_Interface_Data_Structures/complex_sketch.pdf)
 
 
 ##Fold Features
@@ -42,7 +42,7 @@ The central data structure of Foldlings is the fold feature: a representation of
 All fold features have functionality in common:
 
 * Each feature contains a list of edges in the feature — cuts and folds, including twins.
-* Each feature has a driving fold — in the case of unconnected features, such as the master card and holes, the driving fold is nil.
+* Each feature has a driving fold — in the case of unconnected features (i.e the master card and holes), the driving fold is nil.
 * Each feature can be deleted from the sketch, "healing" the sketch by closing gaps left in any existing cuts and folds.
 * Features implement apples _NSEncoding_ protocol, allowing them to be serialized to a file on the device and restored from the saved file.
 * Each feature can provide a list of current "tap options" — actions that can be performed on the feature given its state.
@@ -50,31 +50,32 @@ All fold features have functionality in common:
 
 ###Master Card
 
-Each sketch always contains a single master feature, which is the ancestor of all other features.  It is a simplification of the box fold, in that it contains three horizontal folds with connecting vertical cuts.  Users do not create features of this type — each sketch begins with one.   All of the edges in the master feature are marked with a flag indicating that they belong to the master feature, because master feature edges and planes are sometimes treated differently than normal edges.  For example, the parent-child relationships between planes are constructed by starting at the top plane in the master feature, determined by edge type and height.
-
 ![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/mastercard.pdf)
+
+Each sketch always contains a single master feature, which is the ancestor of all other features. The master feature consists of two planes with a valley fold between them.  Users do not create features of this type — each sketch begins with one.   All of the edges in the master feature are marked with a flag indicating that they belong to the master feature, because master edges and planes are sometimes treated differently than normal edges.  For example, the parent-child relationships between planes are constructed by starting at the top plane in the master feature, determined by edge type and height.
+
 
 ###Box Fold
 
+![Left: fold & cut pattern of a box fold feaure.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/box.pdf)
+
 A box fold consists entirely of straight edges, and can be constructed from two points: the top left point, and the bottom right point.  The middle fold position is determined by the position of the driving fold, as described in Chapter 3, section \ref{constraints-on-fold-features} , \nameref{constraints-on-fold-features} on page \pageref{geometric-constraints}.  Box folds are only valid if they span a driving fold.
 
-![Left: fold & cut pattern of the master feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/box.pdf)
-
 ###Free Form
+
+![Left: fold & cut pattern of a freeform feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/free.pdf)
 
 Freeform shapes are defined by a single, closed path.  When the feature is completed (by releasing the touch), the shape is truncated, horizontal folds are added, and the path is split into multiple edges (assuming the shape spanned a fold).  The curved path is defined by a set of "interpolation points" — points captured by sampling touch positions while a user draws a shape on the screen.  A path is interpolated between these points using the Catmull-Rom algorithm (@catmull1974class).
 
 Holes are a special case of FreeForm shapes, and are cut out from the final design, rather than simulated as a separate plane.   FreeForm shapes that do not cross a fold are considered holes — drawn in white in the 2d sketch and drawn as subtractions from planes in the 3d view.
 
-![Left: fold & cut pattern of a freeform feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/free.pdf)
-
 ###Polygon
+
+![Left: fold & cut pattern of a polygon feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/poly.pdf)
 
 Polygons are created from a list of "tap points" constructed from user input.  As in free-form shapes, these points are connected with a bezier path, and are truncated if they have a driving fold when they are completed.  For polygons, this path consists only of straight line segments.   Unlike interpolation points, tap points can be moved at any time during the drawing process.
 
 Like freeform shapes, polygons that do not have a driving fold are considered holes.
-
-![Left: fold & cut pattern of a polygon feature.  Right: laser-cut model of the same.](figures/33_UI_Interface_Data_Structures/poly.pdf)
 
 ### V-Fold
 

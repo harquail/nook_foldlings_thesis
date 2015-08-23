@@ -68,17 +68,19 @@ A driving fold is not a special type of edge, but rather a relationship
 between an edge in one feature and a feature ``spanning'' that edge. A
 feature is said to span a fold when it is drawn on top of an existing
 fold, so that it has horizontal folds both above and below the fold it
-spans ---~as shown in figure 1.12.
+spans ---~as shown in figure 2.12.
 
 An edge can be the driving fold for more than one feature, but each
 feature has only one driving fold (if there are multiple potential
-driving edges at the same height, the leftmost edge is selected). The
-driving fold is important for calculating parent-child relationships
-between features: a feature's parent is the feature that contains it's
-driving fold\footnote{The exception to this rule is holes ---~a hole's
-  parent is the feature that contains it.}. These parent-child
-relationships are described in more detail in the section
-\nameref{hierarchy} on page \pageref{hierarchy} and in \citet{mallen}.
+driving edges at the same height, the leftmost edge is selected). That
+is, there is a many-to-one relationship between children and their
+parent feature . The driving fold is important for calculating
+parent-child relationships between features: a feature's parent is the
+feature that contains it's driving fold\footnote{The exception to this
+  rule is holes ---~a hole's parent is the feature that contains it.}.
+These parent-child relationships are described in more detail in the
+section \nameref{hierarchy} on page \pageref{hierarchy} and in
+\citet{mallen}.
 
 \subsubsection{Fold Orientation}\label{fold-orientation}
 
@@ -104,14 +106,15 @@ edges by traversing the directed edge graph, as described in
 sketch, and simulated in the 3D preview as extruded shapes that rotate
 about a pivot point. In order to simulate the planes in 3D, we construct
 parent-child relationships between the planes, which determine how they
-move during simulation.
+move during simulation. Each plane's parent is the plane that contains
+its topmost edge, as shown in figure 2.15.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{figures/33_UI_Interface_Data_Structures/boxfold_planes.png}
+\includegraphics{figures/33_UI_Interface_Data_Structures/boxfold_planes.pdf}
 \caption{Planes in a simple sketch, numbered by ancestry. Starting at
 the root plane 1, each successive plane is the child of the previous
-numbered plane.}
+numbered plane. 2b is the child of plane 1.}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -120,7 +123,7 @@ numbered plane.}
 \caption{Planes in a more complex sketch, numbered by ancestry. Starting
 at the root plane 1, each successive plane is the child of the previous
 numbered plane. Letters indicate branches within the plane tree (I.e. 3a
-is the child of 2a.}
+is the child of 2a).}
 \end{figure}
 
 \subsection{Fold Features}\label{fold-features}
@@ -143,7 +146,7 @@ All fold features have functionality in common:
   folds, including twins.
 \item
   Each feature has a driving fold --- in the case of unconnected
-  features, such as the master card and holes, the driving fold is nil.
+  features (i.e the master card and holes), the driving fold is nil.
 \item
   Each feature can be deleted from the sketch, ``healing'' the sketch by
   closing gaps left in any existing cuts and folds.
@@ -161,17 +164,6 @@ All fold features have functionality in common:
 
 \subsubsection{Master Card}\label{master-card}
 
-Each sketch always contains a single master feature, which is the
-ancestor of all other features. It is a simplification of the box fold,
-in that it contains three horizontal folds with connecting vertical
-cuts. Users do not create features of this type~--- each sketch begins
-with one. All of the edges in the master feature are marked with a flag
-indicating that they belong to the master feature, because master
-feature edges and planes are sometimes treated differently than normal
-edges. For example, the parent-child relationships between planes are
-constructed by starting at the top plane in the master feature,
-determined by edge type and height.
-
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/33_UI_Interface_Data_Structures/mastercard.pdf}
@@ -179,7 +171,24 @@ determined by edge type and height.
 laser-cut model of the same.}
 \end{figure}
 
+Each sketch always contains a single master feature, which is the
+ancestor of all other features. The master feature consists of two
+planes with a valley fold between them. Users do not create features of
+this type~--- each sketch begins with one. All of the edges in the
+master feature are marked with a flag indicating that they belong to the
+master feature, because master edges and planes are sometimes treated
+differently than normal edges. For example, the parent-child
+relationships between planes are constructed by starting at the top
+plane in the master feature, determined by edge type and height.
+
 \subsubsection{Box Fold}\label{box-fold}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/33_UI_Interface_Data_Structures/box.pdf}
+\caption{Left: fold \& cut pattern of a box fold feaure. Right:
+laser-cut model of the same.}
+\end{figure}
 
 A box fold consists entirely of straight edges, and can be constructed
 from two points: the top left point, and the bottom right point. The
@@ -189,14 +198,14 @@ as described in Chapter 3, section \ref{constraints-on-fold-features} ,
 \pageref{geometric-constraints}. Box folds are only valid if they span a
 driving fold.
 
+\subsubsection{Free Form}\label{free-form}
+
 \begin{figure}[htbp]
 \centering
-\includegraphics{figures/33_UI_Interface_Data_Structures/box.pdf}
-\caption{Left: fold \& cut pattern of the master feature. Right:
+\includegraphics{figures/33_UI_Interface_Data_Structures/free.pdf}
+\caption{Left: fold \& cut pattern of a freeform feature. Right:
 laser-cut model of the same.}
 \end{figure}
-
-\subsubsection{Free Form}\label{free-form}
 
 Freeform shapes are defined by a single, closed path. When the feature
 is completed (by releasing the touch), the shape is truncated,
@@ -212,14 +221,14 @@ final design, rather than simulated as a separate plane. FreeForm shapes
 that do not cross a fold are considered holes ---~drawn in white in the
 2d sketch and drawn as subtractions from planes in the 3d view.
 
+\subsubsection{Polygon}\label{polygon}
+
 \begin{figure}[htbp]
 \centering
-\includegraphics{figures/33_UI_Interface_Data_Structures/free.pdf}
-\caption{Left: fold \& cut pattern of a freeform feature. Right:
+\includegraphics{figures/33_UI_Interface_Data_Structures/poly.pdf}
+\caption{Left: fold \& cut pattern of a polygon feature. Right:
 laser-cut model of the same.}
 \end{figure}
-
-\subsubsection{Polygon}\label{polygon}
 
 Polygons are created from a list of ``tap points'' constructed from user
 input. As in free-form shapes, these points are connected with a bezier
@@ -230,13 +239,6 @@ time during the drawing process.
 
 Like freeform shapes, polygons that do not have a driving fold are
 considered holes.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/33_UI_Interface_Data_Structures/poly.pdf}
-\caption{Left: fold \& cut pattern of a polygon feature. Right:
-laser-cut model of the same.}
-\end{figure}
 
 \subsubsection{V-Fold}\label{v-fold}
 

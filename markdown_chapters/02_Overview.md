@@ -4,7 +4,6 @@
 
 _This section is co-authored with Marissa Allen_
 
-##Motivation
 We set out to create a tool that would help people design 3D pop-up cards. We were driven by our own struggles in creating 3D pop-up cards and the desire to create an original design without a template. As we progressed in our project, we began to focus on developing a tool that would provide a way to create pop-ups more intuitively, without explicitly understanding how to create a valid 90-degree pop-up card. Our tool allows users to design, iterate, and preview an original pop-up card before they even pick up a pair of scissors. 
 
 ##Technical Overview 
@@ -24,4 +23,6 @@ To begin, a user draws a design using the fold feature tools: box fold, polygon,
 Each time a new shape is added to the design it is evaluated for validity: whether it can fold to 90 degrees and be parsed into individual planes. The planes are then linked together in an acyclic graph based on the planes’ abutting top edges. Each time a user adds a new feature or line to the sketch, planes are evaluated and added to an acyclic graph.  Each feature can also be modified or deleted, by tapping on the feature an selecting an entry from the list of available options.
 
 This process continues until the user decides to preview the design in 3D. When the user presses the 3D preview button, we recursively traverse the plane-graph, for every newly evaluated plane, we set the rotation and add any holes to those planes. The user is free to go back to the 2D drawing interface and continue editing his/her design or save the design as either a raster file or SVG vector file. After this step, the user can print and cut the raster file or open the file on a laser cutter.  We automatically save designs locally when leaving the design workspace, so users can restore their work.
+
+##Development Process
 

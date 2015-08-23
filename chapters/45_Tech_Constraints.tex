@@ -19,14 +19,14 @@ resolved automatically.
 \begin{figure}[htbp]
 \centering
 \includegraphics{figures/45_Tech_Constraints/boxfoldConstraints.pdf}
-\caption{Geometric constraints for freeform features}
+\caption{Geometric constraints for box fold features}
 \end{figure}
 
 A box fold is constrained by a relationship between its folds. Given a
 top fold and bottom fold at fixed height, with a driving fold with a
 height between the other two folds, the vertical distance between the
 bottom fold and the driving fold must be equal to the distance between
-the top fold and the middle fold of the feature.
+the top fold and the middle fold of the feature (see figure 3.9).
 
 This 90-degree angle constraint applies equally to freeform and polygon
 features (at least, those that span a fold).
@@ -45,7 +45,7 @@ After performing truncation\footnote{Described in section
   \pageref{tool-implementation}.} to place the top and bottom folds of
 the freeform shape, we apply the 90-degree constraint to place the
 middle fold in the feature. Of course, holes are not bound by this
-constraint, because they do not have a driving fold.
+constraint, because they do not have a driving fold (see figure 3.10).
 
 As with all features, validity constraints are separate from geometric
 constraints. Freeform shapes that intersect themselves do not have a
@@ -63,7 +63,8 @@ that would otherwise occur.
 
 The same constraints that apply to freeform shape apply to polygons.
 Although the edges are constructed differently, polygons are essentially
-a subset of freeform shapes, composed only of straight lines.
+a subset of freeform shapes, composed only of straight lines (see figure
+3.11).
 
 \subsubsection{V-Fold}\label{v-fold}
 
@@ -91,7 +92,7 @@ constraint is only solvable if the sum of the angles between each
 diagonal fold and driving fold is less than 180 degrees. Intuitively,
 this constraint is not dissimilar from the constraint for box folds ---
 the position of the middle fold is constrained by the driving fold's
-relationship to the top and bottom folds.
+relationship to the top and bottom folds (see figure 3.12).
 
 \subsection{Physical Constraints}\label{physical-constraints}
 
