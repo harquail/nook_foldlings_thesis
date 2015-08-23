@@ -33,13 +33,13 @@ ybar]
 
   In the graph above, the first ten labels indicate the number of participants who tapped a button.  The last three labels — starting with "wanted mirror," show responses to unimplemented tools.  To calculate these numbers, we asked first users to describe what they thought the button would do, and then gauged their reaction as we described our vision for that tool.  The tally represents a qualitative measure of whether the user was enthusiastic about the feature or had a more negative response.  Some negative responses include confusion about the tool's purpose and statements such as "I don't think I would want to use that." 
     
-The unimeplemented tools were:
+The unimplemented tools were:
 
 1. Mirror: a tool that would take an existing group of edges and reflect them about a fold in the sketch
 2. Track: a tool that would create a cut in the sketch, and a second shape that would move within the cut, with folded tabs on the opposite side of the card.  This tool required multiple pieces of paper.
 3. Slider: a tool that would create a parallel set of cuts, making a "pocket" that a second shape would slide through. This tool required multiple pieces of paper. 
 
-Each of these tools was inspired by features often found in commercially-designed popup card and popup books (@birmingham1997pop).
+Each of these tools was inspired by features often found in commercially-designed popup card and popup books (@birmingham1997pop and @valenta1997pop).
 
 From this test, we learned that the track and slider tools were confusing, and that novice users were generally not interested in creating features that require multiple pieces of paper.  
  
