@@ -1,7 +1,4 @@
 #Overview
-
-**>>TODO: Complete w/Marissa**
-
 _This section is co-authored with Marissa Allen_
 
 We set out to create a tool that would help people design 3D pop-up cards. We were driven by our own struggles in creating 3D pop-up cards and the desire to create an original design without a template. As we progressed in our project, we began to focus on developing a tool that would provide a way to create pop-ups more intuitively, without explicitly understanding how to create a valid 90-degree pop-up card. Our tool allows users to design, iterate, and preview an original pop-up card before they even pick up a pair of scissors. 
@@ -14,9 +11,6 @@ All fold endpoints must have cuts between them — although these cuts can be ar
 
 Our approach constructs a tree representation of the planes based on fold adjacency and uses this for determining the parent child relationships in the simulated 3D view.  We also use a tree-based structure to store associations between logical geometric units.
 
-The full source for our software is available on github.com, at [http://github.com/harquail/foldlings/](http://github.com/harquail/foldlings/).
-
-![We used github to build Foldlings collaboratively.  Our workflow involved creating new code branches for each feature, and reviewing the changes before merging back into the master branch of the codebase.](figures/30_UI_Design_Philosophy/gitflow.png)
 
 ##Pipeline Overview
 
@@ -27,4 +21,9 @@ Each time a new shape is added to the design it is evaluated for validity: wheth
 This process continues until the user decides to preview the design in 3D. When the user presses the 3D preview button, we recursively traverse the plane-graph, for every newly evaluated plane, we set the rotation and add any holes to those planes. The user is free to go back to the 2D drawing interface and continue editing his/her design or save the design as either a raster file or SVG vector file. After this step, the user can print and cut the raster file or open the file on a laser cutter.  We automatically save designs locally when leaving the design workspace, so users can restore their work.
 
 ##Development Process
+
+The full source for our software is available on github.com, at [http://github.com/harquail/foldlings/](http://github.com/harquail/foldlings/).
+
+![We used github to build Foldlings collaboratively.  Our workflow involved creating new code branches for each feature, and reviewing the changes before merging back into the master branch of the codebase.](figures/30_UI_Design_Philosophy/gitflow.png)
+
 

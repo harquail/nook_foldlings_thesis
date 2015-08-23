@@ -15,9 +15,9 @@ Kirigami is the art of papercraft originating from 17th century Japan
 scale ---~from sub-microscopic creations to large sculptures
 (\citet{grosso2015bending} to \citet{andrewscreating}). Kirigami can
 represent a wide range of 2D and 3D constructions. For example, a design
-can be a 2D lace-like pattern, or a large architectural structure ---~as
+can be a 2D lace-like pattern, or a large architectural structure; as
 long as the paper design does not require glue or other attachments, it
-is kirigami. Further constraints define subsets of kirigami, such as
+is kirigami. Further constraints define subsets of kirigami --- such as
 origami, which only allows folds\footnote{Purist origami adds further
   restrictions, including the requirement that the starting piece of
   paper be square (\citet{burczykul}).}. In particular, Foldlings is
@@ -48,16 +48,28 @@ manually is difficult for several reasons:
 \def\labelenumi{\arabic{enumi}.}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  a
+  \textbf{2D to 3D visualization is difficult}. Users have difficulty
+  understanding how the card will fold based on a 2D design.
 \item
-  b
+  \textbf{Geometric constraints}. Pop-up cards present strict
+  constraints, which are often unintuitive to novice designers.\\
 \item
-  c
+  \textbf{No "undo"}. Since pop-up card design is often a
+  trial-and-error process, designers must sometimes make multiple
+  versions of their card to test their design.
+\item
+  \textbf{Physical constraints}. In addition to the geometric
+  constraints, the paper medium presents physical limitations on where
+  edges can be placed.
 \end{enumerate}
 
 The 90-degree popup card presents a tightly-constrained problem, with
-opportunities for both interface design and algorithm innovations. We
-present a system for designing popup cards, whose audience is
+opportunities for both interface design and algorithm innovations. Our
+work spans human-computer interaction, graph-based algorithms, and
+algorithms for manipulating bezier paths and pop-up card structures. Our
+culminating product is an iPad application.
+
+We present a system for designing popup cards, whose audience is
 deliberately broad. That is, our tool aims to make the design process
 easier and more fun for users with all degrees of popup card design
 experience.
