@@ -2,28 +2,20 @@
 
 \section{Design Philosophy}\label{design-philosophy}
 
-Our design philosophy is simple: follow the user. As often as possible,
-we presented our interface concepts to potential users, and allowed
-their feedback to guide the design process through the final prototype.
+Our design philosophy is simple: follow the user
+(\citet{bell2008design}). As often as possible, we presented our
+interface concepts to potential users, and allowed their feedback to
+guide the design process through the final prototype.
 
-Following a methodology roughly following agile methodologies, we
-designed and developed the application collaboratively
-(\citet{martin2003agile}). Our process was driven by user experience
-design, rather than graphic design. That is, we spent relatively little
-time polishing aesthetic interface details, and instead focussed on the
-core interactions of the application.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{figures/30_UI_Design_Philosophy/gitflow.png}
-\caption{We used github to build Foldlings collaboratively. Our workflow
-involved creating new code branches for each feature, and reviewing the
-changes before merging back into the master branch of the codebase.}
-\end{figure}
+Roughly following the Agile Methodology, we designed and developed the
+application collaboratively (\citet{martin2003agile}). Our process was
+driven by user experience design, rather than graphic design. That is,
+we spent relatively little time polishing aesthetic interface details,
+and instead focussed on the core interactions of the application.
 
 Throughout the design process, we explored the conflict between
 creativity and rigid geometric constraints. That is, interfaces that
-give the user more room for creative generally tend to make it more
+give the user more room for creativity generally tend to make it more
 difficult to create designs that will fold correctly in 3D. We aimed for
 an interface that provides a great deal of flexibility and creativity,
 while guaranteeing that all popup card designs created with it are
@@ -45,14 +37,18 @@ The iPad (and tablets in general) present unique affordances\footnote{Affordance
   \citet{norman2013design}.}. We chose to design for the iPad as a way
 of forcing the interface to remain minimal and intuitive. With a simple,
 gesture-based interface, we we could not rely on complex interactions
-or, and instead focussed on distilling the essential. One benefit of
-designing for a touch-based interface is that the interactions are
-``natural'' ---~that is, intuitive and easy to learn; however, gestural
-interfaces present a unique set of design problems
-\citet{norman2010gestural}. Additionally, the iPad lends itself well to
-casual, fun experiences, which aligns with our goal of creating a usable
-popup-card design interface for a general audience
-\citet{johansen2013ipad}.
+and instead focussed on distilling the essential design elements. One
+benefit of designing for a touch-based interface is that the
+interactions are ``natural'' ---~that is, intuitive and easy to learn;
+however, gestural interfaces present a unique set of design
+problems\footnote{For example, gestural interfaces have relatively few
+  inputs: compared to a mouse an keyboard, which have more than 100
+  unique input options, there are fewer than 12 gestures recognized by
+  Apple's \emph{UIGestureRecognizer} class.}
+(\citet{norman2010gestural}). Additionally, the iPad lends itself well
+to casual, fun experiences, which aligns with our goal of creating a
+usable popup-card design interface for a general audience
+(\citet{johansen2013ipad}).
 
 We strive to design an interface that is \textbf{modular},
 \textbf{friendly}, and \textbf{delightful}. \textbf{Modularity} stems

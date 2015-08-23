@@ -11,22 +11,24 @@ In arriving at our final design, we iterated through several potential designs, 
 Throughout the development process, we collected feedback through informal user tests.  One test we performed involved presenting a partially-implemented version of our software to users.  The majority of buttons were functional — erase, cut, fold, and and tab, but our interface also contained buttons for unimplemented features.  The primary goals were to test whether our existing tools were useful and to collect feedback on potential new features for Foldlings.  When a user tapped a button that we had not yet implemented, we asked them to describe how they thought the tool would work, and talked with them about the behavior the button represented.  
 
 \begin{tikzpicture}
-  \begin{axis}[
-    title=User Reactions to Alpha,
-    ybar,
-    enlargelimits=0.15,
-    x=0.8cm,
-    legend style={at={(0.5,-0.2)},
-      anchor=north,legend columns=-1},
-    ylabel={participants},
-    symbolic x coords={new sketch,saved sketch,erase,fold,cut,tab,track,mirror,send to laser,print,wanted mirror,wanted track,wanted slider},
-    xtick=data,
-    nodes near coords, 
-	nodes near coords align={vertical},
-    x tick label style={rotate=45,anchor=east},
-    ]
-    \addplot coordinates {(new sketch,14)(saved sketch,15)(erase,15)(fold,16)(cut,16)(tab,14)(track,10)(mirror,13)(send to laser,16)(print,16)(wanted mirror,12)(wanted track,2)(wanted slider,2)};
-  \end{axis}
+\begin{axis}[%
+enlargelimits=0.15,
+x=0.8cm,
+title=User Reactions to Alpha -- Button Taps per Tool,
+ symbolic x coords={new sketch,saved sketch,erase,fold,cut,tab,track,mirror,send to laser,print,wanted mirror,wanted track,wanted slider},
+nodes near coords,
+xtick={new sketch,saved sketch,erase,fold,cut,tab,track,mirror,send to laser,print,wanted mirror,wanted track,wanted slider},
+ylabel style={align=center},
+ylabel={participants},
+x tick label style={rotate=45,anchor=east},
+legend entries={Implemented, Unimplemented},
+ybar]
+
+
+\addplot coordinates {(new sketch,14)(saved sketch,15)(erase,15)(fold,16)(cut,16)(tab,14)(track,10)(mirror,13)(send to laser,16)(print,16)};
+\addplot[color=black] coordinates {(wanted mirror,12)(wanted track,2)(wanted slider,2)};
+
+\end{axis}
 \end{tikzpicture}
 
   In the graph above, the first ten labels indicate the number of participants who tapped a button.  The last three labels — starting with "wanted mirror," show responses to unimplemented tools.  To calculate these numbers, we asked first users to describe what they thought the button would do, and then gauged their reaction as we described our vision for that tool.  The tally represents a qualitative measure of whether the user was enthusiastic about the feature or had a more negative response.  Some negative responses include confusion about the tool's purpose and statements such as "I don't think I would want to use that." 
@@ -34,7 +36,7 @@ Throughout the development process, we collected feedback through informal user 
 From this test, we learned that the track and slider tools were confusing, and that novice users were generally not interested in creating features that require multiple pieces of paper.  
  
  
-As users created sketches using our software, we also took notes on their experience and collected suggestions for improvements.  Although only a small fraction of the features requested by users are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the observation in Table 1.1 is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
+As users created sketches using our software, we also took notes on their experience and collected suggestions for improvements.  Although only a small fraction of the features requested by users are implemented in the final app, the feedback from these early user tests set us on the path toward feature-based design.  A common theme among the observation in Table 2.1 is the difficulty in creating valid sketches and confusion about the proposed track and slider tools.
 
 -------------------------------------------------------------
 Observations
@@ -61,7 +63,7 @@ fairly self-sufficient after tools were explained, made a house, moved slowly, w
 -------------------------------------------------------------
 Table:  Observations of behavior from first user test.
 
-A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 1.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time. See Chapter 2, section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on page \pageref{tutorial} for more discussion.  These tutorials allow users to quickly get started quickly with minimal interruptions.
+A common theme among the feature requests was a desire for a more complete tutorial and explanation of tools.  Features only appear once in Table 2.2, even if they were requested by multiple people.  The most-requested feature was an interactive tutorial, requested by 4 (of 16) users.  In the final version of our software, we display short example videos when users use a tool for the first time. See Chapter 2, section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on page \pageref{tutorial} for more discussion.  These tutorials allow users to quickly get started quickly with minimal interruptions.
 
 -------------------------------------------------------------
 Feature Requests
