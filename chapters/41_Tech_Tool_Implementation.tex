@@ -99,10 +99,10 @@ bounds of the feature on which the method is called.
 
 We can analytically determine intersection points for box folds, which
 makes testing for fold spanning and other operations very fast. We
-dynamically update edges for feature (including the middle fold), as the
-user drags out the box. Box folds are the only feature for which we can
-display a live preview of the middle fold, as a result of the simple
-intersection tests.
+dynamically update edges for this feature (including the middle fold),
+as the user drags out the box. Box folds are the only feature for which
+we can display a live preview of the middle fold, as a result of the
+simple intersection tests.
 
 \subsection{FreeForm}\label{freeform}
 
@@ -115,7 +115,7 @@ capture the entire drawing with a similar level of detail throughout,
 and correct for the gesture recognizer sending relatively more frequent
 updates when the touch is moving more slowly.
 
-However, the catmull-Rom algorithm only draws a full path when the start
+However, the Catmull-Rom algorithm only draws a full path when the start
 and end points of the curve are coincident, so we manually construct
 straight line segments to and from the touch start and end points for
 unclosed freeform shapes. We use an alpha value of 1.0, which we found
@@ -295,10 +295,10 @@ Right: the feature after the self-intersection has been resolved.}
 \end{algorithm}
 
 A convoluted design with many overlapping self intersections can fail to
-resolve to a valid shape \footnote{I.e. a valid shape being one that
-  does not intersect with itself and has more than zero enclosed area.}.
-In cases where our algorithm fails, we display an error and do not add
-the feature to the sketch.
+resolve to a valid shape\footnote{I.e. a valid shape being one that does
+  not intersect with itself and has more than zero enclosed area.}. In
+cases where our algorithm fails, we display an error and do not add the
+feature to the sketch.
 
 \begin{figure}[htbp]
 \centering

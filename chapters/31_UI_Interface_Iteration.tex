@@ -9,7 +9,7 @@ screen.}
 
 We started development in Fall 2014, as the final project for a course
 on Computational Fabrication at Dartmouth. By December 2014, we had a
-functional prototype of our popup card design software. Users could
+functional prototype of our popup card design software: users could
 create cuts and folds and fabricate them using a laser cutter. However,
 in many ways our software was no better than manually creating cards. In
 order to create a valid and beautiful design, users needed some prior
@@ -96,7 +96,7 @@ The unimplemented tools were:
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Mirror: a tool that would take an existing group of edges and reflect
-  them about a fold in the sketch
+  them across a fold in the sketch
 \item
   Track: a tool that would create a cut in the sketch, and a second
   shape that would move within the cut, with folded tabs on the opposite
@@ -108,7 +108,7 @@ The unimplemented tools were:
 \end{enumerate}
 
 Each of these tools was inspired by features often found in
-commercially-designed popup card and popup books
+commercially-designed popup cards and popup books
 (\citet{birmingham1997pop} and \citet{valenta1997pop}).
 
 From this test, we learned that the track and slider tools were
@@ -118,10 +118,10 @@ creating features that require multiple pieces of paper.
 As users created sketches using our software, we also took notes on
 their experience and collected suggestions for improvements. Although
 only a small fraction of the features requested by users are implemented
-in the final app, the feedback from these early user tests set us on the
-path toward feature-based design. A common theme among the observations
-in Table 2.1 is the difficulty in creating valid sketches and confusion
-about the proposed track and slider tools.
+in the final application, the feedback from these early user tests set
+us on the path toward feature-based design. A common theme among the
+observations in Table 2.1 is the difficulty in creating valid sketches
+and confusion about the proposed track and slider tools.
 
 \begin{longtable}[c]{@{}l@{}}
 \caption{Observations of behavior from first user test.}\tabularnewline
@@ -180,8 +180,8 @@ most-requested feature was an interactive tutorial, requested by 4 (of
 example videos when users use a tool for the first time. See Chapter 2,
 section \ref{tool-interactions} \ref{tutorial} \nameref{tutorial} on
 page \pageref{tutorial} for more discussion. These tutorials allow users
-to quickly get started quickly with minimal interruptions. In addition,
-a commonality between our observations of user behavior and the feature
+to quickly get started quickly with minimal interruption. In addition, a
+commonality between our observations of user behavior and the feature
 requests is a desire for more guidance in creating valid cards. This
 indicates that the geometric constraints of popup cards were not
 sufficiently intuitive or discoverable in this version of Foldlings.
@@ -236,13 +236,13 @@ more snapping/validity guidance
 \bottomrule
 \end{longtable}
 
-Through this and other informal user tests, we modified our software
-based on user feedback. One of the key findings from this early test was
-that our toolset was very difficult for amateur users to use. Due to the
-difficulty in creating valid designs with our software, we completely
+As a result of this and other informal user tests, we modified our
+software based on user feedback. One of the key findings from this early
+test was that our toolset was very difficult for amateur users to use.
+Due to the difficulty users had creating valid designs, we completely
 overhauled our interface to focus on keeping the user's design in a
 valid state. In our final interface, users cannot add an element to
-sketch that will cause it to become invalid. Along with the system that
+sketch that will cause it to become invalid. Along with a system that
 validates cuts and folds before adding them to the sketch, our modular
 tools help ensure validity. Rather than individual cuts and folds, our
 tools create modular folding units, which solve geometric constraints

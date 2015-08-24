@@ -19,30 +19,30 @@
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Kirigami fold pattern (\citet {maekawas-theorem}).\relax }}{30}{figure.caption.30}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane. 2b is the child of plane 1.\relax }}{31}{figure.caption.31}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Planes in a more complex sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane. Letters indicate branches within the plane tree (I.e. 3a is the child of 2a).\relax }}{32}{figure.caption.32}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Left: fold \& cut pattern of the master feature. Right: laser-cut model of the same.\relax }}{33}{figure.caption.34}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Left: fold \& cut pattern of a box fold feaure. Right: laser-cut model of the same.\relax }}{34}{figure.caption.36}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Left: fold \& cut pattern of the master feature. Right: laser-cut model of the same.\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Left: fold \& cut pattern of a box fold feaure. Right: laser-cut model of the same.\relax }}{33}{figure.caption.36}
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Left: fold \& cut pattern of a freeform feature. Right: laser-cut model of the same.\relax }}{34}{figure.caption.38}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Left: fold \& cut pattern of a polygon feature. Right: laser-cut model of the same.\relax }}{35}{figure.caption.40}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Left: fold \& cut pattern of a v-fold feature. Right: laser-cut model of the same.\relax }}{36}{figure.caption.42}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Left: fold \& cut pattern of a polygon feature. Right: laser-cut model of the same.\relax }}{34}{figure.caption.40}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Left: fold \& cut pattern of a v-fold feature. Right: laser-cut model of the same.\relax }}{35}{figure.caption.42}
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.\relax }}{36}{figure.caption.43}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{38}{figure.caption.45}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{37}{figure.caption.45}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{39}{figure.caption.46}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Left: a freeform shape before performing \emph {SplitFoldByOcclusion}. Right: a freeform feature after performing \emph {SplitFoldByOcclusion}.\relax }}{45}{figure.caption.47}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Left: A freeform feature before truncation. Right: A freeform feature after truncation\relax }}{47}{figure.caption.49}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Left: a feature with a self-intersection before processing. Right: the feature after the self-intersection has been resolved.\relax }}{50}{figure.caption.50}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Left: a feature with multiple self-intersecting loops, which our algorithm can repair. Right: a feature with multiple overlapping intersections, which our algorithm fails to repair.\relax }}{52}{figure.caption.51}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces An attempted sketch with overlapping features.\relax }}{53}{figure.caption.52}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces New polygon feature intersecting with an existing freeform shape.\relax }}{55}{figure.caption.53}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{57}{figure.caption.54}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Geometric constraints for box fold features\relax }}{58}{figure.caption.56}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Geometric constraints for freeform features\relax }}{59}{figure.caption.58}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Geometric constraints for polygon features\relax }}{60}{figure.caption.60}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Geometric constraints for freeform features\relax }}{61}{figure.caption.62}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{62}{figure.caption.63}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{38}{figure.caption.46}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Left: a freeform shape before performing \emph {SplitFoldByOcclusion}. Right: a freeform feature after performing \emph {SplitFoldByOcclusion}.\relax }}{44}{figure.caption.47}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Left: A freeform feature before truncation. Right: A freeform feature after truncation\relax }}{46}{figure.caption.49}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Left: a feature with a self-intersection before processing. Right: the feature after the self-intersection has been resolved.\relax }}{49}{figure.caption.50}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Left: a feature with multiple self-intersecting loops, which our algorithm can repair. Right: a feature with multiple overlapping intersections, which our algorithm fails to repair.\relax }}{51}{figure.caption.51}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces An attempted sketch with overlapping features.\relax }}{52}{figure.caption.52}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces New polygon feature intersecting with an existing freeform shape.\relax }}{54}{figure.caption.53}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{56}{figure.caption.54}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Geometric constraints for box fold features\relax }}{57}{figure.caption.56}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Geometric constraints for freeform features\relax }}{58}{figure.caption.58}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Geometric constraints for polygon features\relax }}{59}{figure.caption.60}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Geometric constraints for freeform features\relax }}{60}{figure.caption.62}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{61}{figure.caption.63}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Foldlings at the Digital Arts Exhibition (\citet {daxphoto}).\relax }}{64}{figure.caption.64}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{67}{figure.caption.65}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The four visual aids. Left to right: planes shaded by orientation, edges patterned based on orientation, video simulation, still image.\relax }}{68}{figure.caption.66}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Foldlings at the Digital Arts Exhibition (\citet {daxphoto}).\relax }}{63}{figure.caption.64}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{66}{figure.caption.65}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The four visual aids. Left to right: planes shaded by orientation, edges patterned based on orientation, video simulation, still image.\relax }}{67}{figure.caption.66}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -19,7 +19,7 @@ Although this structure borrows heavily from the Model-View-Controller
 design pattern, we do not follow the pattern strictly. The MVC paradigm
 often becomes muddy, with much information shared between the separate
 modules (\citet{veit2003model}). In our case, we separate modules not
-purely based on MVC encapsulation but based on functionality. For
+purely based on MVC encapsulation, but based on functionality. For
 example, rather that strictly separating all touch handling into the
 view controller (or all drawing into the view), these responsibilities
 are shared between the classes as needed to perform their roles. See
@@ -43,12 +43,13 @@ The target object is typically the view's view controller, which
 responds to the gesture\ldots{} (\citet{appledocs}).
 \end{quote}
 
-In Foldlings, all gestures are captured by the )SketchViewController\_ ,
-which passes un-handled gestures on to classes lower down the chain. In
-general, all taps are handled at the view controller level; the only
-exception to this rule is the Polygon feature, described in Chapter 2,
-section \ref{tool-interactions} \ref{feature-interactions}
-\nameref{feature-interactions} on page \pageref{feature-interactions}.
+In Foldlings, all gestures are captured by the
+\emph{SketchViewController} , which passes un-handled gestures on to
+classes lower down the chain. In general, all taps are handled at the
+view controller level; the only exception to this rule is the Polygon
+feature, described in Chapter 2, section \ref{tool-interactions}
+\ref{feature-interactions} \nameref{feature-interactions} on page
+\pageref{feature-interactions}.
 
 \subsection{Tool Selection}\label{tool-selection}
 
@@ -120,17 +121,16 @@ We store the currently active feature separately; it is not added to the
 list of features until it is completed and passes validation. Thus, its
 edges are drawn by the function that draws all edges currently in the
 sketch. For performance reasons, we display a preview of the active
-feature on top of all features in the sketch --- modifications to
-existing features, and computationally expensive operations such as
-truncation for freeform shapes, are performed only when the feature is
-added to the sketch. During drawing, we display the set of preview edges
-stored in the feature, which sometimes differ from the final feature
-edges.
+feature on top of all features in the sketch. Modifications to existing
+features, and computationally expensive operations such as truncation
+for freeform shapes, are performed only when the feature is added to the
+sketch. During drawing, we display the set of preview edges stored in
+the feature, which sometimes differ from the final feature edges.
 
 For box folds, we display a preview of all the edges, but do not occlude
 the middle fold until the feature is completed. For freeform features,
 we do not perform truncation until the feature is completed (and spans a
-driving fold) \footnote{A description of truncation can be found in
+driving fold)\footnote{A description of truncation can be found in
   Chapter 3 section \ref{tool-implementation}
   \nameref{tool-implementation} on page \pageref{tool-implementation}}.
 As a preview, the SketchView shows the user's touch path as a cut. For
@@ -151,9 +151,9 @@ edges. How these tasks are achieved depends on the specific fold feature
 type.
 
 The specific implementations of the FoldFeature superclass are described
-in section \nameref{tool-implementation} on page
-\pageref{tool-implementation}. The Sketch class contains methods for
-adding and removing features from the sketch. It also contains
+in section \ref{tool-implementation} \nameref{tool-implementation} on
+page \pageref{tool-implementation}. The Sketch class contains methods
+for adding and removing features from the sketch. It also contains
 lower-level functions for adding, removing, and replacing edges. These
 methods are typically called by feature-specific methods that modify the
 sketch, such as \emph{splitFoldByOcclusion}.

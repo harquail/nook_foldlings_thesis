@@ -34,13 +34,12 @@ core interaction is as follows:
 Some interactions are common to all features. To add a feature, you
 select the tool that creates features of that type. Each feature
 type\footnote{(Except for the master card)} has a corresponding button
-in the toolbar at the bottom of the sketches. In general, all features
+in the toolbar at the bottom of the sketche. In general, all features
 are defined by dragging in the drawing area. Features are generally
 completed by releasing the drag. As long as you remain in that tool, you
-can continue creating features of that type by dragging. Having
-consistent tool interactions helps reduce the burden of learning new
-tools, and allows for a scaffolded user experience
-(\citet{wood2001scaffolding}).
+can continue creating features of that type by dragging. Consistent tool
+interactions help reduce the burden of learning new tools, and allow for
+a scaffolded user experience (\citet{wood2001scaffolding}).
 
 We can infer that the user has completed a sketch when a touch completes
 the feature. Completion conditions are different depending on the
@@ -49,9 +48,10 @@ are always defined with a single touch: Box Fold and Free Form. The
 multi-step tools: Polygon and V-Fold ---~require more than one touch to
 define.
 
-The fold features are fully defined in section
+The fold features are described in section
 \ref{interface-data-structures}, \nameref{interface-data-structures}, on
-page \pageref{interface-data-structures}.
+page \pageref{interface-data-structures}. What follow is a description
+of the interaction to create each type of fold feature.
 
 \begin{figure}[htbp]
 \centering
@@ -67,9 +67,9 @@ folds are only valid if they span a driving fold.
 
 \subsubsection{Free Form Interactions}\label{free-form-interactions}
 
-Free-form shapes are created by dragging a single closed shape.
-Free-form shapes that cross a fold are truncated\footnote{See Chapter 3
-  section \ref{tool-implementation} on page \pageref{truncation} for a
+Free-form shapes are created by dragging a closed shape. Free-form
+shapes that cross a fold are truncated\footnote{See Chapter 3 section
+  \ref{tool-implementation} on page \pageref{truncation} for a
   description of the truncation process.}, and a center fold is
 automatically added at the correct height. If a free-form shape does not
 cross a fold\footnote{More formally, if a feature does not span a fold,
@@ -79,16 +79,16 @@ cross a fold\footnote{More formally, if a feature does not span a fold,
 are added. Initially, we considered having a separate tool for creating
 holes. However, through informal user tests we discovered that users
 intuitively understood that free-form shape that do not cross a fold
-will become holes --- and therefore we were able to combine the two
+will become holes --- and we were therefore able to combine the two
 functions into a single tool.
 
 \subsubsection{Polygon Interactions}\label{polygon-interactions}
 
-Polygons are constructed one vertex at a time. Points are added by
-tapping or dragging on the sketch, adding edges between successive
-points with each tap. Once a vertex is (nearly) coincident with the
-initial point, the feature is complete. Users can also drag existing
-points in the polygon to modify the shape.
+Polygons are created one vertex at a time. Points are added by tapping
+or dragging on the sketch, adding edges between successive points with
+each tap. Once a vertex is (nearly) coincident with the initial point,
+the feature is complete. Users can also drag existing points in the
+polygon to modify the shape.
 
 Initially, tapping was they only way to add points to a polygon --- we
 added dragging points to make the interaction more consistent with other
@@ -184,10 +184,10 @@ editor to make further changes.
 The sketches are bound by physical constraints, as described in Chapter
 3 section \ref{constraints-on-fold-features} \ref{physical-constraints},
 \nameref{physical-constraints} on page \pageref{physical-constraints}.
-One constraint is the precision of the cutter, which limits how closely
-cuts and folds can be drawn to each other. We take these physical
-constraints into account during the sketching process, so the user's
-design is foldable.
+One constraint is the precision of the cutting tool, which limits how
+closely cuts and folds can be drawn to each other. We take these
+physical constraints into account during the sketching process, so the
+user's design is foldable.
 
 \subsection{Print}\label{print}
 
@@ -221,7 +221,7 @@ interactive preview of the folded card. Users can interact with this
 card through an intuitive ``pinch'' gesture. In addition, we shade
 planes based on orientation (cool colors for planes that will be
 vertical when the card is halfway folded and warm colors for horizontal
-planes. In the SVG file (accessed via ``send to laser cutter''), we
+planes). In the SVG file (accessed via ``Send to Laser Cutter''), we
 adjust line dash patterns for folds based on orientation: dotted lines
 are mountains, creased away from the main fold --- dot-dash lines are
 valleys, creased in the same direction as the main fold. From the visual
