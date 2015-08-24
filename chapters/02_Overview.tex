@@ -16,10 +16,10 @@ card before they even pick up a pair of scissors.
 Our algorithmic simulation and validity detection is based on a tight
 set of constraints to the pop-up card problem. We require the card to
 have a central main valley fold --- from there we can determine the
-orientation, as alternating folds have opposite orientations. The card
-then folds to a 90 degree angle; this implies parallelogram constraints
-between all the edges in a sideways cross-section with the exception of
-V-Fold features .
+orientation, as alternating folds fold in opposite orientations. The
+card then folds 180 degrees; this implies parallelogram constraints
+between all the edges in a sideways cross-section (with the exception of
+v-fold features).
 
 All fold endpoints must have cuts between them --- although these cuts
 can be arbitrary shapes. Cuts can also form holes (regions bounded by
@@ -46,28 +46,28 @@ folds, displaying an interactive preview of the design as the user
 creates it. The cuts and folds created with these tools remain
 associated with each other, and can be modified or deleted as a unit.
 
-Each time a new shape is added to the design it is evaluated for
+Each time a new shape is added to the design, it is evaluated for
 validity: whether it can fold to 90 degrees and be parsed into
 individual planes. The planes are then linked together in an acyclic
-graph based on the planes' abutting top edges. Each time a user adds a
-new feature or line to the sketch, planes are evaluated and added to an
-acyclic graph. Each feature can also be modified or deleted, by tapping
-on the feature an selecting an entry from the list of available options.
+graph based on the planes' abutting top edges. This acyclic graph allows
+us to shade planes based on orientation in 2D and simulate the design in
+3D. Each feature can also be modified or deleted, by tapping on the
+feature an selecting an entry from the list of available options.
 
 This process continues until the user decides to preview the design in
-3D. When the user presses the 3D preview button, we recursively traverse
-the plane-graph, for every newly evaluated plane, we set the rotation
-and add any holes to those planes. The user is free to go back to the 2D
-drawing interface and continue editing his/her design or save the design
-as either a raster file or SVG vector file. After this step, the user
-can print and cut the raster file or open the file on a laser cutter. We
-automatically save designs locally when leaving the design workspace, so
-users can restore their work.
+3D. The 3D preview displays a preview of how the design will fold, which
+can be manipulated using a pinch gesture. The user is free to return to
+the 2D drawing interface and continue editing his/her design or save the
+design as either a raster file or SVG vector file. After this step, the
+user can print and cut the raster file or open the SVG file on a laser
+cutter or other cutting tool. We automatically save designs locally when
+leaving the design workspace, so users can restore their work.
 
 \subsection{Development Process}\label{development-process}
 
-The full source for our software is available on github.com, at
-\url{http://github.com/harquail/foldlings/}.
+We designed and developed the software interactively, frequently testing
+prototypes with users. The full source for our software is available on
+github.com, at \url{http://github.com/harquail/foldlings/}.
 
 \begin{figure}[htbp]
 \centering

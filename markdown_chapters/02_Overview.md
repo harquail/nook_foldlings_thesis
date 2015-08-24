@@ -16,11 +16,11 @@ To begin, a user draws a design using the fold feature tools: box fold, polygon,
 
 Each time a new shape is added to the design, it is evaluated for validity: whether it can fold to 90 degrees and be parsed into individual planes. The planes are then linked together in an acyclic graph based on the planes’ abutting top edges.  This acyclic graph allows us to shade planes based on orientation in 2D and simulate the design in 3D.  Each feature can also be modified or deleted, by tapping on the feature an selecting an entry from the list of available options.
 
-This process continues until the user decides to preview the design in 3D. The 3D preview displays a preview of how the design will fold in 3D, which can be manipulated using a pinch gesture. The user is free to go back to the 2D drawing interface and continue editing his/her design or save the design as either a raster file or SVG vector file. After this step, the user can print and cut the raster file or open the file on a laser cutter.  We automatically save designs locally when leaving the design workspace, so users can restore their work.
+This process continues until the user decides to preview the design in 3D. The 3D preview displays a preview of how the design will fold, which can be manipulated using a pinch gesture. The user is free to return to the 2D drawing interface and continue editing his/her design or save the design as either a raster file or SVG vector file. After this step, the user can print and cut the raster file or open the SVG file on a laser cutter or other cutting tool.  We automatically save designs locally when leaving the design workspace, so users can restore their work.
 
 ##Development Process
 
-The full source for our software is available on github.com, at [http://github.com/harquail/foldlings/](http://github.com/harquail/foldlings/).  
+We designed and developed the software interactively, frequently testing prototypes with users.  The full source for our software is available on github.com, at [http://github.com/harquail/foldlings/](http://github.com/harquail/foldlings/).  
 
 ![We used github to build Foldlings collaboratively.  Our workflow involved creating new code branches for each feature, and reviewing the changes before merging back into the master branch of the codebase.](figures/30_UI_Design_Philosophy/gitflow.png)
 
