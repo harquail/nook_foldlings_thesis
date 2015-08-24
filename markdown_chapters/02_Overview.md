@@ -8,7 +8,7 @@ _This section is co-authored with Marissa Allen_
 
 Our algorithmic simulation and validity detection is based on a tight set of constraints to the pop-up card problem.  We require the card to have a central main valley fold — from there we can determine the orientation, as alternating folds fold in opposite orientations.  The card then folds 180 degrees; this implies parallelogram constraints between all the edges in a sideways cross-section (with the exception of v-fold features).  
 
-We capture touch input, translating touches into cuts and folds depending on the geometry of the fold feature.  When a fold feature is added to the sketch, we re-calculate planes (areas enclosed by cuts and folds) by traversing a directed graph of edges in the sketch.  Based on these 2D planes, we create 3D planes, which are oriented and translated based on their relationship to other planes in the sketch.  In 3D, we animate planes in response to user input.  Each of the planes is translated in relation to the plane oriented above the fold and rotated in relation to the main driving joint.
+We capture touch input, translating touches into cuts and folds depending on the geometry of the fold feature.  We validate fold features before they are added to the sketch, ensuring that the design can fold in 3D.  At this point, we also perform bezier path operations to modify existing edges in the sketch based on the new design element.  When a fold feature is added to the sketch, we re-calculate planes (areas enclosed by cuts and folds) by traversing a directed graph of edges in the sketch.  Based on these 2D planes, we create 3D planes, which are oriented and translated based on their relationship to other planes in the sketch.  In 3D, we animate planes in response to user input.  Each of the planes is translated in relation to the plane oriented above the fold and rotated in relation to the main driving joint.
 
 Our approach constructs a tree representation of the planes based on fold adjacency and uses this for determining the parent child relationships in the simulated 3D view.  We also use a tree-based structure to store associations between logical geometric units.
 
@@ -20,6 +20,8 @@ We designed and developed the software interactively, frequently testing prototy
 
 #Pipeline Overview
 _This section is co-authored with Marissa Allen_
+
+![Overview of data flow between 2D and 3D systems.](figures/shared/02_Overview/pipeline.pdf)
 
 To begin, a user draws a design using the fold feature tools: box fold, polygon, freeform and v-fold.  These tools create a pattern of cuts and folds, displaying an interactive preview of the design as the user creates it.  The cuts and folds created with these tools remain associated with each other, and can be modified or deleted as a unit.
 

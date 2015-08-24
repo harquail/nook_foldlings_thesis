@@ -3,13 +3,13 @@
 \emph{This section is co-authored with Marissa Allen}
 
 We set out to create a tool that would help people design 3D pop-up
-cards. We were driven by our own struggles in creating 3D pop-up cards
-and the desire to create an original design without a template. As we
-progressed in our project, we began to focus on developing a tool that
-would provide a way to create pop-ups more intuitively, without
-explicitly understanding how to create a valid 90-degree pop-up card.
-Our tool allows users to design, iterate, and preview an original pop-up
-card before they even pick up a pair of scissors.
+cards. We were driven by the desire to create original kirigami designs
+without a template. As we progressed in our project, we began to focus
+on developing a tool that would provide a way to create pop-ups more
+intuitively, without explicitly understanding how to create a valid
+90-degree pop-up card. Our tool allows users to design, iterate, and
+preview an original pop-up card before they even pick up a pair of
+scissors.
 
 \section{Technical Overview}\label{technical-overview}
 
@@ -24,14 +24,17 @@ between all the edges in a sideways cross-section (with the exception of
 v-fold features).
 
 We capture touch input, translating touches into cuts and folds
-depending on the geometry of the fold feature. When a fold feature is
-added to the sketch, we re-calculate planes (areas enclosed by cuts and
-folds) by traversing a directed graph of edges in the sketch. Based on
-these 2D planes, we create 3D planes, which are oriented and translated
-based on their relationship to other planes in the sketch. In 3D, we
-animate planes in response to user input. Each of the planes is
-translated in relation to the plane oriented above the fold and rotated
-in relation to the main driving joint.
+depending on the geometry of the fold feature. We validate fold features
+before they are added to the sketch, ensuring that the design can fold
+in 3D. At this point, we also perform bezier path operations to modify
+existing edges in the sketch based on the new design element. When a
+fold feature is added to the sketch, we re-calculate planes (areas
+enclosed by cuts and folds) by traversing a directed graph of edges in
+the sketch. Based on these 2D planes, we create 3D planes, which are
+oriented and translated based on their relationship to other planes in
+the sketch. In 3D, we animate planes in response to user input. Each of
+the planes is translated in relation to the plane oriented above the
+fold and rotated in relation to the main driving joint.
 
 Our approach constructs a tree representation of the planes based on
 fold adjacency and uses this for determining the parent child
@@ -56,6 +59,12 @@ available at \url{http://github.com/harquail/foldlings/}.
 \section{Pipeline Overview}\label{pipeline-overview}
 
 \emph{This section is co-authored with Marissa Allen}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/shared/02_Overview/pipeline.pdf}
+\caption{Overview of data flow between 2D and 3D systems.}
+\end{figure}
 
 To begin, a user draws a design using the fold feature tools: box fold,
 polygon, freeform and v-fold. These tools create a pattern of cuts and
