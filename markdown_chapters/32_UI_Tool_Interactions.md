@@ -9,11 +9,11 @@ Through the iterations described in the previous chapter, we arrived at Foldling
 
 ## Feature Interactions
 
-Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketches.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Having consistent tool interactions helps reduce the burden of learning new tools, and allows for a scaffolded user experience (@wood2001scaffolding). 
+Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketche.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Consistent tool interactions help reduce the burden of learning new tools, and allow for a scaffolded user experience (@wood2001scaffolding). 
 
 We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
 
-The fold features are fully defined in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  
+The fold features are described in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  What follow is a description of the interaction to create each type of fold feature.  
 
 ![Examples of the four fold features created by the tools. Left to right: box fold, freeform, polygon, v-fold.](figures/32_UI_Tool_Interactions/foldFeatures.png)
 
@@ -23,11 +23,11 @@ A box fold is created by dragging to define the bounds of the box.  Box folds ar
 
 ###Free Form Interactions
 
-Free-form shapes are created by dragging a single closed shape.  Free-form shapes that cross a fold are truncated^[See Chapter 3 section \ref{tool-implementation} on page \pageref{truncation} for a description of the truncation process.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the _featureSpansFold_ function described in Chapter 3 section \ref{tool-implementation} on page \pageref{tool-implementation}.] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and therefore we were able to combine the two functions into a single tool.
+Free-form shapes are created by dragging a closed shape.  Free-form shapes that cross a fold are truncated^[See Chapter 3 section \ref{tool-implementation} on page \pageref{truncation} for a description of the truncation process.], and a center fold is automatically added at the correct height.  If a free-form shape does not cross a fold^[More formally, if a feature does not span a fold, as determined by the _featureSpansFold_ function described in Chapter 3 section \ref{tool-implementation} on page \pageref{tool-implementation}.] it is considered a hole, and no folds are added.  Initially, we considered having a separate tool for creating holes.  However, through informal user tests we discovered that users intuitively understood that free-form shape that do not cross a fold will become holes — and we were therefore able to combine the two functions into a single tool.
 
 ###Polygon Interactions
 
-Polygons are constructed one vertex at a time.  Points are added by tapping or dragging on the sketch, adding edges between successive points with each tap.  Once a vertex is (nearly) coincident with the initial point, the feature is complete.  Users can also drag existing points in the polygon to modify the shape.
+Polygons are created one vertex at a time.  Points are added by tapping or dragging on the sketch, adding edges between successive points with each tap.  Once a vertex is (nearly) coincident with the initial point, the feature is complete.  Users can also drag existing points in the polygon to modify the shape.
 
 Initially, tapping was they only way to add points to a polygon — we added dragging points to make the interaction more consistent with other feature types.  
 
@@ -67,7 +67,7 @@ Some features can be drawn over cuts and folds of existing features.  When a new
 
 Users can tap the "send to laser cutter" option; this sends the user an email with an attached SVG file.  This file can be fed to a laser cutter or paper cutting machine, and can be opened in a vector graphics editor to make further changes.
 
-The sketches are bound by physical constraints, as described in  Chapter 3 section \ref{constraints-on-fold-features} \ref{physical-constraints}, \nameref{physical-constraints} on page \pageref{physical-constraints}.  One constraint is the precision of the cutter, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
+The sketches are bound by physical constraints, as described in  Chapter 3 section \ref{constraints-on-fold-features} \ref{physical-constraints}, \nameref{physical-constraints} on page \pageref{physical-constraints}.  One constraint is the precision of the cutting tool, which limits how closely cuts and folds can be drawn to each other.  We take these physical constraints into account during the sketching process, so the user's design is foldable.
 
 ##Print
 
@@ -79,6 +79,6 @@ In addition to sharing an SVG file for laser cutting, users can press "print".  
 
 ![Line patterns in SVG export](figures/32_UI_Tool_Interactions/dot-dash.pdf)
 
-Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section \ref{visual-aids-user-study}, on page  \pageref{visual-aids-user-study}, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (cool colors for planes that will be vertical when the card is halfway folded and warm colors for horizontal planes.  In the SVG file (accessed via "send to laser cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data suggesting that displaying fold orientation is very helpful to users when folding pop-up cards.
+Foldlings utility relies on the user understanding how their design will fold while they are designing.  We use visual aids to help the user.  Using data from the user study described in Chapter 3, section \ref{visual-aids-user-study}, on page  \pageref{visual-aids-user-study}, we adjusted our interface to include more cues to help users visualize the design.  The primary visual aid is the 3D preview, which displays an interactive preview of the folded card.  Users can interact with this card through an intuitive "pinch" gesture.  In addition, we shade planes based on orientation (cool colors for planes that will be vertical when the card is halfway folded and warm colors for horizontal planes).  In the SVG file (accessed via "Send to Laser Cutter"), we adjust line dash patterns for folds based on orientation: dotted lines are mountains, creased away from the main fold — dot-dash lines are valleys, creased in the same direction as the main fold.  From the visual aids user study, we  have data suggesting that displaying fold orientation is very helpful to users when folding pop-up cards.
 
 ![Plane shading is one of many visual aids in Foldlings.](figures/32_UI_Tool_Interactions/currentInterface.png)

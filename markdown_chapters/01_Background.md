@@ -10,10 +10,10 @@ Kirigami is the art of papercraft originating from 17th century Japan (@temko197
 ![Cross-section of a popup card. Figure modified from https://en.wikipedia.org/
 wiki/File:Popup-diagram.svg.](figures/shared/01_Background/popup-diagram.pdf)
 
-Typically, users create popup cards manually.  For example, a user might sketch out shape on a card in pencil, and then measure with a rule to determine locations to place folds.  Or, they might fold the paper while cutting, discovering correct fold positions experimentally.  The second method works well for simple designs, but becomes difficult with complex and nested geometries^[These are behaviors we observed by watching users create pop-up cards.].  Constructing popup cards manually is difficult for several reasons:
+Typically, users create popup cards manually.  For example, a user might sketch out shape on a card in pencil, and then measure with a ruler to determine where to place folds.  Or, they might fold the paper while cutting, discovering correct fold positions experimentally.  The second method works well for simple designs, but becomes difficult with complex and nested geometries^[These are behaviors we observed by watching users create pop-up cards.].  Constructing popup cards manually is difficult for several reasons:
 
 1. \textbf{2D to 3D visualization is difficult}.  Users have difficulty understanding how the card will fold based on a 2D design.
-2. \textbf{Geometric constraints}.  Pop-up cards present strict constraints, which are often unintuitive to novice designers.  
+2. \textbf{Geometric constraints}.  Pop-up cards present strict constraints, which are often unintuitive to novice designers.
 3. \textbf{No "undo"}. Since pop-up card design is often a trial-and-error process, designers must sometimes make multiple versions of their card to test their design.
 4. \textbf{Physical constraints}.  In addition to the geometric constraints, the paper medium presents physical limitations on where edges can be placed.
 

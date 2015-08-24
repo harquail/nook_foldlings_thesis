@@ -1,6 +1,6 @@
 #Saving
 
-Every time users leave a sketch, Foldlings archives the sketch to a file, from which the session can later be restored.  Users restore a sketch by tapping on one of the cards on the main screen.  These cards can be deleted through a long press on the sketch, which presents an option to remove the saved file.  This convention is familiar to iOS users.
+Each time users leave a sketch, Foldlings archives the sketch to a file, from which the session can later be restored.  Users restore a sketch by tapping on one of the cards on the main screen.  These cards can be deleted through a long press on the sketch, which presents an option to remove the saved file.  This convention is familiar to iOS users.
 
 ![Saved sketches displayed on the main screen.](figures/34_UI_Saving/saved_sketches.png)
 

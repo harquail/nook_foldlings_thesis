@@ -1,6 +1,6 @@
 \chapter{Conclusions}
 
-We plan to release Foldlings in the Apple app store in September.  In many ways, the primary test of our software will be the extent to which real users are able to achieve their design goals.  However, we can make several conclusions about the success of our tool.  In general, users find the process of designing popup cards more intuitive with the current version of Foldling than with previous versions of our software or manual methods.  Additionally, we have qualitative evidence that suggest that users can create a wide range of complex cards, faster and with more precision than using manual methods.  That said, there is much work to be done on this and related popup-card design problems.
+We plan to release Foldlings in the Apple App Store in September.  In many ways, the primary test of our software will be the extent to which real users are able to achieve their design goals.  However, we can make several conclusions about the success of our tool.  In general, users find the process of designing popup cards more intuitive with the current version of Foldlings than with previous versions of our software or manual methods.  Additionally, we have qualitative evidence that suggest that users can create a wide range of complex cards, faster and with more precision than using manual methods.  That said, there is much work to be done on this and related popup-card design problems.
 
 #User Interface Future Work
 
@@ -24,4 +24,4 @@ Feature intersections are only partially implemented, and do not always succeed.
 
 ##Concurrency
 
-A key limitation of Foldlings is that all functions currently run on a single thread.  As a consequence, the user is sometimes blocked by operations that could be performed in the background.  For example, when completing a feature, out app ignores touch input until the feature is added to the sketch and planes are calculated.  This can cause a slight but noticeable delay between  Restructuring our algorithms to perform computationally-heavy operations in the background would reduce lag between action, allowing users to design more quickly and fluidly.
+A key limitation of Foldlings is that all functions currently run on a single thread.  As a consequence, the user is sometimes blocked by operations that could be performed in the background.  For example, when completing a feature, out app ignores touch input until the feature is added to the sketch and planes are calculated.  This can cause a slight but noticeable delay between actions.  Restructuring our algorithms to perform computationally-heavy operations in the background would reduce lag between actions, allowing users to design more quickly and fluidly.

@@ -2,11 +2,11 @@
 
 ![A Participant folding a card in our study on 2D to 3D visual aids for popup cards.](figures/51_User_Study_Visual_Aids/kikofoldling.jpg)
 
-The goal of this study was to determine whether users understand the mapping of 2d fold patterns to 3D, and test the degree to which plane shading, edge patterning, and a 3D preview help users understand how a popup card will fold.
+The goal of this study was to determine whether users understand the mapping of 2D fold patterns to 3D, and test the degree to which plane shading, edge patterning, and a 3D preview help users understand how a popup card will fold.
 
 ##Method
 
-We performed this study with 22 participants, who spent an average of 18 minutes with us.  Each subject received a set of five laser cut cards, and we recorded the time for them to successfully fold the card.  Although there was some variety in age and background, but the largest demographic was undergraduate Dartmouth students.  10 of the participants were male, 12 were female.  
+We performed this study with 22 participants, who spent an average of 18 minutes with us.  Each subject received a set of five laser cut cards, and we recorded the time for them to successfully fold the card.  Although there was some variety in age and background, the largest demographic was undergraduate Dartmouth students.  10 of the participants were male, 12 were female.  
 
  For each card, each subject was randomly given one of of the following five aids:
 
@@ -67,7 +67,7 @@ The time to fold varied significantly depending on the visual aid used to fold t
   \end{axis}
 \end{tikzpicture}
 
-Some trials were not completed successfully.  In some cases, users folded the design incorrectly — in others, they refused to fold the card, feeling lost without a visual aid.  Unsurprisingly, users were far more likely to fail to fold the card when they did not have a visual aid.  The times for these failures were not recorded in the Number of Figures graph above.
+Some trials were not completed successfully.  In some cases, users folded the design incorrectly — in others, they refused to fold the card, feeling lost without a visual aid.  Unsurprisingly, users were far more likely to fail to fold the card when they did not have a visual aid.  The times for these failures were not recorded in the Number of Failures graph above.
 
 \begin{tikzpicture}
   \begin{axis}[
