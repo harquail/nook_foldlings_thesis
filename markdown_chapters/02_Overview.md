@@ -16,7 +16,7 @@ Our approach constructs a tree representation of the planes based on fold adjace
 
 We designed and developed the software interactively, frequently testing prototypes with users.  We used github to build Foldlings collaboratively.  Our workflow involved creating new code branches for each feature, and reviewing the changes before merging back into the master branch of the codebase.  The full source for our software is available at [http://github.com/harquail/foldlings/](http://github.com/harquail/foldlings/).  
 
-![Branches in our github.com repository.](figures/30_UI_Design_Philosophy/gitflow.png)
+![Branches in our github.com repository.](figures/shared/02_Overview/gitflow.png)
 
 #Pipeline Overview
 _This section is co-authored with Marissa Allen_
