@@ -6,7 +6,7 @@ One of the primary goals of our software is to keep the user's sketch in a valid
 func validate() -> (passed: Bool, error: String) 
 \end{pygmented}
 
-The tool/template-based system is the primary means of insuring that user input is valid.  The validate function is a secondary system, which attempts to fix errors in user input, and then returns an error message if the feature could not be validated.  In case of errors, the feature is removed from the feature and we display a message using the warning system.   For example, the _validate()_ function of v-fold features reads as follows:
+The tool/template-based system is the primary means of insuring that user input is valid.  The validate function is a secondary system, which attempts to fix errors in user input, and then returns an error message if the feature could not be validated.  In case of errors, the feature is removed from the feature and we display a message using the warning system.   For example, the $validate()$ function of v-fold features reads as follows:
 
 \singlespacing 
 \begin{pygmented}{swift}

@@ -20,8 +20,8 @@ Often, users wish construct a fully-contained popup card.  That is, a card that 
 
 ##Feature Intersections
 
-Feature intersections are only partially implemented, and do not always succeed.  To fully-implement feature intersections, we would need to refactor our FoldFeature class to add feature intersections a primary component.  This would replace the current method of intersecting features with folds — _splitFoldByOcclusion_ — and would allow for more generalizable intersections between features.
+Feature intersections are only partially implemented, and do not always succeed.  To fully-implement feature intersections, we would need to refactor our FoldFeature class to add feature intersections as a primary component.  This would replace the current method of intersecting features with folds — $splitFoldByOcclusion$ — and would allow for more generalizable intersections between features.
 
 ##Concurrency
 
-A key limitation of Foldlings is that all functions currently run on a single thread.  As a consequence, the user is sometimes blocked by operations that could be performed in the background.  For example, when completing a feature, out app ignores touch input until the feature is added to the sketch and planes are calculated.  This can cause a slight but noticeable delay between actions.  Restructuring our algorithms to perform computationally-heavy operations in the background would reduce lag between actions, allowing users to design more quickly and fluidly.
+A key limitation of Foldlings is that all functions currently run on a single thread.  As a consequence, the user is sometimes blocked by operations that could be performed in the background.  For example, when completing a feature, our app ignores touch input until the feature is added to the sketch and planes are calculated.  This can cause a slight but noticeable delay between actions.  Restructuring our algorithms to perform computationally-heavy operations in the background would reduce lag between actions, allowing users to design more quickly and fluidly.

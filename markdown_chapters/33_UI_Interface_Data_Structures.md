@@ -18,7 +18,7 @@ An edge represents a cut or fold.  Edges are the basic building block of planes,
 
 A driving fold is not a special type of edge, but rather a relationship between an edge in one feature and a feature "spanning" that edge.  A feature is said to span a fold when it is drawn on top of an existing fold, so that it has horizontal folds both above and below the fold it spans — as shown in figure 2.12.
 
- An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  That is, there is a many-to-one relationship between children and their parent feature.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the feature that contains it.].  These parent-child relationships are described in more detail in the section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
+ An edge can be the driving fold for more than one feature, but each feature has only one driving fold (if there are multiple potential driving edges at the same height, the leftmost edge is selected).  That is, there is a many-to-one relationship between children and their parent feature.  The driving fold is important for calculating parent-child relationships between features: a feature's parent is the feature that contains it's driving fold^[The exception to this rule is holes — a hole's parent is the plane that contains it.].  These parent-child relationships are described in more detail in the section \nameref{hierarchy} on page \pageref{hierarchy} and in @mallen.
  
 ###Fold Orientation
 
@@ -37,7 +37,7 @@ Planes are an enclosed shape, bounded by edges.  Plane are detected from edges b
 
 ##Fold Features
 
-The central data structure of Foldlings is the fold feature: a representation of a shape drawn by the user that folds in 3D.  Each fold feature is a single design element — and can be individually created, modified, and deleted.  There are five subclasses of FoldFeature: MasterCard, BoxFold, FreeForm, Polygon, and V-Fold, representing differences in drawing behavior, geometry, and appearance (the differences are described in detail below).  Each of these features is a subclass of the FoldFeature superclass.
+The central data structure of Foldlings is the fold feature: a representation of a shape drawn by the user that folds in 3D.  Each fold feature is a single design element — and can be individually created, modified, and deleted.  There are five subclasses of FoldFeature: MasterCard, BoxFold, FreeForm, Polygon, and V-Fold, representing differences in drawing behavior, geometry, and appearance (the differences are described in detail below).  Each of these features is a subclass of the base FoldFeature class.
 
 All fold features have functionality in common:
 

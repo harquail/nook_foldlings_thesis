@@ -14,7 +14,7 @@ Typically, users create popup cards manually.  For example, a user might sketch 
 
 1. \textbf{2D to 3D visualization is difficult}.  Users have difficulty understanding how the card will fold based on a 2D design.
 2. \textbf{Geometric constraints}.  Pop-up cards present strict constraints, which are often unintuitive to novice designers.
-3. \textbf{No "undo"}. Since pop-up card design is often a trial-and-error process, designers must sometimes make multiple versions of their card to test their design.
+3. \textbf{No "undo"}. Since pop-up card design is often a trial-and-error process, designers must sometimes make many versions of their card to test their design.
 4. \textbf{Physical constraints}.  In addition to the geometric constraints, the paper medium presents physical limitations on where edges can be placed.
 
 The 90-degree popup card presents a tightly-constrained problem, with opportunities for both interface design and algorithm innovations.  Our work spans human-computer interaction, graph-based algorithms, and algorithms for manipulating bezier paths and pop-up card structures.  Our culminating product is an iPad application.

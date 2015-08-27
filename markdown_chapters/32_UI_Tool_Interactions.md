@@ -9,11 +9,11 @@ Through the iterations described in the previous chapter, we arrived at Foldling
 
 ## Feature Interactions
 
-Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketche.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Consistent tool interactions help reduce the burden of learning new tools, and allow for a scaffolded user experience (@wood2001scaffolding). 
+Some interactions are common to all features.  To add a feature, you select the tool that creates features of that type.  Each feature type^[(Except for the master card)] has a corresponding button in the toolbar at the bottom of the sketch.  In general, all features are defined by dragging in the drawing area.  Features are generally completed by releasing the drag.  As long as you remain in that tool, you can continue creating features of that type by dragging.  Consistent tool interactions help reduce the burden of learning new tools, and allow for a scaffolded user experience (@wood2001scaffolding). 
 
 We can infer that the user has completed a sketch when a touch completes the feature.  Completion conditions are different depending on the feature, but the completion state is never ambiguous.  Two feature types are always defined with a single touch: Box Fold and Free Form.  The multi-step tools: Polygon and V-Fold — require more than one touch to define.
 
-The fold features are described in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  What follow is a description of the interaction to create each type of fold feature.  
+The fold features are described in section \ref{interface-data-structures}, \nameref{interface-data-structures}, on page \pageref{interface-data-structures}.  What follows is a description of the interaction to create each type of fold feature.  
 
 ![Examples of the four fold features created by the tools. Left to right: box fold, freeform, polygon, v-fold.](figures/32_UI_Tool_Interactions/foldFeatures.png)
 
@@ -71,7 +71,7 @@ The sketches are bound by physical constraints, as described in  Chapter 3 secti
 
 ##Print
 
-In addition to sharing an SVG file for laser cutting, users can press "print".  This option provides what is essentially screenshot of the 2D sketch.  This image can be printed, emailed, or shared via social media.  Typically, this is the option a user would choose to cut and fold their design by hand.
+In addition to sharing an SVG file for laser cutting, users can press "print".  This option provides what is essentially a screenshot of the 2D sketch.  This image can be printed, emailed, or shared via social media.  Typically, this is the option a user would choose to cut and fold their design by hand.
 
 ![Options for sharing a fold pattern from the 3D preview.](figures/32_UI_Tool_Interactions/3d-share.png)
 
