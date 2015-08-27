@@ -77,7 +77,7 @@ is, there is a many-to-one relationship between children and their
 parent feature. The driving fold is important for calculating
 parent-child relationships between features: a feature's parent is the
 feature that contains it's driving fold\footnote{The exception to this
-  rule is holes ---~a hole's parent is the feature that contains it.}.
+  rule is holes ---~a hole's parent is the plane that contains it.}.
 These parent-child relationships are described in more detail in the
 section \nameref{hierarchy} on page \pageref{hierarchy} and in
 \citet{mallen}.
@@ -135,7 +135,7 @@ modified, and deleted. There are five subclasses of FoldFeature:
 MasterCard, BoxFold, FreeForm, Polygon, and V-Fold, representing
 differences in drawing behavior, geometry, and appearance (the
 differences are described in detail below). Each of these features is a
-subclass of the FoldFeature superclass.
+subclass of the base FoldFeature class.
 
 All fold features have functionality in common:
 

@@ -94,12 +94,12 @@ the tool selected and the drawing state.
 \normalsize
 
 Within the specific function in SketchView, pan gestures are converted
-into feature edges by listening to \emph{touchesBegan},
-\emph{touchesMoved}, and \emph{touchesEnded}. When a pan begins, we
-create a new feature of the appropriate type and set it as the currently
-active drawing feature. When the pan is updated, we add and/or modify
-edges in the active feature. When the pan ends, we make final
-modifications to edges, validate the feature, and add it to the sketch.
+into feature edges by listening to \(touchesBegan\), \(touchesMoved\),
+and \(touchesEnded\). When a pan begins, we create a new feature of the
+appropriate type and set it as the currently active drawing feature.
+When the pan is updated, we add and/or modify edges in the active
+feature. When the pan ends, we make final modifications to edges,
+validate the feature, and add it to the sketch.
 
 Of course, the implementation of pan delegate methods varies widely
 between features. For example, a diagonal pan with the box fold tool
