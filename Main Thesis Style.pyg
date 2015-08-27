@@ -1,40 +1,19 @@
-var horizontalFolds:[Edge] = [] //list of horizontal folds
-var featureEdges:[Edge]?        //edges in a feature
-var children:[FoldFeature] = [] // children of feature
-var drivingFold:Edge? // driving fold of feature
-var parent:FoldFeature? // parent of feature
-var startPoint:CGPoint?
-var endPoint:CGPoint? // start and end touch points
-
-/// splits an edge around the current feature
-func splitFoldByOcclusion(edge:Edge) -> [Edge]
-{
-//by default, return edge whole
-return [edge]
-}
-/// features are leaves if they don't have children
-func isLeaf() -> Bool
-{
-return children.count == 0
-}
-/// options or modifications that can be made to the current feature
-func tapOptions() -> [FeatureOption]?
-{
-  return [FeatureOption.PrintPlanes, FeatureOption.PrintEdges,
-  FeatureOption.ColorPlaneEdges, FeatureOption.PrintSinglePlane]
-}
-/// whether a feature is drawn over a fold, determines whether
-/// a fold can be the driving fold for a feature
-  func featureSpansFold(fold:Edge)->Bool
-{
-  return false
-}
-/// returns and calculates planes in a feature
-func getFeaturePlanes()-> [Plane]{
-  return featurePlanes
-}
-/// whether a feature contains a point
-/// needs to be overridden by subclasses
-func containsPoint(point:CGPoint) -> Bool{
-  return self.boundingBox()?.contains(point) ?? false
-}
+override func validate() -> (passed: Bool, error: String) {
+ let validity = super.validate()
+ if(!validity.passed){
+    return validity
+ }
+ // clever test for concave paths: close the vertical cut's
+ // path and test whether vfold end point is inside it
+ var testPath = UIBezierPath(CGPath: verticalCut.path.CGPath)
+ testPath.closePath()
+ if(testPath.containsPoint(diagonalFolds[0].end)){
+    return (false,"Angle too shallow")
+ }
+ if(!tooShortEdges().filter({
+    \$0.kind == Edge.Kind.Fold
+    }).isEmpty){
+        return (false,"Edges too short")
+ }
+    return (true,"")
+ }

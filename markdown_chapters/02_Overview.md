@@ -39,9 +39,9 @@ Each time a new shape is added to the design, it is evaluated for validity: whet
 
 This process continues until the user previews the design in 3D. The 3D preview displays a simulation of how the design will fold, which can be manipulated using a pinch gesture. The user is free to return to the 2D drawing interface and continue editing his/her design or save the design as either a raster file or SVG vector file. After this step, the user can print and cut the raster file or open the SVG file on a laser cutter or other cutting tool.  We automatically save designs locally when leaving the design workspace, so users can restore their work.
 
-Figure 1.6 shows the full pipeline for designing cards.  It shows a user's design process, starting with concept sketches, and moving through iterations of the sketch using the 3D preview to test the design. Finally, the user exports the design as a fold pattern, and cuts and folds the pop-up card.
+Figure 1.6 shows the full pipeline for designing cards.  It shows a user's design process, starting with concept sketches, and moving through iterations of the sketch using the 2D and 3D preview to test the design. Finally, the user exports the design as a fold pattern, and cuts and folds the pop-up card.
 
-![A full outline of the design process for Foldlings, from initial concept sketches to full realization of a paper pop-up card.](figures/shared/02_Overview/sinewave.pdf)
+![A full outline of the design process using Foldlings, from initial concept sketches to full realization of a paper pop-up card.  Initial concept design (a), 2D designs (b and c), 3D preview (d), SVG file (e), and folded card (f).](figures/shared/02_Overview/sinewave.pdf)
 
 
 

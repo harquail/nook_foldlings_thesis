@@ -1,0 +1,50 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A complex design created with our software.\relax }}{1}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Cross-section of a popup card. Figure modified from https://en.wikipedia.org/ wiki/File:Popup-diagram.svg.\relax }}{2}{figure.caption.8}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A sample of cards created using Foldlings. For larger images and fold patterns, see \nameref {appendix-d-sample-cards} on page \pageref {appendix-d-sample-cards}.\relax }}{4}{figure.caption.9}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Branches in our github.com repository.\relax }}{6}{figure.caption.10}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Overview of data flow between 2D and 3D systems.\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces A full outline of the design process for Foldlings, from initial concept sketches to full realization of a paper pop-up card.\relax }}{9}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Initial mockups showing cards for saved sketches on the main screen.\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Left: drawing interface as of December 2014. Users directly draw cuts and folds. Right: drawing interface as of August 2015. Modular, feature-based interface.\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Examples of the four fold features created by the tools. Left to right: box fold, freeform, polygon, v-fold.\relax }}{23}{figure.caption.15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Options presented when tapping a box fold feature.\relax }}{24}{figure.caption.20}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Free-form shape tutorial video.\relax }}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces An error message shown when rejecting a polygon with intersecting edges.\relax }}{26}{figure.caption.22}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Options for sharing a fold pattern from the 3D preview.\relax }}{27}{figure.caption.23}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Line patterns in SVG export\relax }}{28}{figure.caption.24}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Plane shading is one of many visual aids in Foldlings.\relax }}{29}{figure.caption.25}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces In Foldlings, cuts are displayed as solid black lines. Folds are displayed as dotted red lines. This convention is familiar to those who use traditional instructional books (\citet {berenson1972kirigami},3).\relax }}{30}{figure.caption.26}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces This sketch contains 34 edges, with orientations shown by the overlaid gray arrows.\relax }}{31}{figure.caption.28}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Left: a box fold mid-drag. The feature does not have a driving fold. Right: a box-fold after the user has released the touch. The feature's driving fold is the master card's middle horizontal fold.\relax }}{32}{figure.caption.30}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Kirigami fold pattern (\citet {maekawas-theorem}).\relax }}{33}{figure.caption.32}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Planes in a simple sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane. 2b is the child of plane 1.\relax }}{34}{figure.caption.33}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Planes in a more complex sketch, numbered by ancestry. Starting at the root plane 1, each successive plane is the child of the previous numbered plane. Letters indicate branches within the plane tree (I.e. 3a is the child of 2a).\relax }}{35}{figure.caption.34}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Left: fold \& cut pattern of the master feature. Right: laser-cut model of the same.\relax }}{35}{figure.caption.36}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Left: fold \& cut pattern of a box fold feaure. Right: laser-cut model of the same.\relax }}{36}{figure.caption.38}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Left: fold \& cut pattern of a freeform feature. Right: laser-cut model of the same.\relax }}{37}{figure.caption.40}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Left: fold \& cut pattern of a polygon feature. Right: laser-cut model of the same.\relax }}{37}{figure.caption.42}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Left: fold \& cut pattern of a v-fold feature. Right: laser-cut model of the same.\relax }}{38}{figure.caption.44}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Left: an unfinished v-fold, consisting only of a vertical cut. Right: a v-fold after defining the point on the driving fold to create diagonal cuts.\relax }}{39}{figure.caption.45}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Saved sketches displayed on the main screen.\relax }}{40}{figure.caption.47}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Relationship between interface classes: a SketchViewController manages a SketchView that contains a Sketch that contains FoldFeatures. \relax }}{41}{figure.caption.48}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Left: a freeform shape before performing \emph {SplitFoldByOcclusion}. Right: a freeform feature after performing \emph {SplitFoldByOcclusion}.\relax }}{47}{figure.caption.49}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Left: A freeform feature before truncation. Right: A freeform feature after truncation\relax }}{49}{figure.caption.51}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Left: a feature with a self-intersection before processing. Right: the feature after the self-intersection has been resolved.\relax }}{52}{figure.caption.52}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Left: a feature with multiple self-intersecting loops, which our algorithm can repair. Right: a feature with multiple overlapping intersections, which our algorithm fails to repair.\relax }}{54}{figure.caption.53}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces An attempted sketch with overlapping features.\relax }}{55}{figure.caption.54}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces New polygon feature intersecting with an existing freeform shape.\relax }}{57}{figure.caption.55}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Left: an invalid, concave v-fold. Right: a valid, convex v-fold.\relax }}{59}{figure.caption.56}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Geometric constraints for box fold features\relax }}{60}{figure.caption.58}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Geometric constraints for freeform features\relax }}{61}{figure.caption.60}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Geometric constraints for polygon features\relax }}{62}{figure.caption.62}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Geometric constraints for freeform features\relax }}{63}{figure.caption.64}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces A malformed laser-cut fold. This is supposed to be a dotted line, but because the dots were too close together, they have merged to become a single cut.\relax }}{64}{figure.caption.65}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Foldlings at the Digital Arts Exhibition (\citet {daxphoto}).\relax }}{66}{figure.caption.66}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A Participant folding a card in our study on 2D to 3D visual aids for popup cards.\relax }}{69}{figure.caption.67}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The four visual aids. Left to right: planes shaded by orientation, edges patterned based on orientation, video simulation, still image.\relax }}{70}{figure.caption.68}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
